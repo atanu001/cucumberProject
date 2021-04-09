@@ -2,43 +2,34 @@ package com.app.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 import com.app.factory.DriverFactory;
 import com.app.util.CommonUtility;
 
-public class ManageStepPage {
+public class ManageStepPage extends BasePage {
+
+	public ManageStepPage(WebDriver driver) {
+		super(driver);
+	}
 
 	private CommonUtility commonUtil = new CommonUtility(DriverFactory.getDriver());
-	private Header header = new Header(DriverFactory.getDriver());
-	private WebDriver driver;
+	private BasePage header = new BasePage(DriverFactory.getDriver());
 
 	@FindBy(id = "stepName")
-	@CacheLookup
 	WebElement txtStepName;
 
 	@FindBy(id = "stepapiurl")
-	@CacheLookup
 	WebElement stepApiUrl;
 
 	@FindBy(xpath = "//label[text()='Display this step as a Modal?']//preceding-sibling::input[@id='displayAsModal']")
-	@CacheLookup
 	WebElement chkboxDisplayAsModal;
 
 	@FindBy(xpath = "//label[text()='Will the modal be dismissable?']//preceding-sibling::input[@id='dismissModal']")
-	@CacheLookup
 	WebElement chkboxDismissModal;
 
 	@FindBy(xpath = "//label[text()='Is this step conditional?']//preceding-sibling::input[@id='conditional']")
-	@CacheLookup
 	WebElement chkboxConditional;
-
-	public ManageStepPage(WebDriver driver) {
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
-	}
 
 	public void createStep(String stepName, String stepApiUrlName, String bootstrapClassName, String customClassName,
 			String parameterName, String parameterValue, String device_Type, String templateId) {
@@ -60,6 +51,12 @@ public class ManageStepPage {
 		commonUtil.typeIn(locator3, testDate3);
 		commonUtil.scrollDownToBottomPage();
 		commonUtil.onClick(header.btnSave);
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }

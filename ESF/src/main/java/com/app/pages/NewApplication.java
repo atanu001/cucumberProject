@@ -2,34 +2,28 @@ package com.app.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 import com.app.factory.DriverFactory;
 import com.app.util.CommonUtility;
 
-public class NewApplication {
-	private WebDriver driver;
-	private CommonUtility commonUtil = new CommonUtility(DriverFactory.getDriver());
-	private Header header = new Header(DriverFactory.getDriver());
-
-	@FindBy(id = "applicationName")
-	@CacheLookup
-	WebElement applicationName;
-
-	@FindBy(xpath = "//select[@id='platformList']")
-	@CacheLookup
-	WebElement platformList;
-
-	@FindBy(xpath = "//select[@id='langList']")
-	@CacheLookup
-	WebElement languageList;
+public class NewApplication extends BasePage {
 
 	public NewApplication(WebDriver driver) {
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
+		super(driver);
 	}
+
+	private CommonUtility commonUtil = new CommonUtility(DriverFactory.getDriver());
+	private BasePage header = new BasePage(DriverFactory.getDriver());
+
+	@FindBy(id = "applicationName")
+	public WebElement applicationName;
+
+	@FindBy(xpath = "//select[@id='platformList']")
+	public WebElement platformList;
+
+	@FindBy(xpath = "//select[@id='langList']")
+	public WebElement languageList;
 
 	public void createApplication(String appName, String platfromName, String languageName, String paramName,
 			String paramValue) {

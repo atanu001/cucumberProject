@@ -10,7 +10,7 @@ import org.junit.Assert;
 
 import com.app.factory.DriverFactory;
 import com.app.pages.ApplicationDashboard;
-import com.app.pages.Header;
+import com.app.pages.BasePage;
 import com.app.pages.LoginPage;
 import com.app.pages.ManageStepPage;
 import com.app.pages.MyApplication;
@@ -38,16 +38,22 @@ public class stepDefinition {
 	private ApplicationDashboard applicationDashboard = new ApplicationDashboard(DriverFactory.getDriver());
 	private StepListPage stepListPage = new StepListPage(DriverFactory.getDriver());
 	private ManageStepPage manageStepPage = new ManageStepPage(DriverFactory.getDriver());
-	private Header header = new Header(DriverFactory.getDriver());
+	private BasePage base = new BasePage(DriverFactory.getDriver());
 
 	private String modifiedAppName = null;
 	private String modifiedStepName = null;
-	private String testDataPath = null;
+
 	// private String removalAppName = null;
+
+	static {
+
+		prop = configReader.init_prop();
+
+	}
 
 	@Given("^User has logged into the Portal$")
 	public void user_has_logged_into_the_Portal(DataTable dataTable) {
-		loginPage.openUrl();
+		base.openUrl(prop.getProperty("URL"));
 		String actualTitle = loginPage.getLoginPageTitle();
 		List<Map<String, String>> credentialList = dataTable.asMaps();
 		String email = credentialList.get(0).get("Email");
@@ -67,16 +73,14 @@ public class stepDefinition {
 	@And("^Create an Application using data in sheetWithRow (.*) and (.*)$")
 	public void provide_appName_and_platform_and_lang(String sheetName, String rowNo) {
 		try {
-			prop = configReader.init_prop();
-			testDataPath = prop.getProperty("TestDataPath");
-			ec = new Excell(testDataPath);
+			// prop = configReader.init_prop();
+			// testDataPath = prop.getProperty("TestDataPath");
+			ec = new Excell(prop.getProperty("TestDataPath"));
 			String appName = ec.getCellData("Application_Details", "Application Name", 0);
 			String platformName = ec.getCellData("Application_Details", "Platform", 0);
 			String languageName = ec.getCellData("Application_Details", "Languages", 0);
 			String paramName = ec.getCellData("Application_Details", "Parameter Name", 0);
 			String paramValue = ec.getCellData("Application_Details", "Parameter Value", 0);
-			// Random random = new Random();
-			// int randNum = random.nextInt(1000);
 			int randomNum = commonUtil.generateRandomNumber();
 			modifiedAppName = appName + "_" + randomNum;
 			System.out.println(modifiedAppName);
@@ -89,6 +93,7 @@ public class stepDefinition {
 
 	@Then("^Verify the Application in the list using data in sheetWithRow (.*) and (.*)$")
 	public void application_will_display_in_the_list(String sheetName, String rowNo) {
+		commonUtil.waitForElementToVisible(myApplication.appListTable);
 		commonUtil.doSearch(modifiedAppName);
 		String actualApplicationName = myApplication.getApplicationNameFromList();
 		Assert.assertTrue(actualApplicationName.equals(modifiedAppName));
@@ -97,11 +102,8 @@ public class stepDefinition {
 	@Given("^User open an application from the list using data in sheetWithRow (.*) and (.*)$")
 	public void user_open_an_application_from_the_list_using_data_in_sheetwithrow_and(
 			String applicationdetailssheetname, String rowno) {
-		configReader = new ConfigReader();
-		prop = configReader.init_prop();
-		String testDataPath = prop.getProperty("TestDataPath");
 		try {
-			ec = new Excell(testDataPath);
+			ec = new Excell(prop.getProperty("TestDataPath"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -124,10 +126,7 @@ public class stepDefinition {
 		Assert.assertTrue(actualTitle.equals(expectedTitle));
 		stepListPage.clickOnCreateStepBtn();
 		try {
-			configReader = new ConfigReader();
-			prop = configReader.init_prop();
-			String testDataPath = prop.getProperty("TestDataPath");
-			ec = new Excell(testDataPath);
+			ec = new Excell(prop.getProperty("TestDataPath"));
 			String stepName = ec.getCellData("Step_Details", "Application Step Name", 0);
 			String stepApiUrlName = ec.getCellData("Step_Details", "Step API URL", 0);
 			String bootstrapClassName = ec.getCellData("Step_Details", "Bootstrap Class Name", 0);
@@ -150,17 +149,15 @@ public class stepDefinition {
 	@Then("^Verify the Step in the list using data in sheetWithRow (.*) and (.*)$")
 	public void verify_the_step_in_the_list_using_data_in_sheetwithrow_and(String stepdetailssheetname, String rowno) {
 		System.out.println(modifiedStepName);
-		commonUtil.waitForStaleElement(header.txtSearch);
+		// commonUtil.waitForStaleElement(header.txtSearch);
+		// commonUtil.refresh(stepListPage.stepListPageHeading);
 		commonUtil.doSearch(modifiedStepName);
 	}
 
 	@When("^user click on remove option of an application from the list using data in sheetWithRow (.*) and (.*)$")
 	public void user_click_on_remove_option(String applicationremovalsheetname, String rowno) {
 		try {
-			configReader = new ConfigReader();
-			prop = configReader.init_prop();
-			String testDataPath = prop.getProperty("TestDataPath");
-			ec = new Excell(testDataPath);
+			ec = new Excell(prop.getProperty("TestDataPath"));
 			ArrayList<String> removalAppName = ec.getCellDataAsList("Application_Removal", "Application Name");
 			try {
 				myApplication.removeApplication(removalAppName);
@@ -177,7 +174,7 @@ public class stepDefinition {
 	public void verify_application_will_remove_from_the_list_using_data_in_sheetwithrow_and(
 			String applicationremovalsheetname, String rowno) {
 		// commonUtil.doSearch(removalAppName);
-		Assert.assertTrue(commonUtil.isDisplayed(header.txtNoRecordFound));
+		// Assert.assertTrue(commonUtil.isDisplayed(header.txtNoRecordFound));
 
 	}
 
