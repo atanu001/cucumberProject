@@ -1,0 +1,12 @@
+2021-03-30 18:29:41,961 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name : Application Name are : 
+2021-03-30 18:29:41,963 +0530 [main] INFO  (Log.java:10) - Atanu_Test
+2021-03-30 18:29:41,963 +0530 [main] INFO  (Log.java:10) - getting app name: Atanu_Test
+2021-03-30 18:31:55,274 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Application Name ' are  : 
+2021-03-30 18:31:55,276 +0530 [main] INFO  (Log.java:10) - Atanu_Test
+2021-03-30 18:31:55,276 +0530 [main] INFO  (Log.java:10) - getting app name: Atanu_Test
+2021-03-30 20:55:32,042 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Application Name ' are  : 
+2021-03-30 20:55:32,042 +0530 [main] INFO  (Log.java:10) - Atanu_Test
+2021-03-30 20:55:32,042 +0530 [main] INFO  (Log.java:10) - getting app name: Atanu_Test
+2021-03-30 20:55:38,810 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Application Name ' are  : 
+2021-03-30 20:55:38,821 +0530 [main] INFO  (Log.java:10) - Atanu_Test
+2021-03-30 20:55:38,821 +0530 [main] INFO  (Log.java:10) - getting app name: Atanu_Test
