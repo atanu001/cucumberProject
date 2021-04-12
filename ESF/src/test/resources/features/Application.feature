@@ -27,7 +27,32 @@ Then Verify the Step in the list using data in sheetWithRow <Step Details Sheet 
 Examples:
       |Application Sheet Name|Row No|Step Details Sheet Name|
       |Application_Details   |0     |Step_Details           |
-      
+
+@Section    
+Scenario Outline: Create a Section in a Step of an Application
+
+Given User open an application from the list using data in sheetWithRow <Application Details Sheet Name> and <Row No>
+When User open an Step from the list using data in sheetWithRow <Step Details Sheet Name> and <Row No>
+And User create a Section using data in sheetWithRow <Section Details Sheet Name> and <Row No>
+Then Verify the Section in the list using data in sheetWithRow <Section Details Sheet Name> and <Row No>
+
+Examples:
+      |Application Details Sheet Name|Row No|Step Details Sheet Name|Section Details Sheet Name|
+      |Application_Details           |0     |Step_Details           |Section_Details           |
+
+
+@Field   
+Scenario Outline: Create a Field in a Section of an Application
+
+Given User open an application from the list using data in sheetWithRow <Application Details Sheet Name> and <Row No>
+When User open an Step from the list using data in sheetWithRow <Step Details Sheet Name> and <Row No>
+And User open an Section from the list using data in sheetWithRow <Section Details Sheet Name> and <Row No>
+And User create a Field using data in sheetWithRow <Field Details Sheet Name> and <Row No>
+Then Verify the Field in the list using data in sheetWithRow <Field Details Sheet Name> and <Row No>
+
+Examples:
+      |Application Details Sheet Name|Row No|Step Details Sheet Name|Section Details Sheet Name|Field Details Sheet Name|
+      |Application_Details           |0     |Step_Details           |Section_Details           |Field_Details           |     
 
 @ApplicationRemove
 Scenario Outline: Remove an application from the list

@@ -21,6 +21,9 @@ public class StepListPage extends BasePage {
 	@FindBy(xpath = "//div[@class='w-100 row p-2 mb-3']//span[text()='Application Steps']")
 	public WebElement stepListPageHeading;
 
+	@FindBy(xpath = "//div[@aria-labelledby='dropdownMenuButton']//a[text()='Manage Sections']")
+	public WebElement btnManageSection;
+
 	public void clickOnCreateStepBtn() {
 		commonUtil.onClick(createStepBtn);
 
@@ -28,6 +31,11 @@ public class StepListPage extends BasePage {
 
 	public String getStepListPageTitle() {
 		return driver.getTitle();
+	}
+
+	public void openStep() {
+		commonUtil.onClick(btnOption);
+		commonUtil.onClick(btnManageSection);
 	}
 
 }

@@ -122,7 +122,7 @@ public class CommonUtility {
 
 	public void waitForElementToVisible(WebElement element) {
 		try {
-			WebDriverWait wait = new WebDriverWait(DriverFactory.getDriver(), 10);
+			WebDriverWait wait = new WebDriverWait(DriverFactory.getDriver(), 15);
 			wait.until(ExpectedConditions.visibilityOf(element));
 		} catch (Exception e) {
 			try {
@@ -145,6 +145,10 @@ public class CommonUtility {
 				ex.printStackTrace();
 			}
 		}
+	}
+
+	public void acceptJavaScripAlert() {
+		driver.switchTo().alert().accept();
 	}
 
 }

@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 
 import com.app.factory.DriverFactory;
 import com.app.util.CommonUtility;
+import com.app.util.Log;
 
 public class LoginPage extends BasePage {
 
@@ -36,6 +37,7 @@ public class LoginPage extends BasePage {
 		WebElement[] locator = { emailId, password };
 		commonUtil.typeIn(locator, testData);
 		commonUtil.onClick(btnLogin);
+		Log.info("click on login button");
 		commonUtil.waitForElementToVisible(myApplication.appListTable);
 
 	}
