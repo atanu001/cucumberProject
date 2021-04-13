@@ -17,7 +17,7 @@ Examples:
       |Application Sheet Name|Row No|
       |Application_Details   |0     |
       
-@Steps      
+@Step      
 Scenario Outline: Create a Step in the application
 
 Given User open an application from the list using data in sheetWithRow <Application Details Sheet Name> and <Row No>

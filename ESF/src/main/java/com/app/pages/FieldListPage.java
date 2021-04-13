@@ -20,12 +20,20 @@ public class FieldListPage extends BasePage {
 	public WebElement txtLabelHeaderFieldListPage;
 
 	@FindBy(xpath = "//a[@id='createButton']//span[text()='New Step Field']")
-	public WebElement btnCreateNewField;
+	private WebElement btnCreateNewField;
 
+	/**
+	 * This method is used to get the label Header Text of the Filed List Page
+	 * 
+	 * @return String
+	 */
 	public String labelHeaderFieldListPage() {
 		return txtLabelHeaderFieldListPage.getText();
 	}
 
+	/**
+	 * This method is used to click on Create New Field button on Field List Page
+	 */
 	public void clickOnCreateNewFieldBtn() {
 		commonUtil.onClick(btnCreateNewField);
 		commonUtil.waitForElementToVisible(manageFieldPage.txtlabelHeaderManageFiled);

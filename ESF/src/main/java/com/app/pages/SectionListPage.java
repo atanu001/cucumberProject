@@ -13,21 +13,36 @@ public class SectionListPage extends BasePage {
 		super(driver);
 	}
 
-	@FindBy(xpath = "//a[@id='createButton']")
-	public WebElement btnCreateSection;
-
 	private CommonUtility commonUtil = new CommonUtility(DriverFactory.getDriver());
+
+	@FindBy(xpath = "//span[text()='Application Sections']")
+	public WebElement labelHeaderSectionListPage;
+
+	@FindBy(xpath = "//a[@id='createButton']")
+	private WebElement btnCreateSection;
+
+	private String sectionName = null;
 
 	public String getSectionListPageTitle() {
 		return driver.getTitle();
 	}
 
+	/**
+	 * This method will click on Create Section Button on Section List Page
+	 */
 	public void clickOnCreateSectionBtn() {
 		commonUtil.onClick(btnCreateSection);
 	}
 
-	// This method is used to click on manage of a section from the List
-	public void openSection() {
+	/**
+	 * This method is used to open a section from the List of a Step
+	 * 
+	 * @param sectiondetailssheetname
+	 * @param rowno
+	 */
+	public void openSection(String sectiondetailssheetname, String rowno) {
+		sectionName = ec.getCellData("Section_Details", "Modified Section Name", 0);
+		commonUtil.doSearch(sectionName);
 		commonUtil.onClick(btnOption);
 		commonUtil.onClick(optionManage);
 

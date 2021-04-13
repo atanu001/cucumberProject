@@ -1,11 +1,14 @@
 package com.app.pages;
 
+import java.io.IOException;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import com.app.factory.DriverFactory;
 import com.app.util.CommonUtility;
+import com.app.util.Log;
 
 public class NewApplication extends BasePage {
 
@@ -13,36 +16,100 @@ public class NewApplication extends BasePage {
 		super(driver);
 	}
 
-	private CommonUtility commonUtil = new CommonUtility(DriverFactory.getDriver());
-	private BasePage header = new BasePage(DriverFactory.getDriver());
+	private CommonUtility commonUtil = new CommonUtility(DriverFactory.getDriver());;
+	private MyApplication myApplication = new MyApplication(DriverFactory.getDriver());;
+
+	@FindBy(xpath = "//h2[text()='New Application']")
+	private WebElement labelHeaderNewApplication;
 
 	@FindBy(id = "applicationName")
-	public WebElement applicationName;
+	private WebElement txtApplicationName;
 
 	@FindBy(xpath = "//select[@id='platformList']")
-	public WebElement platformList;
+	private WebElement drpdwnPlatformList;
 
 	@FindBy(xpath = "//select[@id='langList']")
-	public WebElement languageList;
+	private WebElement drpdwnLanguageList;
 
-	public void createApplication(String appName, String platfromName, String languageName, String paramName,
-			String paramValue) {
+	private String appName = null;
+	private String platformName = null;
+	private String languageName = null;
+	private String paramName = null;
+	private String paramValue = null;
+	private String modifiedAppName = null;
 
-		String[] testDate = { appName, platfromName, languageName };
-		WebElement[] locator = { applicationName, platformList, languageList };
-		commonUtil.typeIn(locator, testDate);
-		commonUtil.onClick(header.btnConfigAddParam);
+	/**
+	 * This method is used to create an Application with Data from Excel Sheet
+	 * 
+	 * @param sheetName
+	 * @param rowNo
+	 */
+	public void createApplication(String sheetName, String rowNo) {
+		appName = ec.getCellData("Application_Details", "Application Name", 0);
+		platformName = ec.getCellData("Application_Details", "Platform", 0);
+		languageName = ec.getCellData("Application_Details", "Languages", 0);
+		paramName = ec.getCellData("Application_Details", "Parameter Name", 0);
+		paramValue = ec.getCellData("Application_Details", "Parameter Value", 0);
+		int randomNum = commonUtil.generateRandomNumber();
+		modifiedAppName = appName + "_" + randomNum;
+		String[] testData1 = { modifiedAppName, platformName, languageName };
+		WebElement[] locator1 = { txtApplicationName, drpdwnPlatformList, drpdwnLanguageList };
+		commonUtil.typeIn(locator1, testData1);
+		commonUtil.onClick(btnConfigAddParam);
 		commonUtil.scrollDownToBottomPage();
-		String[] testDate1 = { paramName, paramValue };
-		WebElement[] locator1 = { header.parameterName, header.parameterValue };
-		commonUtil.typeIn(locator1, testDate1);
-		commonUtil.onClick(header.btnSave);
+		commonUtil.waitForElementToVisible(txtParameterName);
+		String[] testData2 = { paramName, paramValue };
+		WebElement[] locator2 = { txtParameterName, txtParameterValue };
+		commonUtil.typeIn(locator2, testData2);
+		commonUtil.onClick(btnSave);
+
+		try {
+			ec.writeCellData("Application_Details", "Modified Application Name", 1, modifiedAppName);
+		} catch (IOException e) {
+
+			e.printStackTrace();
+		}
 
 	}
 
-	public void verifyApplication() {
-		commonUtil = new CommonUtility(DriverFactory.getDriver());
-		String appName = applicationName.getAttribute("value");
-
+	/**
+	 * This method is used to verify the data of inside an Application with Excel
+	 * Data
+	 * 
+	 * @param sheetName
+	 * @param rowNo
+	 */
+	public void verifyApplication(String sheetName, String rowNo) {
+		commonUtil.waitForElementToVisible(myApplication.appListTable);
+		commonUtil.doSearch(modifiedAppName);
+		commonUtil.onClick(btnOption);
+		commonUtil.onClick(optionEdit);
+		commonUtil.waitForElementToVisible(labelHeaderNewApplication);
+		String actualAppName = txtApplicationName.getAttribute("value");
+		if (actualAppName.equals(modifiedAppName)) {
+			Log.info("Application Name is matched: " + "Expected: " + modifiedAppName + " Found: " + actualAppName);
+		} else {
+			Log.error(
+					"Application Name is not matched: " + "Expected: " + modifiedAppName + " Found: " + actualAppName);
+		}
+		commonUtil.onClick(btnConfigAddParam);
+		commonUtil.scrollDownToBottomPage();
+		commonUtil.waitForElementToVisible(txtParameterName);
+		String actualParameterName = txtParameterName.getAttribute("value");
+		if (actualParameterName.equals(paramName)) {
+			Log.info("Parameter Name is matched for the Application: " + modifiedAppName + " Expected: " + paramName
+					+ " Found: " + actualParameterName);
+		} else {
+			Log.error("Parameter Name is not matched for the Application: " + modifiedAppName + " Expected: "
+					+ paramName + " Found: " + actualParameterName);
+		}
+		String actualParameterValue = txtParameterValue.getAttribute("value");
+		if (actualParameterValue.equals(paramValue)) {
+			Log.info("Parameter Value is matched for the Application: " + modifiedAppName + " Expected: " + paramValue
+					+ " Found: " + actualParameterValue);
+		} else {
+			Log.error("Parameter Value is not matched for the Application: " + modifiedAppName + " Expected: "
+					+ paramValue + " Found: " + actualParameterValue);
+		}
 	}
 }

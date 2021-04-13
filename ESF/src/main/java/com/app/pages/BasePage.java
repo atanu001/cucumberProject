@@ -1,14 +1,33 @@
 package com.app.pages;
 
+import java.io.IOException;
+import java.util.Properties;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.app.factory.DriverFactory;
+import com.app.util.ConfigReader;
+import com.app.util.Excell;
 
 public class BasePage {
 	public WebDriver driver;
+	public static Properties prop;
+	public static ConfigReader configReader = new ConfigReader();
+	public static Excell ec;
+
+	static {
+
+		prop = configReader.init_prop();
+		try {
+			ec = new Excell(prop.getProperty("TestDataPath"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
 
 	public BasePage(WebDriver driver) {
 		this.driver = driver;
@@ -19,10 +38,10 @@ public class BasePage {
 	public WebElement txtSearch;
 
 	@FindBy(id = "parameterType0")
-	public WebElement parameterName;
+	public WebElement txtParameterName;
 
 	@FindBy(xpath = "//input[@id='value0']")
-	public WebElement parameterValue;
+	public WebElement txtParameterValue;
 
 	@FindBy(xpath = "//button[text()='Save']")
 	public WebElement btnSave;
@@ -43,16 +62,16 @@ public class BasePage {
 	public WebElement btnConfigAddParam;
 
 	@FindBy(xpath = "//label[text()='Bootstrap Class Name']//following-sibling::input[@id='bootstrapClassName']")
-	public WebElement bootstrapClassName;
+	public WebElement txtBootstrapClassName;
 
 	@FindBy(xpath = "//label[text()='Custom Class Name']//following-sibling::input[@id='customClassName']")
-	public WebElement customClassName;
+	public WebElement txtCustomClassName;
 
 	@FindBy(xpath = "//select[@name='deviceType']")
-	public WebElement deviceType;
+	public WebElement drpdwnDeviceType;
 
 	@FindBy(xpath = "//select[@name='templateId']")
-	public WebElement templateId;
+	public WebElement txtTemplateId;
 
 	@FindBy(xpath = "//button[contains(text(),'Configure Templates')]")
 	public WebElement btnConfigureTemplate;

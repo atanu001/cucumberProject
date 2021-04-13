@@ -19,7 +19,7 @@ public class ApplicationDashboard extends BasePage {
 	@FindBy(xpath = "//div[@class='row col-lg-12 p-3']//h6[text()='Steps']")
 	public WebElement linkStep;
 
-	/*
+	/**
 	 * This method is used to click on step link on the Dashboard
 	 */
 	public void clickOnStep() {

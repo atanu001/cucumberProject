@@ -14,6 +14,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.app.factory.DriverFactory;
 import com.app.pages.BasePage;
 
+/**
+ * This class will contain all the common method
+ * 
+ * @author Atanu Samanta
+ */
 public class CommonUtility {
 
 	private WebDriver driver;
@@ -118,6 +123,13 @@ public class CommonUtility {
 	 * Thread.sleep(2000); } catch (Exception ex) { ex.printStackTrace(); } }
 	 * 
 	 * }
+	 */
+
+	/**
+	 * This method is used to wait the driver for the Element to be visible will
+	 * wait 15 s
+	 * 
+	 * @param Element
 	 */
 
 	public void waitForElementToVisible(WebElement element) {

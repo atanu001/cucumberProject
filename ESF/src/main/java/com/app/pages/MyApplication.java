@@ -8,6 +8,7 @@ import org.openqa.selenium.support.FindBy;
 
 import com.app.factory.DriverFactory;
 import com.app.util.CommonUtility;
+import com.app.util.Log;
 
 public class MyApplication extends BasePage {
 
@@ -16,46 +17,67 @@ public class MyApplication extends BasePage {
 	}
 
 	private CommonUtility commonUtil = new CommonUtility(DriverFactory.getDriver());
-	private BasePage header = new BasePage(DriverFactory.getDriver());
 	private ApplicationDashboard applicationDashboard = new ApplicationDashboard(DriverFactory.getDriver());
 
 	@FindBy(xpath = "//a[@id='createButton']")
-	public WebElement btnCreateApp;
+	private WebElement btnCreateApp;
 
 	@FindBy(xpath = "//div[@class='col-sm-12']//table[@id='generic-table']")
 	public WebElement appListTable;
 
 	@FindBy(xpath = "//th[@aria-label='Name: activate to sort column ascending']//parent::tr//parent::thead/following-sibling::tbody//td[2]/span")
-	public WebElement appNameFromList;
+	private WebElement appNameFromList;
 
 	public String getMyApplicationPageTitle() {
 		return driver.getTitle();
 	}
 
+	/**
+	 * This method is used to click on Create Application button on My Application
+	 * Page
+	 */
 	public void clickOnCreateApplicationBtn() {
 		commonUtil.onClick(btnCreateApp);
-
+		Log.info("User clicked on Create Application Button");
 	}
 
-	public void openApplication() {
-
-		commonUtil.onClick(header.btnOption);
-		commonUtil.onClick(header.optionManage);
+	/**
+	 * This method is used to open an application from the table
+	 * 
+	 * @param applicationdetailssheetname
+	 * @param rowno
+	 */
+	public void openApplication(String applicationdetailssheetname, String rowno) {
+		String appName = ec.getCellData("Application_Details", "Modified Application Name", 0);
+		commonUtil.doSearch(appName);
+		commonUtil.onClick(btnOption);
+		commonUtil.onClick(optionManage);
 		// Thread.sleep(2000);
 		commonUtil.waitForElementToVisible(applicationDashboard.linkStep);
 	}
 
+	/**
+	 * This method is used to Delete multiple Application from the Table
+	 * 
+	 * @param removalAppName
+	 * @throws InterruptedException
+	 */
 	public void removeApplication(List<String> removalAppName) throws InterruptedException {
 		for (int i = 0; i < removalAppName.size(); i++) {
 			commonUtil.doSearch(removalAppName.get(i));
-			commonUtil.onClick(header.btnOption);
-			commonUtil.onClick(header.optionRemove);
+			commonUtil.onClick(btnOption);
+			commonUtil.onClick(optionRemove);
 			Thread.sleep(2000);
-			commonUtil.onClick(header.optionRemoveInPopup);
+			commonUtil.onClick(optionRemoveInPopup);
 
 		}
 	}
 
+	/**
+	 * This method is used to get the application name from the Table
+	 * 
+	 * @return Application Name
+	 */
 	public String getApplicationNameFromList() {
 		String applicationNameFromList = appNameFromList.getText();
 		return applicationNameFromList;

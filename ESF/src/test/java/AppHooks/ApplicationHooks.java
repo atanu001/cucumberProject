@@ -2,6 +2,7 @@ package AppHooks;
 
 import java.util.Properties;
 
+import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -24,6 +25,7 @@ public class ApplicationHooks {
 	public void getProperty() {
 		configReader = new ConfigReader();
 		prop = configReader.init_prop();
+		PropertyConfigurator.configure("log4j.properties");
 	}
 
 	@Before(order = 1)

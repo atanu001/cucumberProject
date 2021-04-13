@@ -32,12 +32,11 @@ public class LoginPage extends BasePage {
 	}
 
 	public void doLogin(String email, String Password) {
-
 		String[] testData = { email, Password };
 		WebElement[] locator = { emailId, password };
 		commonUtil.typeIn(locator, testData);
 		commonUtil.onClick(btnLogin);
-		Log.info("click on login button");
+		Log.info(" User click on login button");
 		commonUtil.waitForElementToVisible(myApplication.appListTable);
 
 	}
