@@ -17,7 +17,6 @@ public class ManageSectionPage extends BasePage {
 	}
 
 	private CommonUtility commonUtil;
-	private SectionListPage sectionListPage;
 
 	@FindBy(xpath = "//h2[text()='Manage Section']")
 	private WebElement labelHeaderManageSectionPage;
@@ -64,9 +63,9 @@ public class ManageSectionPage extends BasePage {
 	 * 
 	 * @param sectiondetailssheetname
 	 * @param rowno
+	 * @return the driver to the Section List Page
 	 */
-
-	public void createSection(String sectiondetailssheetname, String rowno) {
+	public SectionListPage createSection(String sectiondetailssheetname, String rowno) {
 		commonUtil = new CommonUtility(DriverFactory.getDriver());
 		SectionNumber = ec.getCellData("Section_Details", "Section Number", 0);
 		SectionName = ec.getCellData("Section_Details", "Section Name", 0);
@@ -95,6 +94,7 @@ public class ManageSectionPage extends BasePage {
 		commonUtil.typeIn(locator2, testData2);
 		commonUtil.scrollDownToVisibleElement(btnSave);
 		commonUtil.onClick(btnSave);
+		return new SectionListPage(driver);
 	}
 
 	/**
@@ -105,10 +105,6 @@ public class ManageSectionPage extends BasePage {
 	 */
 	public void verifySection(String sectiondetailssheetname, String rowno) {
 		commonUtil = new CommonUtility(DriverFactory.getDriver());
-		sectionListPage = new SectionListPage(DriverFactory.getDriver());
-		commonUtil.waitForElementToVisible(sectionListPage.labelHeaderSectionListPage);
-		commonUtil.onClick(btnOption);
-		commonUtil.onClick(optionEdit);
 		commonUtil.waitForElementToVisible(labelHeaderManageSectionPage);
 		String actualSectionNumber = drpdwnSectionNum.getAttribute("value");
 		if (actualSectionNumber.equals(SectionNumber)) {

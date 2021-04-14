@@ -85,7 +85,6 @@ public class stepDefinition {
 
 	@And("^Create an Application using data in sheetWithRow (.*) and (.*)$")
 	public void provide_appName_and_platform_and_lang(String sheetName, String rowNo) {
-		// newApplication = new NewApplication(DriverFactory.getDriver());
 		newApplication.createApplication(sheetName, rowNo);
 	}
 
@@ -104,52 +103,46 @@ public class stepDefinition {
 		String actualTitle = applicationDashboard.getApplicationDashboardTitle();
 		String expectedTitle = "Application Dashboard";
 		Assert.assertTrue(actualTitle.equals(expectedTitle));
-		applicationDashboard.clickOnStep();
+		stepListPage = applicationDashboard.clickOnStep();
 	}
 
 	@When("^User create a Step using data in sheetWithRow (.*) and (.*)$")
 	public void user_create_a_step_using_data_in_sheetwithrow_and(String stepdetailssheetname, String rowno) {
-		stepListPage = new StepListPage(DriverFactory.getDriver());
-		manageStepPage = new ManageStepPage(DriverFactory.getDriver());
 		String actualTitle = stepListPage.getStepListPageTitle();
 		String expectedTitle = "Application Steps";
 		Assert.assertTrue(actualTitle.equals(expectedTitle));
-		stepListPage.clickOnCreateStepBtn();
-		manageStepPage.createStep(stepdetailssheetname, rowno);
+		manageStepPage = stepListPage.clickOnCreateStepBtn();
+		stepListPage = manageStepPage.createStep(stepdetailssheetname, rowno);
 	}
 
 	@Then("^Verify the Step in the list using data in sheetWithRow (.*) and (.*)$")
 	public void verify_the_step_in_the_list_using_data_in_sheetwithrow_and(String stepdetailssheetname, String rowno) {
-		manageStepPage = new ManageStepPage(DriverFactory.getDriver());
+		manageStepPage = stepListPage.editStep(stepdetailssheetname, rowno);
 		manageStepPage.verifyStep(stepdetailssheetname, rowno);
 	}
 
 	@And("^User create a Section using data in sheetWithRow (.*) and (.*)$")
 	public void user_create_a_section_using_data_in_sheetwithrow_and(String sectiondetailssheetname, String rowno) {
-		sectionListPage = new SectionListPage(DriverFactory.getDriver());
-		manageSectionPage = new ManageSectionPage(DriverFactory.getDriver());
-		sectionListPage.clickOnCreateSectionBtn();
+		manageSectionPage = sectionListPage.clickOnCreateSectionBtn();
 		if (manageSectionPage.labelHeaderManageSection().equals("Manage Section")) {
 			Log.info("User is on Manage Section Page: ");
 		} else {
 			Log.error("User is not on Manage Section Page: ");
 		}
-		manageSectionPage.createSection(sectiondetailssheetname, rowno);
+		sectionListPage = manageSectionPage.createSection(sectiondetailssheetname, rowno);
 	}
 
 	@Then("^Verify the Section in the list using data in sheetWithRow (.*) and (.*)$")
 	public void verify_the_section_in_the_list_using_data_in_sheetwithrow_and(String sectiondetailssheetname,
 			String rowno) {
-		manageSectionPage = new ManageSectionPage(DriverFactory.getDriver());
+		manageSectionPage = sectionListPage.editSection(sectiondetailssheetname, rowno);
 		manageSectionPage.verifySection(sectiondetailssheetname, rowno);
 	}
 
 	@When("^User open an Step from the list using data in sheetWithRow (.*) and (.*)$")
 	public void user_open_an_step_from_the_list_using_data_in_sheetwithrow_and(String stepdetailssheetname,
 			String rowno) {
-		stepListPage = new StepListPage(DriverFactory.getDriver());
-		sectionListPage = new SectionListPage(DriverFactory.getDriver());
-		stepListPage.openStep(stepdetailssheetname, rowno);
+		sectionListPage = stepListPage.openStep(stepdetailssheetname, rowno);
 		if (sectionListPage.getSectionListPageTitle().equals("Application Sections")) {
 			Log.info("Section List page is displaying with title: " + sectionListPage.getSectionListPageTitle());
 		} else {
@@ -160,9 +153,7 @@ public class stepDefinition {
 	@And("^User open an Section from the list using data in sheetWithRow (.*) and (.*)$")
 	public void user_open_an_section_from_the_list_using_data_in_sheetwithrow_and(String sectiondetailssheetname,
 			String rowno) {
-		sectionListPage = new SectionListPage(DriverFactory.getDriver());
-		fieldListPage = new FieldListPage(DriverFactory.getDriver());
-		sectionListPage.openSection(sectiondetailssheetname, rowno);
+		fieldListPage = sectionListPage.openSection(sectiondetailssheetname, rowno);
 		if (fieldListPage.labelHeaderFieldListPage().equals("Application Step Fields")) {
 			Log.info("User is on Step Field List page :");
 		} else {
@@ -173,17 +164,15 @@ public class stepDefinition {
 
 	@And("^User create a Field using data in sheetWithRow (.*) and (.*)$")
 	public void user_create_a_field_using_data_in_sheetwithrow_and(String fielddetailssheetname, String rowno) {
-		fieldListPage = new FieldListPage(DriverFactory.getDriver());
-		manageFieldPage = new ManageFieldPage(DriverFactory.getDriver());
-		fieldListPage.clickOnCreateNewFieldBtn();
-		manageFieldPage.createField(fielddetailssheetname, rowno);
+		manageFieldPage = fieldListPage.clickOnCreateNewFieldBtn();
+		fieldListPage = manageFieldPage.createField(fielddetailssheetname, rowno);
 
 	}
 
 	@Then("^Verify the Field in the list using data in sheetWithRow (.*) and (.*)$")
 	public void verify_the_field_in_the_list_using_data_in_sheetwithrow_and(String fielddetailssheetname,
 			String rowno) {
-		manageFieldPage = new ManageFieldPage(DriverFactory.getDriver());
+		manageFieldPage = fieldListPage.editField(fielddetailssheetname, rowno);
 		manageFieldPage.verifyField(fielddetailssheetname, rowno);
 	}
 

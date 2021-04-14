@@ -22,6 +22,8 @@ public class FieldListPage extends BasePage {
 	@FindBy(xpath = "//a[@id='createButton']//span[text()='New Step Field']")
 	private WebElement btnCreateNewField;
 
+	private String UniqId = null;
+
 	/**
 	 * This method is used to get the label Header Text of the Filed List Page
 	 * 
@@ -33,12 +35,25 @@ public class FieldListPage extends BasePage {
 
 	/**
 	 * This method is used to click on Create New Field button on Field List Page
+	 * 
+	 * @return the driver Manage Field Page
 	 */
-	public void clickOnCreateNewFieldBtn() {
+	public ManageFieldPage clickOnCreateNewFieldBtn() {
 		commonUtil = new CommonUtility(DriverFactory.getDriver());
 		manageFieldPage = new ManageFieldPage(DriverFactory.getDriver());
 		commonUtil.onClick(btnCreateNewField);
 		commonUtil.waitForElementToVisible(manageFieldPage.txtlabelHeaderManageFiled);
+		return new ManageFieldPage(driver);
+	}
+
+	public ManageFieldPage editField(String fielddetailssheetname, String rowno) {
+		commonUtil = new CommonUtility(DriverFactory.getDriver());
+		UniqId = ec.getCellData("Field_Details", "Modified Uniq Id", 0);
+		commonUtil.waitForElementToVisible(txtLabelHeaderFieldListPage);
+		commonUtil.doSearch(UniqId);
+		commonUtil.onClick(btnOption);
+		commonUtil.onClick(optionEdit);
+		return new ManageFieldPage(driver);
 	}
 
 }

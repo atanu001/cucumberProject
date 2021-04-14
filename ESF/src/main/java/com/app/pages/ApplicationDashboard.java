@@ -21,8 +21,10 @@ public class ApplicationDashboard extends BasePage {
 
 	/**
 	 * This method is used to click on step link on the Dashboard
+	 * 
+	 * @return the driver to the StepList Page
 	 */
-	public void clickOnStep() {
+	public StepListPage clickOnStep() {
 		try {
 			commonUtil = new CommonUtility(DriverFactory.getDriver());
 			stepListPage = new StepListPage(DriverFactory.getDriver());
@@ -32,6 +34,7 @@ public class ApplicationDashboard extends BasePage {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		return new StepListPage(driver);
 	}
 
 	public String getApplicationDashboardTitle() {

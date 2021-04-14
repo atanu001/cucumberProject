@@ -26,9 +26,15 @@ public class StepListPage extends BasePage {
 
 	private String stepName = null;
 
-	public void clickOnCreateStepBtn() {
+	/**
+	 * This method is used to click on Create Step button on Step List Page
+	 * 
+	 * @return the driver to the Manage Step Page
+	 */
+	public ManageStepPage clickOnCreateStepBtn() {
 		commonUtil = new CommonUtility(DriverFactory.getDriver());
 		commonUtil.onClick(createStepBtn);
+		return new ManageStepPage(driver);
 
 	}
 
@@ -36,12 +42,37 @@ public class StepListPage extends BasePage {
 		return driver.getTitle();
 	}
 
-	public void openStep(String stepdetailssheetname, String rowno) {
+	/**
+	 * This method will click on Manage Section option of a Step
+	 * 
+	 * @param stepdetailssheetname
+	 * @param rowno
+	 * @return the driver to the Section List Page
+	 */
+	public SectionListPage openStep(String stepdetailssheetname, String rowno) {
 		commonUtil = new CommonUtility(DriverFactory.getDriver());
 		stepName = ec.getCellData("Step_Details", "Modified Step Name", 0);
 		commonUtil.doSearch(stepName);
 		commonUtil.onClick(btnOption);
 		commonUtil.onClick(btnManageSection);
+		return new SectionListPage(driver);
+	}
+
+	/**
+	 * This method will click on Edit option of a Step
+	 * 
+	 * @param stepdetailssheetname
+	 * @param rowno
+	 * @return the driver to the Manage Step Page
+	 */
+	public ManageStepPage editStep(String stepdetailssheetname, String rowno) {
+		commonUtil = new CommonUtility(DriverFactory.getDriver());
+		stepName = ec.getCellData("Step_Details", "Modified Step Name", 0);
+		commonUtil.waitForElementToVisible(stepListPageHeading);
+		commonUtil.doSearch(stepName);
+		commonUtil.onClick(btnOption);
+		commonUtil.onClick(optionEdit);
+		return new ManageStepPage(driver);
 	}
 
 }

@@ -53,7 +53,7 @@ public class ManageStepPage extends BasePage {
 	 * @param stepdetailssheetname
 	 * @param rowno
 	 */
-	public void createStep(String stepdetailssheetname, String rowno) {
+	public StepListPage createStep(String stepdetailssheetname, String rowno) {
 		commonUtil = new CommonUtility(DriverFactory.getDriver());
 		stepName = ec.getCellData("Step_Details", "Application Step Name", 0);
 		stepApiUrlName = ec.getCellData("Step_Details", "Step API URL", 0);
@@ -93,6 +93,7 @@ public class ManageStepPage extends BasePage {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+		return new StepListPage(driver);
 
 	}
 
@@ -105,10 +106,6 @@ public class ManageStepPage extends BasePage {
 	public void verifyStep(String stepdetailssheetname, String rowno) {
 		commonUtil = new CommonUtility(DriverFactory.getDriver());
 		stepListPage = new StepListPage(DriverFactory.getDriver());
-		commonUtil.waitForElementToVisible(stepListPage.stepListPageHeading);
-		commonUtil.doSearch(modifiedStepName);
-		commonUtil.onClick(btnOption);
-		commonUtil.onClick(optionEdit);
 		commonUtil.waitForElementToVisible(labelHeaderManageStepPage);
 		String actualStepName = txtStepName.getAttribute("value");
 		if (actualStepName.equals(modifiedStepName)) {

@@ -18,7 +18,6 @@ public class ManageFieldPage extends BasePage {
 	}
 
 	private CommonUtility commonUtil;
-	private FieldListPage fieldListPage;
 
 	@FindBy(xpath = "//h2[text()='Manage Field']")
 	public WebElement txtlabelHeaderManageFiled;
@@ -102,7 +101,7 @@ public class ManageFieldPage extends BasePage {
 	 * @param fielddetailssheetname
 	 * @param rowno
 	 */
-	public void createField(String fielddetailssheetname, String rowno) {
+	public FieldListPage createField(String fielddetailssheetname, String rowno) {
 		commonUtil = new CommonUtility(DriverFactory.getDriver());
 		UniqueId = ec.getCellData("Field_Details", "Unique Id", 0);
 		FieldLabel = ec.getCellData("Field_Details", "Field Label", 0);
@@ -124,7 +123,7 @@ public class ManageFieldPage extends BasePage {
 		int randomNum = commonUtil.generateRandomNumber();
 		modifiedUniqId = UniqueId + "_" + randomNum;
 		try {
-			ec.writeCellData("Step_Details", "Modified Step Name", 1, modifiedUniqId);
+			ec.writeCellData("Field_Details", "Modified Uniq Id", 1, modifiedUniqId);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -158,6 +157,7 @@ public class ManageFieldPage extends BasePage {
 		commonUtil.scrollDownToBottomPage();
 		commonUtil.waitForElementToVisible(btnSave);
 		commonUtil.onClick(btnSave);
+		return new FieldListPage(driver);
 	}
 
 	/**
@@ -168,11 +168,6 @@ public class ManageFieldPage extends BasePage {
 	 */
 	public void verifyField(String fielddetailssheetname, String rowno) {
 		commonUtil = new CommonUtility(DriverFactory.getDriver());
-		fieldListPage = new FieldListPage(DriverFactory.getDriver());
-		commonUtil.waitForElementToVisible(fieldListPage.txtLabelHeaderFieldListPage);
-		commonUtil.doSearch(modifiedUniqId);
-		commonUtil.onClick(btnOption);
-		commonUtil.onClick(optionEdit);
 		commonUtil.waitForElementToVisible(txtlabelHeaderManageFiled);
 		String actualUniqueId = txtUniqueId.getAttribute("value");
 		if (actualUniqueId.equals(modifiedUniqId)) {
@@ -280,6 +275,7 @@ public class ManageFieldPage extends BasePage {
 			Log.error("Custom Class Name does not mathched " + "Expected: " + CustomClassName + " Found: "
 					+ actualCustomClassName);
 		}
+		commonUtil.scrollDownToVisibleElement(expandAdditionalParameter);
 		commonUtil.onClick(expandAdditionalParameter);
 		commonUtil.waitForElementToVisible(txtBootstrapClassName);
 		String actualParameterName = txtParameterName.getAttribute("value");
