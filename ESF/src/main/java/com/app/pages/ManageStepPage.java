@@ -16,8 +16,8 @@ public class ManageStepPage extends BasePage {
 		super(driver);
 	}
 
-	private CommonUtility commonUtil = new CommonUtility(DriverFactory.getDriver());
-	private StepListPage stepListPage = new StepListPage(DriverFactory.getDriver());
+	private CommonUtility commonUtil;
+	private StepListPage stepListPage;
 
 	@FindBy(xpath = "//h2[text()='Manage Step']")
 	public WebElement labelHeaderManageStepPage;
@@ -37,15 +37,15 @@ public class ManageStepPage extends BasePage {
 	@FindBy(xpath = "//label[text()='Is this step conditional?']//preceding-sibling::input[@id='conditional']")
 	private WebElement chkboxConditional;
 
-	private String stepName = null;
-	private String stepApiUrlName = null;
-	private String bootstrapClassName = null;
-	private String customClassName = null;
-	private String parameterName = null;
-	private String parameterValue = null;
-	private String device_Type = null;
-	private String templateId = null;
-	private String modifiedStepName = null;
+	private static String stepName = null;
+	private static String stepApiUrlName = null;
+	private static String bootstrapClassName = null;
+	private static String customClassName = null;
+	private static String parameterName = null;
+	private static String parameterValue = null;
+	private static String device_Type = null;
+	private static String templateId = null;
+	private static String modifiedStepName = null;
 
 	/**
 	 * This method will create a step with the data from Excel Sheet
@@ -54,6 +54,7 @@ public class ManageStepPage extends BasePage {
 	 * @param rowno
 	 */
 	public void createStep(String stepdetailssheetname, String rowno) {
+		commonUtil = new CommonUtility(DriverFactory.getDriver());
 		stepName = ec.getCellData("Step_Details", "Application Step Name", 0);
 		stepApiUrlName = ec.getCellData("Step_Details", "Step API URL", 0);
 		bootstrapClassName = ec.getCellData("Step_Details", "Bootstrap Class Name", 0);
@@ -102,6 +103,8 @@ public class ManageStepPage extends BasePage {
 	 * @param rowno
 	 */
 	public void verifyStep(String stepdetailssheetname, String rowno) {
+		commonUtil = new CommonUtility(DriverFactory.getDriver());
+		stepListPage = new StepListPage(DriverFactory.getDriver());
 		commonUtil.waitForElementToVisible(stepListPage.stepListPageHeading);
 		commonUtil.doSearch(modifiedStepName);
 		commonUtil.onClick(btnOption);

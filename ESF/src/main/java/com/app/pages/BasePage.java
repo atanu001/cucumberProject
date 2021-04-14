@@ -14,12 +14,24 @@ import com.app.util.Excell;
 
 public class BasePage {
 	public WebDriver driver;
-	public static Properties prop;
-	public static ConfigReader configReader = new ConfigReader();
-	public static Excell ec;
+	public Properties prop;
+	public ConfigReader configReader = new ConfigReader();
+	public Excell ec;
 
-	static {
+//	static {
+//
+//		prop = configReader.init_prop();
+//		try {
+//			ec = new Excell(prop.getProperty("TestDataPath"));
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
+//
+//	}
 
+	public BasePage(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
 		prop = configReader.init_prop();
 		try {
 			ec = new Excell(prop.getProperty("TestDataPath"));
@@ -27,11 +39,6 @@ public class BasePage {
 			e.printStackTrace();
 		}
 
-	}
-
-	public BasePage(WebDriver driver) {
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
 	}
 
 	@FindBy(xpath = "//input[@type='search']")

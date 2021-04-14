@@ -16,8 +16,8 @@ public class ManageSectionPage extends BasePage {
 		super(driver);
 	}
 
-	private CommonUtility commonUtil = new CommonUtility(DriverFactory.getDriver());
-	private SectionListPage sectionListPage = new SectionListPage(DriverFactory.getDriver());
+	private CommonUtility commonUtil;
+	private SectionListPage sectionListPage;
 
 	@FindBy(xpath = "//h2[text()='Manage Section']")
 	private WebElement labelHeaderManageSectionPage;
@@ -40,15 +40,15 @@ public class ManageSectionPage extends BasePage {
 	@FindBy(xpath = "//input[@id='sectionCustomClassName']")
 	private WebElement txtSectionCustomClassName;
 
-	private String SectionNumber = null;
-	private String SectionName = null;
-	private String SequenceNumber = null;
-	private String SectionClassName = null;
-	private String BootstrapClassName = null;
-	private String CustomClassName = null;
-	private String ParameterName = null;
-	private String ParameterValue = null;
-	private String modifiedSectionName = null;
+	private static String SectionNumber = null;
+	private static String SectionName = null;
+	private static String SequenceNumber = null;
+	private static String SectionClassName = null;
+	private static String BootstrapClassName = null;
+	private static String CustomClassName = null;
+	private static String ParameterName = null;
+	private static String ParameterValue = null;
+	private static String modifiedSectionName = null;
 
 	/**
 	 * This will return label Header of Manage Section page
@@ -67,6 +67,7 @@ public class ManageSectionPage extends BasePage {
 	 */
 
 	public void createSection(String sectiondetailssheetname, String rowno) {
+		commonUtil = new CommonUtility(DriverFactory.getDriver());
 		SectionNumber = ec.getCellData("Section_Details", "Section Number", 0);
 		SectionName = ec.getCellData("Section_Details", "Section Name", 0);
 		SequenceNumber = ec.getCellData("Section_Details", "Sequence Number", 0);
@@ -82,14 +83,15 @@ public class ManageSectionPage extends BasePage {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		String[] testData1 = { SectionNumber, SectionName, SequenceNumber, SectionClassName, BootstrapClassName,
+		String[] testData1 = { SectionNumber, modifiedSectionName, SequenceNumber, SectionClassName, BootstrapClassName,
 				CustomClassName };
 		WebElement[] locator1 = { drpdwnSectionNum, txtSectionName, drpdwnSequenceNumber, txtSectionClassName,
 				txtSectionBootstrapClassName, txtSectionCustomClassName };
 		commonUtil.typeIn(locator1, testData1);
-		commonUtil.onClick(btnConfigAddParam);
 		String[] testData2 = { ParameterName, ParameterValue };
 		WebElement[] locator2 = { txtParameterName, txtParameterValue };
+		commonUtil.onClick(btnConfigAddParam);
+		commonUtil.waitForElementToVisible(txtParameterName);
 		commonUtil.typeIn(locator2, testData2);
 		commonUtil.scrollDownToVisibleElement(btnSave);
 		commonUtil.onClick(btnSave);
@@ -102,6 +104,8 @@ public class ManageSectionPage extends BasePage {
 	 * @param rowno
 	 */
 	public void verifySection(String sectiondetailssheetname, String rowno) {
+		commonUtil = new CommonUtility(DriverFactory.getDriver());
+		sectionListPage = new SectionListPage(DriverFactory.getDriver());
 		commonUtil.waitForElementToVisible(sectionListPage.labelHeaderSectionListPage);
 		commonUtil.onClick(btnOption);
 		commonUtil.onClick(optionEdit);

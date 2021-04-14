@@ -13,8 +13,8 @@ public class FieldListPage extends BasePage {
 		super(driver);
 	}
 
-	private CommonUtility commonUtil = new CommonUtility(DriverFactory.getDriver());
-	private ManageFieldPage manageFieldPage = new ManageFieldPage(DriverFactory.getDriver());
+	private CommonUtility commonUtil;
+	private ManageFieldPage manageFieldPage;
 
 	@FindBy(xpath = "//span[text()='Application Step Fields']")
 	public WebElement txtLabelHeaderFieldListPage;
@@ -35,6 +35,8 @@ public class FieldListPage extends BasePage {
 	 * This method is used to click on Create New Field button on Field List Page
 	 */
 	public void clickOnCreateNewFieldBtn() {
+		commonUtil = new CommonUtility(DriverFactory.getDriver());
+		manageFieldPage = new ManageFieldPage(DriverFactory.getDriver());
 		commonUtil.onClick(btnCreateNewField);
 		commonUtil.waitForElementToVisible(manageFieldPage.txtlabelHeaderManageFiled);
 	}

@@ -13,8 +13,8 @@ public class ApplicationDashboard extends BasePage {
 		super(driver);
 	}
 
-	private CommonUtility commonUtil = new CommonUtility(DriverFactory.getDriver());
-	private StepListPage stepListPage = new StepListPage(DriverFactory.getDriver());
+	private CommonUtility commonUtil;
+	private StepListPage stepListPage;
 
 	@FindBy(xpath = "//div[@class='row col-lg-12 p-3']//h6[text()='Steps']")
 	public WebElement linkStep;
@@ -24,6 +24,8 @@ public class ApplicationDashboard extends BasePage {
 	 */
 	public void clickOnStep() {
 		try {
+			commonUtil = new CommonUtility(DriverFactory.getDriver());
+			stepListPage = new StepListPage(DriverFactory.getDriver());
 			commonUtil.onClick(linkStep);
 			// Thread.sleep(2000);
 			commonUtil.waitForElementToVisible(stepListPage.stepListPageHeading);

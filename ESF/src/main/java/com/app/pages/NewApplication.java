@@ -16,8 +16,8 @@ public class NewApplication extends BasePage {
 		super(driver);
 	}
 
-	private CommonUtility commonUtil = new CommonUtility(DriverFactory.getDriver());;
-	private MyApplication myApplication = new MyApplication(DriverFactory.getDriver());;
+	private CommonUtility commonUtil;
+	private MyApplication myApplication;
 
 	@FindBy(xpath = "//h2[text()='New Application']")
 	private WebElement labelHeaderNewApplication;
@@ -31,12 +31,12 @@ public class NewApplication extends BasePage {
 	@FindBy(xpath = "//select[@id='langList']")
 	private WebElement drpdwnLanguageList;
 
-	private String appName = null;
-	private String platformName = null;
-	private String languageName = null;
-	private String paramName = null;
-	private String paramValue = null;
-	private String modifiedAppName = null;
+	private static String appName = null;
+	private static String platformName = null;
+	private static String languageName = null;
+	private static String paramName = null;
+	private static String paramValue = null;
+	private static String modifiedAppName = null;
 
 	/**
 	 * This method is used to create an Application with Data from Excel Sheet
@@ -45,6 +45,7 @@ public class NewApplication extends BasePage {
 	 * @param rowNo
 	 */
 	public void createApplication(String sheetName, String rowNo) {
+		commonUtil = new CommonUtility(DriverFactory.getDriver());
 		appName = ec.getCellData("Application_Details", "Application Name", 0);
 		platformName = ec.getCellData("Application_Details", "Platform", 0);
 		languageName = ec.getCellData("Application_Details", "Languages", 0);
@@ -80,6 +81,8 @@ public class NewApplication extends BasePage {
 	 * @param rowNo
 	 */
 	public void verifyApplication(String sheetName, String rowNo) {
+		commonUtil = new CommonUtility(DriverFactory.getDriver());
+		myApplication = new MyApplication(DriverFactory.getDriver());
 		commonUtil.waitForElementToVisible(myApplication.appListTable);
 		commonUtil.doSearch(modifiedAppName);
 		commonUtil.onClick(btnOption);

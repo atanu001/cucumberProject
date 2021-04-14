@@ -16,8 +16,8 @@ public class MyApplication extends BasePage {
 		super(driver);
 	}
 
-	private CommonUtility commonUtil = new CommonUtility(DriverFactory.getDriver());
-	private ApplicationDashboard applicationDashboard = new ApplicationDashboard(DriverFactory.getDriver());
+	private CommonUtility commonUtil;
+	private ApplicationDashboard applicationDashboard;
 
 	@FindBy(xpath = "//a[@id='createButton']")
 	private WebElement btnCreateApp;
@@ -34,11 +34,15 @@ public class MyApplication extends BasePage {
 
 	/**
 	 * This method is used to click on Create Application button on My Application
-	 * Page
+	 * button
+	 * 
+	 * @return driver to the New Application Page
 	 */
-	public void clickOnCreateApplicationBtn() {
+	public NewApplication clickOnCreateApplicationBtn() {
+		commonUtil = new CommonUtility(DriverFactory.getDriver());
 		commonUtil.onClick(btnCreateApp);
 		Log.info("User clicked on Create Application Button");
+		return new NewApplication(driver);
 	}
 
 	/**
@@ -48,6 +52,8 @@ public class MyApplication extends BasePage {
 	 * @param rowno
 	 */
 	public void openApplication(String applicationdetailssheetname, String rowno) {
+		commonUtil = new CommonUtility(DriverFactory.getDriver());
+		applicationDashboard = new ApplicationDashboard(DriverFactory.getDriver());
 		String appName = ec.getCellData("Application_Details", "Modified Application Name", 0);
 		commonUtil.doSearch(appName);
 		commonUtil.onClick(btnOption);
@@ -63,6 +69,7 @@ public class MyApplication extends BasePage {
 	 * @throws InterruptedException
 	 */
 	public void removeApplication(List<String> removalAppName) throws InterruptedException {
+		commonUtil = new CommonUtility(DriverFactory.getDriver());
 		for (int i = 0; i < removalAppName.size(); i++) {
 			commonUtil.doSearch(removalAppName.get(i));
 			commonUtil.onClick(btnOption);

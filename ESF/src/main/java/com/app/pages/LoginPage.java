@@ -15,8 +15,8 @@ public class LoginPage extends BasePage {
 
 	}
 
-	private CommonUtility commonUtil = new CommonUtility(DriverFactory.getDriver());
-	private MyApplication myApplication = new MyApplication(DriverFactory.getDriver());
+	private CommonUtility commonUtil;
+	private MyApplication myApplication;
 
 	@FindBy(id = "inputEmail")
 	WebElement emailId;
@@ -32,6 +32,8 @@ public class LoginPage extends BasePage {
 	}
 
 	public void doLogin(String email, String Password) {
+		commonUtil = new CommonUtility(DriverFactory.getDriver());
+		myApplication = new MyApplication(DriverFactory.getDriver());
 		String[] testData = { email, Password };
 		WebElement[] locator = { emailId, password };
 		commonUtil.typeIn(locator, testData);

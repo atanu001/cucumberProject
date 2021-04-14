@@ -27,6 +27,7 @@ public class StepListPage extends BasePage {
 	private String stepName = null;
 
 	public void clickOnCreateStepBtn() {
+		commonUtil = new CommonUtility(DriverFactory.getDriver());
 		commonUtil.onClick(createStepBtn);
 
 	}
@@ -36,6 +37,7 @@ public class StepListPage extends BasePage {
 	}
 
 	public void openStep(String stepdetailssheetname, String rowno) {
+		commonUtil = new CommonUtility(DriverFactory.getDriver());
 		stepName = ec.getCellData("Step_Details", "Modified Step Name", 0);
 		commonUtil.doSearch(stepName);
 		commonUtil.onClick(btnOption);

@@ -13,7 +13,7 @@ public class SectionListPage extends BasePage {
 		super(driver);
 	}
 
-	private CommonUtility commonUtil = new CommonUtility(DriverFactory.getDriver());
+	private CommonUtility commonUtil;
 
 	@FindBy(xpath = "//span[text()='Application Sections']")
 	public WebElement labelHeaderSectionListPage;
@@ -31,6 +31,7 @@ public class SectionListPage extends BasePage {
 	 * This method will click on Create Section Button on Section List Page
 	 */
 	public void clickOnCreateSectionBtn() {
+		commonUtil = new CommonUtility(DriverFactory.getDriver());
 		commonUtil.onClick(btnCreateSection);
 	}
 
@@ -41,6 +42,7 @@ public class SectionListPage extends BasePage {
 	 * @param rowno
 	 */
 	public void openSection(String sectiondetailssheetname, String rowno) {
+		commonUtil = new CommonUtility(DriverFactory.getDriver());
 		sectionName = ec.getCellData("Section_Details", "Modified Section Name", 0);
 		commonUtil.doSearch(sectionName);
 		commonUtil.onClick(btnOption);
