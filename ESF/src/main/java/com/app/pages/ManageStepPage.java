@@ -53,16 +53,16 @@ public class ManageStepPage extends BasePage {
 	 * @param stepdetailssheetname
 	 * @param rowno
 	 */
-	public StepListPage createStep(String stepdetailssheetname, String rowno) {
+	public StepListPage createStep(String stepdetailssheetname, int rowno) {
 		commonUtil = new CommonUtility(DriverFactory.getDriver());
-		stepName = ec.getCellData("Step_Details", "Application Step Name", 0);
-		stepApiUrlName = ec.getCellData("Step_Details", "Step API URL", 0);
-		bootstrapClassName = ec.getCellData("Step_Details", "Bootstrap Class Name", 0);
-		customClassName = ec.getCellData("Step_Details", "Custom Class Name", 0);
-		parameterName = ec.getCellData("Step_Details", "Parameter Name", 0);
-		parameterValue = ec.getCellData("Step_Details", "Parameter Value", 0);
-		device_Type = ec.getCellData("Step_Details", "Device Type", 0);
-		templateId = ec.getCellData("Step_Details", "Template Id", 0);
+		stepName = ec.getCellData("Step_Details", "Application Step Name", rowno);
+		stepApiUrlName = ec.getCellData("Step_Details", "Step API URL", rowno);
+		bootstrapClassName = ec.getCellData("Step_Details", "Bootstrap Class Name", rowno);
+		customClassName = ec.getCellData("Step_Details", "Custom Class Name", rowno);
+		parameterName = ec.getCellData("Step_Details", "Parameter Name", rowno);
+		parameterValue = ec.getCellData("Step_Details", "Parameter Value", rowno);
+		device_Type = ec.getCellData("Step_Details", "Device Type", rowno);
+		templateId = ec.getCellData("Step_Details", "Template Id", rowno);
 		int randomNum = commonUtil.generateRandomNumber();
 		modifiedStepName = stepName + "_" + randomNum;
 		try {
@@ -103,7 +103,7 @@ public class ManageStepPage extends BasePage {
 	 * @param stepdetailssheetname
 	 * @param rowno
 	 */
-	public void verifyStep(String stepdetailssheetname, String rowno) {
+	public void verifyStep(String stepdetailssheetname, int rowno) {
 		commonUtil = new CommonUtility(DriverFactory.getDriver());
 		stepListPage = new StepListPage(DriverFactory.getDriver());
 		commonUtil.waitForElementToVisible(labelHeaderManageStepPage);

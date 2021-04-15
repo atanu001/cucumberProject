@@ -65,16 +65,16 @@ public class ManageSectionPage extends BasePage {
 	 * @param rowno
 	 * @return the driver to the Section List Page
 	 */
-	public SectionListPage createSection(String sectiondetailssheetname, String rowno) {
+	public SectionListPage createSection(String sectiondetailssheetname, int rowno) {
 		commonUtil = new CommonUtility(DriverFactory.getDriver());
-		SectionNumber = ec.getCellData("Section_Details", "Section Number", 0);
-		SectionName = ec.getCellData("Section_Details", "Section Name", 0);
-		SequenceNumber = ec.getCellData("Section_Details", "Sequence Number", 0);
-		SectionClassName = ec.getCellData("Section_Details", "Section Class Name", 0);
-		BootstrapClassName = ec.getCellData("Section_Details", "Bootstrap Class Name", 0);
-		CustomClassName = ec.getCellData("Section_Details", "Custom Class Name", 0);
-		ParameterName = ec.getCellData("Section_Details", "Parameter Name", 0);
-		ParameterValue = ec.getCellData("Section_Details", "Parameter Value", 0);
+		SectionNumber = ec.getCellData("Section_Details", "Section Number", rowno);
+		SectionName = ec.getCellData("Section_Details", "Section Name", rowno);
+		SequenceNumber = ec.getCellData("Section_Details", "Sequence Number", rowno);
+		SectionClassName = ec.getCellData("Section_Details", "Section Class Name", rowno);
+		BootstrapClassName = ec.getCellData("Section_Details", "Bootstrap Class Name", rowno);
+		CustomClassName = ec.getCellData("Section_Details", "Custom Class Name", rowno);
+		ParameterName = ec.getCellData("Section_Details", "Parameter Name", rowno);
+		ParameterValue = ec.getCellData("Section_Details", "Parameter Value", rowno);
 		int randomNum = commonUtil.generateRandomNumber();
 		modifiedSectionName = SectionName + "_" + randomNum;
 		try {
@@ -103,7 +103,7 @@ public class ManageSectionPage extends BasePage {
 	 * @param sectiondetailssheetname
 	 * @param rowno
 	 */
-	public void verifySection(String sectiondetailssheetname, String rowno) {
+	public void verifySection(String sectiondetailssheetname, int rowno) {
 		commonUtil = new CommonUtility(DriverFactory.getDriver());
 		commonUtil.waitForElementToVisible(labelHeaderManageSectionPage);
 		String actualSectionNumber = drpdwnSectionNum.getAttribute("value");

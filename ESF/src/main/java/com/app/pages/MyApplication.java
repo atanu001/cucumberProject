@@ -51,15 +51,16 @@ public class MyApplication extends BasePage {
 	 * @param applicationdetailssheetname
 	 * @param rowno
 	 */
-	public void openApplication(String applicationdetailssheetname, String rowno) {
+	public ApplicationDashboard openApplication(String applicationdetailssheetname, int rowno) {
 		commonUtil = new CommonUtility(DriverFactory.getDriver());
 		applicationDashboard = new ApplicationDashboard(DriverFactory.getDriver());
-		String appName = ec.getCellData("Application_Details", "Modified Application Name", 0);
+		String appName = ec.getCellData("Application_Details", "Modified Application Name", rowno);
 		commonUtil.doSearch(appName);
 		commonUtil.onClick(btnOption);
 		commonUtil.onClick(optionManage);
 		// Thread.sleep(2000);
 		commonUtil.waitForElementToVisible(applicationDashboard.linkStep);
+		return new ApplicationDashboard(driver);
 	}
 
 	/**

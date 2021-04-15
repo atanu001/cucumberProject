@@ -49,9 +49,9 @@ public class StepListPage extends BasePage {
 	 * @param rowno
 	 * @return the driver to the Section List Page
 	 */
-	public SectionListPage openStep(String stepdetailssheetname, String rowno) {
+	public SectionListPage openStep(String stepdetailssheetname, int rowno) {
 		commonUtil = new CommonUtility(DriverFactory.getDriver());
-		stepName = ec.getCellData("Step_Details", "Modified Step Name", 0);
+		stepName = ec.getCellData("Step_Details", "Modified Step Name", rowno);
 		commonUtil.doSearch(stepName);
 		commonUtil.onClick(btnOption);
 		commonUtil.onClick(btnManageSection);
@@ -65,9 +65,9 @@ public class StepListPage extends BasePage {
 	 * @param rowno
 	 * @return the driver to the Manage Step Page
 	 */
-	public ManageStepPage editStep(String stepdetailssheetname, String rowno) {
+	public ManageStepPage editStep(String stepdetailssheetname, int rowno) {
 		commonUtil = new CommonUtility(DriverFactory.getDriver());
-		stepName = ec.getCellData("Step_Details", "Modified Step Name", 0);
+		stepName = ec.getCellData("Step_Details", "Modified Step Name", rowno);
 		commonUtil.waitForElementToVisible(stepListPageHeading);
 		commonUtil.doSearch(stepName);
 		commonUtil.onClick(btnOption);

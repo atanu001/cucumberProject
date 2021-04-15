@@ -52,7 +52,34 @@ Then Verify the Field in the list using data in sheetWithRow <Field Details Shee
 
 Examples:
       |Application Details Sheet Name|Row No|Step Details Sheet Name|Section Details Sheet Name|Field Details Sheet Name|
-      |Application_Details           |0     |Step_Details           |Section_Details           |Field_Details           |     
+      |Application_Details           |0     |Step_Details           |Section_Details           |Field_Details           |  
+      
+      
+@Block      
+Scenario Outline: Create a Block in the application
+
+Given User open an application from the list using data in sheetWithRow <Application Details Sheet Name> and <Row No>
+When User create a Block using data in sheetWithRow <Block Details Sheet Name> and <Row No>
+Then Verify the Block in the list using data in sheetWithRow <Block Details Sheet Name> and <Row No>
+
+Examples:
+      |Application Sheet Name|Row No|Block Details Sheet Name|
+      |Application_Details   |0     |Block_Details           |
+      
+      
+@Condition
+Scenario Outline: Create a Block in the application
+
+Given User open an application from the list using data in sheetWithRow <Application Details Sheet Name> and <Row No>
+When User create <No of Condition> Condition using data in sheetWithRow <Condition Details Sheet Name> and <Row No>
+#Then Verify the Condition in the list using data in sheetWithRow <Condition Details Sheet Name> and <Row No>
+
+Examples:
+      |Application Sheet Name|Row No|Condition Details Sheet Name|No of Condition|
+      |Application_Details   |0     |Condition_Details           |1            |
+      |Application_Details   |1     |Condition_Details           |1            |
+      
+   
 
 @ApplicationRemove
 Scenario Outline: Remove an application from the list

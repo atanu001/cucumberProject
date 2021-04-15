@@ -44,13 +44,13 @@ public class NewApplication extends BasePage {
 	 * @param sheetName
 	 * @param rowNo
 	 */
-	public void createApplication(String sheetName, String rowNo) {
+	public void createApplication(String sheetName, int rowNo) {
 		commonUtil = new CommonUtility(DriverFactory.getDriver());
-		appName = ec.getCellData("Application_Details", "Application Name", 0);
-		platformName = ec.getCellData("Application_Details", "Platform", 0);
-		languageName = ec.getCellData("Application_Details", "Languages", 0);
-		paramName = ec.getCellData("Application_Details", "Parameter Name", 0);
-		paramValue = ec.getCellData("Application_Details", "Parameter Value", 0);
+		appName = ec.getCellData("Application_Details", "Application Name", rowNo);
+		platformName = ec.getCellData("Application_Details", "Platform", rowNo);
+		languageName = ec.getCellData("Application_Details", "Languages", rowNo);
+		paramName = ec.getCellData("Application_Details", "Parameter Name", rowNo);
+		paramValue = ec.getCellData("Application_Details", "Parameter Value", rowNo);
 		int randomNum = commonUtil.generateRandomNumber();
 		modifiedAppName = appName + "_" + randomNum;
 		String[] testData1 = { modifiedAppName, platformName, languageName };
@@ -80,7 +80,7 @@ public class NewApplication extends BasePage {
 	 * @param sheetName
 	 * @param rowNo
 	 */
-	public void verifyApplication(String sheetName, String rowNo) {
+	public void verifyApplication(String sheetName, int rowNo) {
 		commonUtil = new CommonUtility(DriverFactory.getDriver());
 		myApplication = new MyApplication(DriverFactory.getDriver());
 		commonUtil.waitForElementToVisible(myApplication.appListTable);

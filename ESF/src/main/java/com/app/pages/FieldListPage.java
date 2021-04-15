@@ -46,9 +46,9 @@ public class FieldListPage extends BasePage {
 		return new ManageFieldPage(driver);
 	}
 
-	public ManageFieldPage editField(String fielddetailssheetname, String rowno) {
+	public ManageFieldPage editField(String fielddetailssheetname, int rowno) {
 		commonUtil = new CommonUtility(DriverFactory.getDriver());
-		UniqId = ec.getCellData("Field_Details", "Modified Uniq Id", 0);
+		UniqId = ec.getCellData("Field_Details", "Modified Uniq Id", rowno);
 		commonUtil.waitForElementToVisible(txtLabelHeaderFieldListPage);
 		commonUtil.doSearch(UniqId);
 		commonUtil.onClick(btnOption);

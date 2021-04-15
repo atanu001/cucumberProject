@@ -45,9 +45,9 @@ public class SectionListPage extends BasePage {
 	 * @param rowno
 	 * @return the driver to Field List Page
 	 */
-	public FieldListPage openSection(String sectiondetailssheetname, String rowno) {
+	public FieldListPage openSection(String sectiondetailssheetname, int rowno) {
 		commonUtil = new CommonUtility(DriverFactory.getDriver());
-		sectionName = ec.getCellData("Section_Details", "Modified Section Name", 0);
+		sectionName = ec.getCellData("Section_Details", "Modified Section Name", rowno);
 		commonUtil.doSearch(sectionName);
 		commonUtil.onClick(btnOption);
 		commonUtil.onClick(optionManage);
@@ -62,9 +62,9 @@ public class SectionListPage extends BasePage {
 	 * @param rowno
 	 * @return the driver to the Manage Section Page
 	 */
-	public ManageSectionPage editSection(String sectiondetailssheetname, String rowno) {
+	public ManageSectionPage editSection(String sectiondetailssheetname, int rowno) {
 		commonUtil = new CommonUtility(DriverFactory.getDriver());
-		sectionName = ec.getCellData("Section_Details", "Modified Section Name", 0);
+		sectionName = ec.getCellData("Section_Details", "Modified Section Name", rowno);
 		commonUtil.waitForElementToVisible(labelHeaderSectionListPage);
 		commonUtil.doSearch(sectionName);
 		commonUtil.onClick(btnOption);

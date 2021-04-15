@@ -15,9 +15,17 @@ public class ApplicationDashboard extends BasePage {
 
 	private CommonUtility commonUtil;
 	private StepListPage stepListPage;
+	private ConditionListPage conditionListPage;
 
 	@FindBy(xpath = "//div[@class='row col-lg-12 p-3']//h6[text()='Steps']")
 	public WebElement linkStep;
+
+	@FindBy(xpath = "//div[@class='row col-lg-12 p-3']//h6[text()='Conditions']")
+	public WebElement linkConditions;
+
+	public String getApplicationDashboardTitle() {
+		return driver.getTitle();
+	}
 
 	/**
 	 * This method is used to click on step link on the Dashboard
@@ -37,8 +45,12 @@ public class ApplicationDashboard extends BasePage {
 		return new StepListPage(driver);
 	}
 
-	public String getApplicationDashboardTitle() {
-		return driver.getTitle();
+	public ConditionListPage clickOnConditionsBtnOnDashboard() {
+		commonUtil = new CommonUtility(DriverFactory.getDriver());
+		conditionListPage = new ConditionListPage(DriverFactory.getDriver());
+		commonUtil.onClick(linkConditions);
+		commonUtil.waitForElementToVisible(conditionListPage.labelHeaderConditionListPage);
+		return new ConditionListPage(driver);
 	}
 
 }

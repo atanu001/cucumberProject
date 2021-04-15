@@ -101,25 +101,25 @@ public class ManageFieldPage extends BasePage {
 	 * @param fielddetailssheetname
 	 * @param rowno
 	 */
-	public FieldListPage createField(String fielddetailssheetname, String rowno) {
+	public FieldListPage createField(String fielddetailssheetname, int rowno) {
 		commonUtil = new CommonUtility(DriverFactory.getDriver());
-		UniqueId = ec.getCellData("Field_Details", "Unique Id", 0);
-		FieldLabel = ec.getCellData("Field_Details", "Field Label", 0);
-		FieldType = ec.getCellData("Field_Details", "Field Type", 0);
-		FieldSequence = ec.getCellData("Field_Details", "Field Sequence", 0);
-		PlaceholderText = ec.getCellData("Field_Details", "Placeholder Text", 0);
-		Tooltip = ec.getCellData("Field_Details", "Tooltip", 0);
-		FieldCharacterLimit = ec.getCellData("Field_Details", "Field Character Limit", 0);
-		APIKey = ec.getCellData("Field_Details", "API Key", 0);
-		RequestAPIKey = ec.getCellData("Field_Details", "Request API Key", 0);
-		ResponseAPIKey = ec.getCellData("Field_Details", "Response API Key", 0);
-		CSSClassName = ec.getCellData("Field_Details", "CSS Class Name", 0);
-		DefaultValue = ec.getCellData("Field_Details", "Default Value", 0);
-		PossibleValues = ec.getCellData("Field_Details", "Possible Values", 0);
-		BootstrapClassName = ec.getCellData("Field_Details", "Bootstrap Class Name", 0);
-		CustomClassName = ec.getCellData("Field_Details", "Custom Class Name", 0);
-		ParameterName = ec.getCellData("Field_Details", "Parameter Name", 0);
-		ParameterValue = ec.getCellData("Field_Details", "Parameter Value", 0);
+		UniqueId = ec.getCellData("Field_Details", "Unique Id", rowno);
+		FieldLabel = ec.getCellData("Field_Details", "Field Label", rowno);
+		FieldType = ec.getCellData("Field_Details", "Field Type", rowno);
+		FieldSequence = ec.getCellData("Field_Details", "Field Sequence", rowno);
+		PlaceholderText = ec.getCellData("Field_Details", "Placeholder Text", rowno);
+		Tooltip = ec.getCellData("Field_Details", "Tooltip", rowno);
+		FieldCharacterLimit = ec.getCellData("Field_Details", "Field Character Limit", rowno);
+		APIKey = ec.getCellData("Field_Details", "API Key", rowno);
+		RequestAPIKey = ec.getCellData("Field_Details", "Request API Key", rowno);
+		ResponseAPIKey = ec.getCellData("Field_Details", "Response API Key", rowno);
+		CSSClassName = ec.getCellData("Field_Details", "CSS Class Name", rowno);
+		DefaultValue = ec.getCellData("Field_Details", "Default Value", rowno);
+		PossibleValues = ec.getCellData("Field_Details", "Possible Values", rowno);
+		BootstrapClassName = ec.getCellData("Field_Details", "Bootstrap Class Name", rowno);
+		CustomClassName = ec.getCellData("Field_Details", "Custom Class Name", rowno);
+		ParameterName = ec.getCellData("Field_Details", "Parameter Name", rowno);
+		ParameterValue = ec.getCellData("Field_Details", "Parameter Value", rowno);
 		int randomNum = commonUtil.generateRandomNumber();
 		modifiedUniqId = UniqueId + "_" + randomNum;
 		try {
@@ -166,7 +166,7 @@ public class ManageFieldPage extends BasePage {
 	 * @param fielddetailssheetname
 	 * @param rowno
 	 */
-	public void verifyField(String fielddetailssheetname, String rowno) {
+	public void verifyField(String fielddetailssheetname, int rowno) {
 		commonUtil = new CommonUtility(DriverFactory.getDriver());
 		commonUtil.waitForElementToVisible(txtlabelHeaderManageFiled);
 		String actualUniqueId = txtUniqueId.getAttribute("value");
