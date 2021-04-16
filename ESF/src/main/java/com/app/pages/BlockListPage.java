@@ -15,7 +15,7 @@ public class BlockListPage extends BasePage {
 
 	private CommonUtility commonUtil;
 	private ManageBlockPage manageBlockPage;
-	private ApplicationDashboard applicationDashboard;
+	// private ApplicationDashboard applicationDashboard;
 
 	@FindBy(xpath = "//span[text()='Application Blocks']")
 	public WebElement labelHeaderBlockListPage;

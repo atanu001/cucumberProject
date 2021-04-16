@@ -17,7 +17,6 @@ public class ManageStepPage extends BasePage {
 	}
 
 	private CommonUtility commonUtil;
-	private StepListPage stepListPage;
 
 	@FindBy(xpath = "//h2[text()='Manage Step']")
 	public WebElement labelHeaderManageStepPage;
@@ -99,7 +98,7 @@ public class ManageStepPage extends BasePage {
 	 */
 	public void verifyStep() {
 		commonUtil = new CommonUtility(DriverFactory.getDriver());
-		stepListPage = new StepListPage(DriverFactory.getDriver());
+		// stepListPage = new StepListPage(DriverFactory.getDriver());
 		commonUtil.waitForElementToVisible(labelHeaderManageStepPage);
 		String actualStepName = txtStepName.getAttribute("value");
 		if (actualStepName.equals(modifiedStepName)) {
