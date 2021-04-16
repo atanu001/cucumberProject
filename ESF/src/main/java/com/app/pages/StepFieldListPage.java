@@ -1,20 +1,28 @@
 package com.app.pages;
 
+import java.io.IOException;
+import java.util.Properties;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import com.app.factory.DriverFactory;
 import com.app.util.CommonUtility;
+import com.app.util.ConfigReader;
+import com.app.util.Excell;
 
-public class FieldListPage extends BasePage {
+public class StepFieldListPage extends BasePage {
 
-	public FieldListPage(WebDriver driver) {
+	public StepFieldListPage(WebDriver driver) {
 		super(driver);
 	}
 
 	private CommonUtility commonUtil;
 	private ManageFieldPage manageFieldPage;
+	private Excell ec;
+	private Properties prop;
+	private ConfigReader configReader = new ConfigReader();
 
 	@FindBy(xpath = "//span[text()='Application Step Fields']")
 	public WebElement txtLabelHeaderFieldListPage;
@@ -42,12 +50,18 @@ public class FieldListPage extends BasePage {
 		commonUtil = new CommonUtility(DriverFactory.getDriver());
 		manageFieldPage = new ManageFieldPage(DriverFactory.getDriver());
 		commonUtil.onClick(btnCreateNewField);
-		commonUtil.waitForElementToVisible(manageFieldPage.txtlabelHeaderManageFiled);
+		commonUtil.waitForElementToVisible(manageFieldPage.txtlabelHeaderManageField);
 		return new ManageFieldPage(driver);
 	}
 
 	public ManageFieldPage editField(String fielddetailssheetname, int rowno) {
 		commonUtil = new CommonUtility(DriverFactory.getDriver());
+		prop = configReader.init_prop();
+		try {
+			ec = new Excell(prop.getProperty("TestDataPath"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		UniqId = ec.getCellData("Field_Details", "Modified Uniq Id", rowno);
 		commonUtil.waitForElementToVisible(txtLabelHeaderFieldListPage);
 		commonUtil.doSearch(UniqId);

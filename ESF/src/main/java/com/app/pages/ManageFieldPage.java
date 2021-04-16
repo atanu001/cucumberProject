@@ -20,7 +20,7 @@ public class ManageFieldPage extends BasePage {
 	private CommonUtility commonUtil;
 
 	@FindBy(xpath = "//h2[text()='Manage Field']")
-	public WebElement txtlabelHeaderManageFiled;
+	public WebElement txtlabelHeaderManageField;
 
 	@FindBy(xpath = "//input[@id='uniqueId']")
 	private WebElement txtUniqueId;
@@ -101,7 +101,7 @@ public class ManageFieldPage extends BasePage {
 	 * @param fielddetailssheetname
 	 * @param rowno
 	 */
-	public FieldListPage createField(String fielddetailssheetname, int rowno) {
+	public void createField(String fielddetailssheetname, int rowno) {
 		commonUtil = new CommonUtility(DriverFactory.getDriver());
 		UniqueId = ec.getCellData("Field_Details", "Unique Id", rowno);
 		FieldLabel = ec.getCellData("Field_Details", "Field Label", rowno);
@@ -123,21 +123,22 @@ public class ManageFieldPage extends BasePage {
 		int randomNum = commonUtil.generateRandomNumber();
 		modifiedUniqId = UniqueId + "_" + randomNum;
 		try {
-			ec.writeCellData("Field_Details", "Modified Uniq Id", 1, modifiedUniqId);
+			ec.writeCellData("Field_Details", "Modified Uniq Id", rowno, modifiedUniqId);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		txtFieldLabel.sendKeys(FieldLabel);
-		commonUtil.onClick(txtUniqueId);
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-		commonUtil.acceptJavaScripAlert();
-		String[] testData1 = { modifiedUniqId, FieldType, FieldSequence, PlaceholderText, Tooltip, FieldCharacterLimit,
-				APIKey, RequestAPIKey, ResponseAPIKey, CSSClassName };
-		WebElement[] locator1 = { txtUniqueId, drpdwnFieldType, txtFieldseq, txtPlaceholder, txtTooltip,
+		Log.info("Modified Uniq Id for Field is: " + modifiedUniqId);
+//		txtFieldLabel.sendKeys(FieldLabel);
+//		commonUtil.onClick(txtUniqueId);
+//		try {
+//			Thread.sleep(2000);
+//		} catch (InterruptedException e) {
+//			e.printStackTrace();
+//		}
+//		commonUtil.acceptJavaScripAlert();
+		String[] testData1 = { modifiedUniqId, FieldLabel, FieldType, FieldSequence, PlaceholderText, Tooltip,
+				FieldCharacterLimit, APIKey, RequestAPIKey, ResponseAPIKey, CSSClassName };
+		WebElement[] locator1 = { txtUniqueId, txtFieldLabel, drpdwnFieldType, txtFieldseq, txtPlaceholder, txtTooltip,
 				txtFieldCharacterLimit, txtapiKey, txtRequestApiKey, txtResponseApiKey, txtCSSClassName };
 		commonUtil.typeIn(locator1, testData1);
 		commonUtil.onClick(expandFieldValues);
@@ -157,7 +158,7 @@ public class ManageFieldPage extends BasePage {
 		commonUtil.scrollDownToBottomPage();
 		commonUtil.waitForElementToVisible(btnSave);
 		commonUtil.onClick(btnSave);
-		return new FieldListPage(driver);
+		// return new StepFieldListPage(driver);
 	}
 
 	/**
@@ -166,9 +167,9 @@ public class ManageFieldPage extends BasePage {
 	 * @param fielddetailssheetname
 	 * @param rowno
 	 */
-	public void verifyField(String fielddetailssheetname, int rowno) {
+	public void verifyField() {
 		commonUtil = new CommonUtility(DriverFactory.getDriver());
-		commonUtil.waitForElementToVisible(txtlabelHeaderManageFiled);
+		commonUtil.waitForElementToVisible(txtlabelHeaderManageField);
 		String actualUniqueId = txtUniqueId.getAttribute("value");
 		if (actualUniqueId.equals(modifiedUniqId)) {
 			Log.info("Uniq Id mathched " + "Expected: " + modifiedUniqId + " Found: " + actualUniqueId);
@@ -182,7 +183,7 @@ public class ManageFieldPage extends BasePage {
 			Log.error("Field Label does not mathched " + "Expected: " + FieldLabel + " Found: " + actualFieldLabel);
 		}
 		String actualFieldType = drpdwnFieldType.getAttribute("value");
-		if (actualFieldType.equals(FieldType)) {
+		if (actualFieldType.equalsIgnoreCase(FieldType)) {
 			Log.info("Field Type mathched " + "Expected: " + FieldType + " Found: " + actualFieldType);
 		} else {
 			Log.error("Field Type does not mathched " + "Expected: " + FieldType + " Found: " + actualFieldType);

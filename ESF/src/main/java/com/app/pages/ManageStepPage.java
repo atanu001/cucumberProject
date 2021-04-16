@@ -66,7 +66,7 @@ public class ManageStepPage extends BasePage {
 		int randomNum = commonUtil.generateRandomNumber();
 		modifiedStepName = stepName + "_" + randomNum;
 		try {
-			ec.writeCellData("Step_Details", "Modified Step Name", 1, modifiedStepName);
+			ec.writeCellData("Step_Details", "Modified Step Name", rowno, modifiedStepName);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -77,7 +77,6 @@ public class ManageStepPage extends BasePage {
 		commonUtil.onClick(chkboxDismissModal);
 		commonUtil.onClick(btnConfigAddParam);
 		commonUtil.waitForElementToVisible(txtParameterName);
-		// Thread.sleep(2000);
 		String[] testDate2 = { parameterName, parameterValue };
 		WebElement[] locator2 = { txtParameterName, txtParameterValue };
 		commonUtil.typeIn(locator2, testDate2);
@@ -88,11 +87,6 @@ public class ManageStepPage extends BasePage {
 		commonUtil.typeIn(locator3, testDate3);
 		commonUtil.scrollDownToBottomPage();
 		commonUtil.onClick(btnSave);
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
 		return new StepListPage(driver);
 
 	}
@@ -103,21 +97,21 @@ public class ManageStepPage extends BasePage {
 	 * @param stepdetailssheetname
 	 * @param rowno
 	 */
-	public void verifyStep(String stepdetailssheetname, int rowno) {
+	public void verifyStep() {
 		commonUtil = new CommonUtility(DriverFactory.getDriver());
 		stepListPage = new StepListPage(DriverFactory.getDriver());
 		commonUtil.waitForElementToVisible(labelHeaderManageStepPage);
 		String actualStepName = txtStepName.getAttribute("value");
 		if (actualStepName.equals(modifiedStepName)) {
-			Log.info("Step Name matched: " + "Expected: " + modifiedStepName + " Found: " + actualStepName);
+			Log.info("Step Name matched: " + " Expected: " + modifiedStepName + " Found: " + actualStepName);
 		} else {
-			Log.error("Step Name do not matched: " + "Expected: " + modifiedStepName + " Found: " + actualStepName);
+			Log.error("Step Name do not matched: " + " Expected: " + modifiedStepName + " Found: " + actualStepName);
 		}
 		String actualStepApiUrl = stepApiUrl.getAttribute("value");
 		if (actualStepApiUrl.equals(stepApiUrlName)) {
-			Log.info("Step Api Url matched: " + "Expected: " + stepApiUrlName + " Found: " + actualStepApiUrl);
+			Log.info("Step Api Url matched: " + " Expected: " + stepApiUrlName + " Found: " + actualStepApiUrl);
 		} else {
-			Log.error("Step Api Url do not matched: " + "Expected: " + stepApiUrlName + " Found: " + actualStepApiUrl);
+			Log.error("Step Api Url do not matched: " + " Expected: " + stepApiUrlName + " Found: " + actualStepApiUrl);
 		}
 		if (chkboxDisplayAsModal.isSelected()) {
 			Log.info("Display this step as a Modal? Checkbox is selected for the Step: " + modifiedStepName);
@@ -136,50 +130,50 @@ public class ManageStepPage extends BasePage {
 		}
 		String actualBootstrapClassName = txtBootstrapClassName.getAttribute("value");
 		if (actualBootstrapClassName.equals(bootstrapClassName)) {
-			Log.info("Bootstrap Class Name is matched for the Step: " + modifiedStepName + "Expected: "
+			Log.info("Bootstrap Class Name is matched for the Step: " + modifiedStepName + " Expected: "
 					+ bootstrapClassName + " Found: " + actualBootstrapClassName);
 		} else {
-			Log.error("Bootstrap Class Name is not matched for the Step: " + modifiedStepName + "Expected: "
+			Log.error("Bootstrap Class Name is not matched for the Step: " + modifiedStepName + " Expected: "
 					+ bootstrapClassName + " Found: " + actualBootstrapClassName);
 		}
 		String actualCustomClassName = txtCustomClassName.getAttribute("value");
 		if (actualCustomClassName.equals(customClassName)) {
-			Log.info("Custom Class Name is matched for the Step: " + modifiedStepName + "Expected: " + customClassName
+			Log.info("Custom Class Name is matched for the Step: " + modifiedStepName + " Expected: " + customClassName
 					+ " Found: " + actualCustomClassName);
 		} else {
-			Log.error("Custom Class Name is not matched for the Step: " + modifiedStepName + "Expected: "
+			Log.error("Custom Class Name is not matched for the Step: " + modifiedStepName + " Expected: "
 					+ customClassName + " Found: " + actualCustomClassName);
 		}
 		String actualParameterName = txtParameterName.getAttribute("value");
 		if (actualParameterName.equals(parameterName)) {
-			Log.info("Parameter Name is matched for the Step: " + modifiedStepName + "Expected: " + parameterName
+			Log.info("Parameter Name is matched for the Step: " + modifiedStepName + " Expected: " + parameterName
 					+ " Found: " + actualParameterName);
 		} else {
-			Log.error("Parameter Name is not matched for the Step: " + modifiedStepName + "Expected: " + parameterName
+			Log.error("Parameter Name is not matched for the Step: " + modifiedStepName + " Expected: " + parameterName
 					+ " Found: " + actualParameterName);
 		}
 		String actualParameterValue = txtParameterValue.getAttribute("value");
 		if (actualParameterValue.equals(parameterValue)) {
-			Log.info("Parameter Value is matched for the Step: " + modifiedStepName + "Expected: " + parameterValue
+			Log.info("Parameter Value is matched for the Step: " + modifiedStepName + " Expected: " + parameterValue
 					+ " Found: " + actualParameterValue);
 		} else {
-			Log.error("Parameter Value is not matched for the Step: " + modifiedStepName + "Expected: " + parameterValue
-					+ " Found: " + actualParameterValue);
+			Log.error("Parameter Value is not matched for the Step: " + modifiedStepName + " Expected: "
+					+ parameterValue + " Found: " + actualParameterValue);
 		}
 		String actualDeviceType = drpdwnDeviceType.getAttribute("value");
 		if (actualDeviceType.equals(device_Type)) {
-			Log.info("Device type is matched for the Step: " + modifiedStepName + "Expected: " + device_Type
+			Log.info("Device type is matched for the Step: " + modifiedStepName + " Expected: " + device_Type
 					+ " Found: " + actualDeviceType);
 		} else {
-			Log.error("Device type is not matched for the Step: " + modifiedStepName + "Expected: " + device_Type
+			Log.error("Device type is not matched for the Step: " + modifiedStepName + " Expected: " + device_Type
 					+ " Found: " + actualDeviceType);
 		}
 		String actualTemplateId = txtTemplateId.getAttribute("value");
 		if (actualTemplateId.equals(templateId)) {
-			Log.info("TemplateId is matched for the Step: " + modifiedStepName + "Expected: " + templateId + " Found: "
+			Log.info("TemplateId is matched for the Step: " + modifiedStepName + " Expected: " + templateId + " Found: "
 					+ actualTemplateId);
 		} else {
-			Log.error("TemplateId is not matched for the Step: " + modifiedStepName + "Expected: " + templateId
+			Log.error("TemplateId is not matched for the Step: " + modifiedStepName + " Expected: " + templateId
 					+ " Found: " + actualTemplateId);
 		}
 	}

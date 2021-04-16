@@ -74,11 +74,12 @@ public class Excell {
 
 		Sheet sheet = workbook.getSheet(sheetName);
 		int colomnNumberToWrite = getColoumnNumber(sheet, coloumnName);
-		Row row = sheet.getRow(rowNumber);
+		Row row = sheet.getRow(rowNumber + 1);
 		Cell cell = row.createCell(colomnNumberToWrite);
 		cell.setCellValue(data);
 		FileOutputStream file = new FileOutputStream(excelFile);
 		workbook.write(file);
+		file.close();
 	}
 
 	public String getCellData(String sheetName, String coloumnName, int rowNumber) {

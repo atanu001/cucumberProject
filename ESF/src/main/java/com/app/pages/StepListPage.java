@@ -29,7 +29,7 @@ public class StepListPage extends BasePage {
 	/**
 	 * This method is used to click on Create Step button on Step List Page
 	 * 
-	 * @return the driver to the Manage Step Page
+	 * @return the Manage Step Page
 	 */
 	public ManageStepPage clickOnCreateStepBtn() {
 		commonUtil = new CommonUtility(DriverFactory.getDriver());
@@ -47,7 +47,7 @@ public class StepListPage extends BasePage {
 	 * 
 	 * @param stepdetailssheetname
 	 * @param rowno
-	 * @return the driver to the Section List Page
+	 * @return the Section List Page
 	 */
 	public SectionListPage openStep(String stepdetailssheetname, int rowno) {
 		commonUtil = new CommonUtility(DriverFactory.getDriver());

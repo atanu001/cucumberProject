@@ -58,6 +58,13 @@ public class AddConditionPage extends BasePage {
 	private String Query = null;
 	private String ModifiedConditionName = null;
 
+	/**
+	 * This method is used to create Condition
+	 * 
+	 * @param conditiondetailssheetname
+	 * @param rowno
+	 * @return Condition List Page
+	 */
 	public ConditionListPage createCondition(String conditiondetailssheetname, int rowno) {
 		commonUtil = new CommonUtility(DriverFactory.getDriver());
 		ConditionName = ec.getCellData("Condition_Details", "Condition Name", rowno);
@@ -79,6 +86,13 @@ public class AddConditionPage extends BasePage {
 		return new ConditionListPage(driver);
 	}
 
+	/**
+	 * This method is used to create conditions as per the number provided
+	 * 
+	 * @param number
+	 * @param conditiondetailssheetname
+	 * @param rowno
+	 */
 	public void createConditions(int number, String conditiondetailssheetname, int rowno) {
 		for (int i = 0; i < number; i++) {
 			conditionListPage = new ConditionListPage(DriverFactory.getDriver());

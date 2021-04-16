@@ -78,7 +78,7 @@ public class ManageSectionPage extends BasePage {
 		int randomNum = commonUtil.generateRandomNumber();
 		modifiedSectionName = SectionName + "_" + randomNum;
 		try {
-			ec.writeCellData("Section_Details", "Modified Section Name", 1, modifiedSectionName);
+			ec.writeCellData("Section_Details", "Modified Section Name", rowno, modifiedSectionName);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -103,7 +103,7 @@ public class ManageSectionPage extends BasePage {
 	 * @param sectiondetailssheetname
 	 * @param rowno
 	 */
-	public void verifySection(String sectiondetailssheetname, int rowno) {
+	public void verifySection() {
 		commonUtil = new CommonUtility(DriverFactory.getDriver());
 		commonUtil.waitForElementToVisible(labelHeaderManageSectionPage);
 		String actualSectionNumber = drpdwnSectionNum.getAttribute("value");

@@ -43,24 +43,25 @@ public class SectionListPage extends BasePage {
 	 * 
 	 * @param sectiondetailssheetname
 	 * @param rowno
-	 * @return the driver to Field List Page
+	 * @return the Field List Page
 	 */
-	public FieldListPage openSection(String sectiondetailssheetname, int rowno) {
+	public StepFieldListPage openSection(String sectiondetailssheetname, int rowno) {
 		commonUtil = new CommonUtility(DriverFactory.getDriver());
 		sectionName = ec.getCellData("Section_Details", "Modified Section Name", rowno);
 		commonUtil.doSearch(sectionName);
 		commonUtil.onClick(btnOption);
 		commonUtil.onClick(optionManage);
-		return new FieldListPage(driver);
+		return new StepFieldListPage(driver);
 
 	}
 
 	/**
-	 * This method is used to edit a section from the List of a Step
+	 * This method is used to click on edit option of a section from the List of a
+	 * Step
 	 * 
 	 * @param sectiondetailssheetname
 	 * @param rowno
-	 * @return the driver to the Manage Section Page
+	 * @return the Manage Section Page
 	 */
 	public ManageSectionPage editSection(String sectiondetailssheetname, int rowno) {
 		commonUtil = new CommonUtility(DriverFactory.getDriver());
