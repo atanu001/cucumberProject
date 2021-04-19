@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
 
 import com.app.factory.DriverFactory;
 import com.app.util.CommonUtility;
@@ -66,6 +67,7 @@ public class ManageStepPage extends BasePage {
 		modifiedStepName = stepName + "_" + randomNum;
 		try {
 			ec.writeCellData("Step_Details", "Modified Step Name", rowno, modifiedStepName);
+			ec.writeCellData("Workflow_Details", "Step Name", rowno, modifiedStepName);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -159,7 +161,9 @@ public class ManageStepPage extends BasePage {
 			Log.error("Parameter Value is not matched for the Step: " + modifiedStepName + " Expected: "
 					+ parameterValue + " Found: " + actualParameterValue);
 		}
-		String actualDeviceType = drpdwnDeviceType.getAttribute("value");
+		Select selectDeviceType = new Select(drpdwnDeviceType);
+		WebElement eleDeviceType = selectDeviceType.getFirstSelectedOption();
+		String actualDeviceType = eleDeviceType.getText();
 		if (actualDeviceType.equals(device_Type)) {
 			Log.info("Device type is matched for the Step: " + modifiedStepName + " Expected: " + device_Type
 					+ " Found: " + actualDeviceType);
@@ -167,7 +171,9 @@ public class ManageStepPage extends BasePage {
 			Log.error("Device type is not matched for the Step: " + modifiedStepName + " Expected: " + device_Type
 					+ " Found: " + actualDeviceType);
 		}
-		String actualTemplateId = txtTemplateId.getAttribute("value");
+		Select selectTemplateId = new Select(txtTemplateId);
+		WebElement eleTemplateId = selectTemplateId.getFirstSelectedOption();
+		String actualTemplateId = eleTemplateId.getText();
 		if (actualTemplateId.equals(templateId)) {
 			Log.info("TemplateId is matched for the Step: " + modifiedStepName + " Expected: " + templateId + " Found: "
 					+ actualTemplateId);

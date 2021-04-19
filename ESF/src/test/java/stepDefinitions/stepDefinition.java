@@ -18,13 +18,17 @@ import com.app.pages.ConditionListPage;
 import com.app.pages.LoginPage;
 import com.app.pages.ManageBlockPage;
 import com.app.pages.ManageFieldPage;
+import com.app.pages.ManageMessagePage;
 import com.app.pages.ManageSectionPage;
 import com.app.pages.ManageStepPage;
+import com.app.pages.ManageWorkflowPage;
+import com.app.pages.MessageListPage;
 import com.app.pages.MyApplication;
 import com.app.pages.NewApplication;
 import com.app.pages.SectionListPage;
 import com.app.pages.StepFieldListPage;
 import com.app.pages.StepListPage;
+import com.app.pages.WorkflowListPage;
 import com.app.util.ConfigReader;
 import com.app.util.Excell;
 import com.app.util.Log;
@@ -56,6 +60,10 @@ public class stepDefinition {
 	private BlockListPage blockListPage;
 	private ManageBlockPage manageBlockPage;
 	private BlockFieldListPage blockFieldListPage;
+	private MessageListPage messageListPage;
+	private ManageMessagePage manageMessagePage;
+	private WorkflowListPage workflowListPage;
+	private ManageWorkflowPage manageWorkflowPage;
 
 	// private String removalAppName = null;
 
@@ -224,6 +232,37 @@ public class stepDefinition {
 
 	}
 
+	@When("^User create a Message using data in sheetWithRow (.+) and (.+)$")
+	public void user_create_a_message_using_data_in_sheetwithrow_and(String messagedetailssheetname, int rowno) {
+		messageListPage = applicationDashboard.clickOnMessageButtonOnDashboard();
+		manageMessagePage = messageListPage.clickOnAddNewMessageBtn();
+		messageListPage = manageMessagePage.createMessage(messagedetailssheetname, rowno);
+
+	}
+
+	@Then("^Verify the Message in the list using data in sheetWithRow (.+) and (.+)$")
+	public void verify_the_message_in_the_list_using_data_in_sheetwithrow_and(String messagedetailssheetname,
+			int rowno) {
+		manageMessagePage = messageListPage.clickOnOptionEditMessage(messagedetailssheetname, rowno);
+		manageMessagePage.verifyMessage();
+
+	}
+
+	@When("^User create a Workflow using data in sheetWithRow (.+) and (.+)$")
+	public void user_create_a_workflow_using_data_in_sheetwithrow_and(String workflowdetailssheetname, int rowno) {
+		workflowListPage = applicationDashboard.clickOnWorkflowButtonOnDashboard();
+		manageWorkflowPage = workflowListPage.clickOnAddNewWorkflowBtn();
+		workflowListPage = manageWorkflowPage.createWorkflow(workflowdetailssheetname, rowno);
+	}
+
+	@Then("^Verify the Workflow in the list using data in sheetWithRow (.+) and (.+)$")
+	public void verify_the_workflow_in_the_list_using_data_in_sheetwithrow_and(String workflowdetailssheetname,
+			int rowno) {
+		manageWorkflowPage = workflowListPage.clickOnEditWorkflowOption(workflowdetailssheetname, rowno);
+		manageWorkflowPage.verifyWorkflow();
+
+	}
+
 	@When("^User create (.*) Condition using data in sheetWithRow (.*) and (.*)$")
 	public void user_create_a_condition_using_data_in_sheetwithrow_and(int number, String conditiondetailssheetname,
 			int rowno) {
@@ -235,7 +274,7 @@ public class stepDefinition {
 
 	@Then("^Verify the Condition in the list using data in sheetWithRow (.*) and (.*)$")
 	public void verify_the_condition_in_the_list_using_data_in_sheetwithrow_and(String conditiondetailssheetname,
-			String rowno) {
+			int rowno) {
 
 	}
 

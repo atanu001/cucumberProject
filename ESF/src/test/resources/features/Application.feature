@@ -82,6 +82,28 @@ Examples:
       |Application_Details           |0     |Block_Details           |Field_Details           |  
       
 
+@Message
+Scenario Outline: Create a Message in the application
+
+Given User open an application from the list using data in sheetWithRow <Application Details Sheet Name> and <Row No>
+When User create a Message using data in sheetWithRow <Message Details Sheet Name> and <Row No>
+Then Verify the Message in the list using data in sheetWithRow <Message Details Sheet Name> and <Row No>
+
+Examples:
+      |Application Sheet Name|Row No|Message Details Sheet Name|
+      |Application_Details   |0     |Message_Details           |
+ 
+
+@Workflow
+Scenario Outline: Create a Workflow in the application
+
+Given User open an application from the list using data in sheetWithRow <Application Details Sheet Name> and <Row No>
+When User create a Workflow using data in sheetWithRow <Workflow Details Sheet Name> and <Row No>
+Then Verify the Workflow in the list using data in sheetWithRow <Workflow Details Sheet Name> and <Row No>
+
+Examples:
+      |Application Sheet Name|Row No|Workflow Details Sheet Name|
+      |Application_Details   |0     |Workflow_Details           |      
       
 @Condition
 Scenario Outline: Create a Condition in the application

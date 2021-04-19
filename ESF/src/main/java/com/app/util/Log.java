@@ -13,4 +13,5 @@ public class Log {
 	public static void error(String message) {
 		logger.error(message);
 	}
+
 }

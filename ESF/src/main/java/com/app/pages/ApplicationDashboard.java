@@ -17,12 +17,20 @@ public class ApplicationDashboard extends BasePage {
 	private StepListPage stepListPage;
 	private BlockListPage blockListPage;
 	private ConditionListPage conditionListPage;
+	private MessageListPage messageListPage;
+	private WorkflowListPage workflowListPage;
 
 	@FindBy(xpath = "//div[@class='row col-lg-12 p-3']//h6[text()='Steps']")
 	public WebElement linkStep;
 
 	@FindBy(xpath = "//div[@class='row col-lg-12 p-3']//h6[text()='Blocks']")
 	public WebElement linkBlock;
+
+	@FindBy(xpath = "//div[@class='row col-lg-12 p-3']//h6[text()='Messages']")
+	public WebElement linkMessage;
+
+	@FindBy(xpath = "//div[@class='row col-lg-12 p-3']//h6[text()='Workflows']")
+	public WebElement linkWorkflow;
 
 	@FindBy(xpath = "//div[@class='row col-lg-12 p-3']//h6[text()='Conditions']")
 	public WebElement linkConditions;
@@ -59,6 +67,32 @@ public class ApplicationDashboard extends BasePage {
 		commonUtil.onClick(linkBlock);
 		commonUtil.waitForElementToVisible(blockListPage.labelHeaderBlockListPage);
 		return new BlockListPage(driver);
+	}
+
+	/**
+	 * This method is used to click on Message link on the Dashboard
+	 * 
+	 * @return the Message List Page
+	 */
+	public MessageListPage clickOnMessageButtonOnDashboard() {
+		commonUtil = new CommonUtility(DriverFactory.getDriver());
+		messageListPage = new MessageListPage(DriverFactory.getDriver());
+		commonUtil.onClick(linkMessage);
+		commonUtil.waitForElementToVisible(messageListPage.labelTxtHeaderMessageListPage);
+		return new MessageListPage(driver);
+	}
+
+	/**
+	 * This method is used to click on Workflow link on the Dashboard
+	 * 
+	 * @return the Workflow List Page
+	 */
+	public WorkflowListPage clickOnWorkflowButtonOnDashboard() {
+		commonUtil = new CommonUtility(DriverFactory.getDriver());
+		workflowListPage = new WorkflowListPage(DriverFactory.getDriver());
+		commonUtil.onClick(linkWorkflow);
+		commonUtil.waitForElementToVisible(workflowListPage.labelTxtHeaderWorkflowListPage);
+		return new WorkflowListPage(driver);
 	}
 
 	/**
