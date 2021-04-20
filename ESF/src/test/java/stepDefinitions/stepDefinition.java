@@ -23,6 +23,8 @@ import com.app.pages.ManageSectionPage;
 import com.app.pages.ManageStepPage;
 import com.app.pages.ManageWorkflowPage;
 import com.app.pages.MessageListPage;
+import com.app.pages.ModalListPage;
+import com.app.pages.ModalManagePage;
 import com.app.pages.MyApplication;
 import com.app.pages.NewApplication;
 import com.app.pages.SectionListPage;
@@ -64,6 +66,8 @@ public class stepDefinition {
 	private ManageMessagePage manageMessagePage;
 	private WorkflowListPage workflowListPage;
 	private ManageWorkflowPage manageWorkflowPage;
+	private ModalListPage modalListPage;
+	private ModalManagePage modalManagePage;
 
 	// private String removalAppName = null;
 
@@ -261,6 +265,19 @@ public class stepDefinition {
 		manageWorkflowPage = workflowListPage.clickOnEditWorkflowOption(workflowdetailssheetname, rowno);
 		manageWorkflowPage.verifyWorkflow();
 
+	}
+
+	@When("^User create a Modal using data in sheetWithRow (.+) and (.+)$")
+	public void user_create_a_modal_using_data_in_sheetwithrow_and(String modaldetailssheetname, int rowno) {
+		modalListPage = applicationDashboard.clickOnModalwButtonOnDashboard();
+		modalManagePage = modalListPage.clickOnAddNewModalBtn();
+		modalListPage = modalManagePage.createModal(modaldetailssheetname, rowno);
+	}
+
+	@Then("^Verify the Modal in the list using data in sheetWithRow (.+) and (.+)$")
+	public void verify_the_modal_in_the_list_using_data_in_sheetwithrow_and(String modaldetailssheetname, int rowno) {
+		modalManagePage = modalListPage.clickOnEditModalOption(modaldetailssheetname, rowno);
+		modalManagePage.verifyModal();
 	}
 
 	@When("^User create (.*) Condition using data in sheetWithRow (.*) and (.*)$")

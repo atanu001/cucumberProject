@@ -19,6 +19,7 @@ public class ApplicationDashboard extends BasePage {
 	private ConditionListPage conditionListPage;
 	private MessageListPage messageListPage;
 	private WorkflowListPage workflowListPage;
+	private ModalListPage modalListPage;
 
 	@FindBy(xpath = "//div[@class='row col-lg-12 p-3']//h6[text()='Steps']")
 	public WebElement linkStep;
@@ -31,6 +32,9 @@ public class ApplicationDashboard extends BasePage {
 
 	@FindBy(xpath = "//div[@class='row col-lg-12 p-3']//h6[text()='Workflows']")
 	public WebElement linkWorkflow;
+
+	@FindBy(xpath = "//div[@class='row col-lg-12 p-3']//h6[text()='Modals']")
+	public WebElement linkModal;
 
 	@FindBy(xpath = "//div[@class='row col-lg-12 p-3']//h6[text()='Conditions']")
 	public WebElement linkConditions;
@@ -93,6 +97,19 @@ public class ApplicationDashboard extends BasePage {
 		commonUtil.onClick(linkWorkflow);
 		commonUtil.waitForElementToVisible(workflowListPage.labelTxtHeaderWorkflowListPage);
 		return new WorkflowListPage(driver);
+	}
+
+	/**
+	 * This method is used to click on Modal link on the Dashboard
+	 * 
+	 * @return the Modal List Page
+	 */
+	public ModalListPage clickOnModalwButtonOnDashboard() {
+		commonUtil = new CommonUtility(DriverFactory.getDriver());
+		modalListPage = new ModalListPage(DriverFactory.getDriver());
+		commonUtil.onClick(linkModal);
+		commonUtil.waitForElementToVisible(modalListPage.labelTxtHeaderModalListPage);
+		return new ModalListPage(driver);
 	}
 
 	/**

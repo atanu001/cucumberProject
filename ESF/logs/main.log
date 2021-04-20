@@ -6428,3 +6428,615 @@ two_column
 2021-04-19 17:43:11,039 +0530 [main] INFO  (Log.java:10) - Step Count Color is matched  Expected: Red Found: Red
 2021-04-19 17:43:11,086 +0530 [main] INFO  (Log.java:10) - Percentage Text Color is matched  Expected: Blue Found: Blue
 2021-04-19 17:43:11,137 +0530 [main] INFO  (Log.java:10) - Progress Bar Color is matched  Expected: Black Found: Black
+2021-04-20 10:50:34,603 +0530 [main] INFO  (Log.java:10) -  User click on login button
+2021-04-20 10:50:37,854 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modified Application Name ' are  : 
+2021-04-20 10:50:37,854 +0530 [main] INFO  (Log.java:10) - CEE_16959
+2021-04-20 10:50:37,854 +0530 [main] INFO  (Log.java:10) - Atanu_Test_544
+2021-04-20 10:50:43,335 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Application Step Name ' are  : 
+2021-04-20 10:50:43,336 +0530 [main] INFO  (Log.java:10) - Atanu_Step
+2021-04-20 10:50:43,336 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Step API URL ' are  : 
+2021-04-20 10:50:43,337 +0530 [main] INFO  (Log.java:10) - https://www.api.url
+2021-04-20 10:50:43,337 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Bootstrap Class Name ' are  : 
+2021-04-20 10:50:43,338 +0530 [main] INFO  (Log.java:10) - col-md-12
+2021-04-20 10:50:43,339 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Custom Class Name ' are  : 
+2021-04-20 10:50:43,339 +0530 [main] INFO  (Log.java:10) - inner-block-panel
+2021-04-20 10:50:43,340 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Parameter Name ' are  : 
+2021-04-20 10:50:43,340 +0530 [main] INFO  (Log.java:10) - Original Field
+2021-04-20 10:50:43,341 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Parameter Value ' are  : 
+2021-04-20 10:50:43,341 +0530 [main] INFO  (Log.java:10) - test _field_123
+2021-04-20 10:50:43,342 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Device Type ' are  : 
+2021-04-20 10:50:43,343 +0530 [main] INFO  (Log.java:10) - web
+2021-04-20 10:50:43,343 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Template Id ' are  : 
+2021-04-20 10:50:43,344 +0530 [main] INFO  (Log.java:10) - single_column
+2021-04-20 10:50:45,983 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modified Step Name ' are  : 
+2021-04-20 10:50:45,983 +0530 [main] INFO  (Log.java:10) - Atanu_Step_393
+2021-04-20 10:51:37,160 +0530 [main] INFO  (Log.java:10) -  User click on login button
+2021-04-20 10:51:39,244 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modified Application Name ' are  : 
+2021-04-20 10:51:39,244 +0530 [main] INFO  (Log.java:10) - CEE_16959
+2021-04-20 10:51:39,245 +0530 [main] INFO  (Log.java:10) - Atanu_Test_544
+2021-04-20 10:51:44,640 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Application Step Name ' are  : 
+2021-04-20 10:51:44,641 +0530 [main] INFO  (Log.java:10) - Atanu_Step
+2021-04-20 10:51:44,641 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Step API URL ' are  : 
+2021-04-20 10:51:44,641 +0530 [main] INFO  (Log.java:10) - https://www.api.url
+2021-04-20 10:51:44,642 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Bootstrap Class Name ' are  : 
+2021-04-20 10:51:44,642 +0530 [main] INFO  (Log.java:10) - col-md-12
+2021-04-20 10:51:44,642 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Custom Class Name ' are  : 
+2021-04-20 10:51:44,643 +0530 [main] INFO  (Log.java:10) - inner-block-panel
+2021-04-20 10:51:44,643 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Parameter Name ' are  : 
+2021-04-20 10:51:44,643 +0530 [main] INFO  (Log.java:10) - Original Field
+2021-04-20 10:51:44,644 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Parameter Value ' are  : 
+2021-04-20 10:51:44,644 +0530 [main] INFO  (Log.java:10) - test _field_123
+2021-04-20 10:51:44,645 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Device Type ' are  : 
+2021-04-20 10:51:44,645 +0530 [main] INFO  (Log.java:10) - web
+2021-04-20 10:51:44,645 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Template Id ' are  : 
+2021-04-20 10:51:44,646 +0530 [main] INFO  (Log.java:10) - single_column
+2021-04-20 10:51:47,452 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modified Step Name ' are  : 
+2021-04-20 10:51:47,452 +0530 [main] INFO  (Log.java:10) - Atanu_Step_821
+2021-04-20 10:51:51,338 +0530 [main] INFO  (Log.java:10) - Step Name matched:  Expected: Atanu_Step_821 Found: Atanu_Step_821
+2021-04-20 10:51:51,370 +0530 [main] INFO  (Log.java:10) - Step Api Url matched:  Expected: https://www.api.url Found: https://www.api.url
+2021-04-20 10:51:51,427 +0530 [main] INFO  (Log.java:10) - Display this step as a Modal? Checkbox is selected for the Step: Atanu_Step_821
+2021-04-20 10:51:51,473 +0530 [main] INFO  (Log.java:10) - Will the modal be dismissable? Checkbox is selected for the Step: Atanu_Step_821
+2021-04-20 10:51:51,514 +0530 [main] INFO  (Log.java:10) - Is this step conditional? Checkbox is not selected for the Step: Atanu_Step_821
+2021-04-20 10:51:51,542 +0530 [main] INFO  (Log.java:10) - Bootstrap Class Name is matched for the Step: Atanu_Step_821 Expected: col-md-12 Found: col-md-12
+2021-04-20 10:51:51,579 +0530 [main] INFO  (Log.java:10) - Custom Class Name is matched for the Step: Atanu_Step_821 Expected: inner-block-panel Found: inner-block-panel
+2021-04-20 10:51:51,605 +0530 [main] INFO  (Log.java:10) - Parameter Name is matched for the Step: Atanu_Step_821 Expected: Original Field Found: Original Field
+2021-04-20 10:51:51,636 +0530 [main] INFO  (Log.java:10) - Parameter Value is matched for the Step: Atanu_Step_821 Expected: test _field_123 Found: test _field_123
+2021-04-20 10:51:51,819 +0530 [main] INFO  (Log.java:10) - Device type is matched for the Step: Atanu_Step_821 Expected: web Found: web
+2021-04-20 10:51:51,934 +0530 [main] INFO  (Log.java:10) - TemplateId is matched for the Step: Atanu_Step_821 Expected: single_column Found: single_column
+2021-04-20 10:51:58,929 +0530 [main] INFO  (Log.java:10) -  User click on login button
+2021-04-20 10:52:01,281 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modified Application Name ' are  : 
+2021-04-20 10:52:01,282 +0530 [main] INFO  (Log.java:10) - CEE_16959
+2021-04-20 10:52:01,282 +0530 [main] INFO  (Log.java:10) - Atanu_Test_544
+2021-04-20 10:52:22,170 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modified Step Name ' are  : 
+2021-04-20 10:52:22,171 +0530 [main] INFO  (Log.java:10) - Atanu_Step_821
+2021-04-20 10:54:14,368 +0530 [main] INFO  (Log.java:10) -  User click on login button
+2021-04-20 10:54:16,170 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modified Application Name ' are  : 
+2021-04-20 10:54:16,170 +0530 [main] INFO  (Log.java:10) - CEE_16959
+2021-04-20 10:54:16,170 +0530 [main] INFO  (Log.java:10) - Atanu_Test_544
+2021-04-20 10:54:20,627 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Application Step Name ' are  : 
+2021-04-20 10:54:20,627 +0530 [main] INFO  (Log.java:10) - Atanu_Step
+2021-04-20 10:54:20,628 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Step API URL ' are  : 
+2021-04-20 10:54:20,629 +0530 [main] INFO  (Log.java:10) - https://www.api.url
+2021-04-20 10:54:20,629 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Bootstrap Class Name ' are  : 
+2021-04-20 10:54:20,630 +0530 [main] INFO  (Log.java:10) - col-md-12
+2021-04-20 10:54:20,631 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Custom Class Name ' are  : 
+2021-04-20 10:54:20,631 +0530 [main] INFO  (Log.java:10) - inner-block-panel
+2021-04-20 10:54:20,631 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Parameter Name ' are  : 
+2021-04-20 10:54:20,632 +0530 [main] INFO  (Log.java:10) - Original Field
+2021-04-20 10:54:20,632 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Parameter Value ' are  : 
+2021-04-20 10:54:20,632 +0530 [main] INFO  (Log.java:10) - test _field_123
+2021-04-20 10:54:20,633 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Device Type ' are  : 
+2021-04-20 10:54:20,633 +0530 [main] INFO  (Log.java:10) - web
+2021-04-20 10:54:20,634 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Template Id ' are  : 
+2021-04-20 10:54:20,634 +0530 [main] INFO  (Log.java:10) - single_column
+2021-04-20 10:54:28,270 +0530 [main] INFO  (Log.java:10) -  User click on login button
+2021-04-20 10:55:02,196 +0530 [main] INFO  (Log.java:10) -  User click on login button
+2021-04-20 10:55:04,859 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modified Application Name ' are  : 
+2021-04-20 10:55:04,859 +0530 [main] INFO  (Log.java:10) - CEE_16959
+2021-04-20 10:55:04,859 +0530 [main] INFO  (Log.java:10) - Atanu_Test_544
+2021-04-20 10:55:10,258 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Application Step Name ' are  : 
+2021-04-20 10:55:10,259 +0530 [main] INFO  (Log.java:10) - Atanu_Step
+2021-04-20 10:55:10,259 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Step API URL ' are  : 
+2021-04-20 10:55:10,259 +0530 [main] INFO  (Log.java:10) - https://www.api.url
+2021-04-20 10:55:10,260 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Bootstrap Class Name ' are  : 
+2021-04-20 10:55:10,260 +0530 [main] INFO  (Log.java:10) - col-md-12
+2021-04-20 10:55:10,260 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Custom Class Name ' are  : 
+2021-04-20 10:55:10,260 +0530 [main] INFO  (Log.java:10) - inner-block-panel
+2021-04-20 10:55:10,261 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Parameter Name ' are  : 
+2021-04-20 10:55:10,261 +0530 [main] INFO  (Log.java:10) - Original Field
+2021-04-20 10:55:10,261 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Parameter Value ' are  : 
+2021-04-20 10:55:10,261 +0530 [main] INFO  (Log.java:10) - test _field_123
+2021-04-20 10:55:10,262 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Device Type ' are  : 
+2021-04-20 10:55:10,262 +0530 [main] INFO  (Log.java:10) - web
+2021-04-20 10:55:10,263 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Template Id ' are  : 
+2021-04-20 10:55:10,263 +0530 [main] INFO  (Log.java:10) - single_column
+2021-04-20 10:55:13,200 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modified Step Name ' are  : 
+2021-04-20 10:55:13,201 +0530 [main] INFO  (Log.java:10) - Atanu_Step_716
+2021-04-20 10:55:17,146 +0530 [main] INFO  (Log.java:10) - Step Name matched:  Expected: Atanu_Step_716 Found: Atanu_Step_716
+2021-04-20 10:55:17,194 +0530 [main] INFO  (Log.java:10) - Step Api Url matched:  Expected: https://www.api.url Found: https://www.api.url
+2021-04-20 10:55:17,227 +0530 [main] INFO  (Log.java:10) - Display this step as a Modal? Checkbox is selected for the Step: Atanu_Step_716
+2021-04-20 10:55:17,246 +0530 [main] INFO  (Log.java:10) - Will the modal be dismissable? Checkbox is selected for the Step: Atanu_Step_716
+2021-04-20 10:55:17,281 +0530 [main] INFO  (Log.java:10) - Is this step conditional? Checkbox is not selected for the Step: Atanu_Step_716
+2021-04-20 10:55:17,314 +0530 [main] INFO  (Log.java:10) - Bootstrap Class Name is matched for the Step: Atanu_Step_716 Expected: col-md-12 Found: col-md-12
+2021-04-20 10:55:17,345 +0530 [main] INFO  (Log.java:10) - Custom Class Name is matched for the Step: Atanu_Step_716 Expected: inner-block-panel Found: inner-block-panel
+2021-04-20 10:55:17,378 +0530 [main] INFO  (Log.java:10) - Parameter Name is matched for the Step: Atanu_Step_716 Expected: Original Field Found: Original Field
+2021-04-20 10:55:17,407 +0530 [main] INFO  (Log.java:10) - Parameter Value is matched for the Step: Atanu_Step_716 Expected: test _field_123 Found: test _field_123
+2021-04-20 10:55:17,625 +0530 [main] INFO  (Log.java:10) - Device type is matched for the Step: Atanu_Step_716 Expected: web Found: web
+2021-04-20 10:55:17,806 +0530 [main] INFO  (Log.java:10) - TemplateId is matched for the Step: Atanu_Step_716 Expected: single_column Found: single_column
+2021-04-20 10:55:25,052 +0530 [main] INFO  (Log.java:10) -  User click on login button
+2021-04-20 10:55:27,218 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modified Application Name ' are  : 
+2021-04-20 10:55:27,218 +0530 [main] INFO  (Log.java:10) - CEE_16959
+2021-04-20 10:55:27,218 +0530 [main] INFO  (Log.java:10) - Atanu_Test_544
+2021-04-20 10:55:31,469 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modified Step Name ' are  : 
+2021-04-20 10:55:31,469 +0530 [main] INFO  (Log.java:10) - Atanu_Step_716
+2021-04-20 10:55:34,328 +0530 [main] INFO  (Log.java:10) - Section List page is displaying with title: Application Sections
+2021-04-20 10:55:35,522 +0530 [main] INFO  (Log.java:10) - User is on Manage Section Page: 
+2021-04-20 10:55:35,582 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Section Number ' are  : 
+2021-04-20 10:55:35,582 +0530 [main] INFO  (Log.java:10) - 1
+2021-04-20 10:55:35,583 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Section Name ' are  : 
+2021-04-20 10:55:35,583 +0530 [main] INFO  (Log.java:10) - Test_Section
+2021-04-20 10:55:35,583 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Sequence Number ' are  : 
+2021-04-20 10:55:35,583 +0530 [main] INFO  (Log.java:10) - 1
+2021-04-20 10:55:35,583 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Section Class Name ' are  : 
+2021-04-20 10:55:35,583 +0530 [main] INFO  (Log.java:10) - col-mo-12
+2021-04-20 10:55:35,583 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Bootstrap Class Name ' are  : 
+2021-04-20 10:55:35,584 +0530 [main] INFO  (Log.java:10) - col-mo-6
+2021-04-20 10:55:35,584 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Custom Class Name ' are  : 
+2021-04-20 10:55:35,584 +0530 [main] INFO  (Log.java:10) - custom-class
+2021-04-20 10:55:35,584 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Parameter Name ' are  : 
+2021-04-20 10:55:35,584 +0530 [main] INFO  (Log.java:10) - Original Field
+2021-04-20 10:55:35,584 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Parameter Value ' are  : 
+2021-04-20 10:55:35,585 +0530 [main] INFO  (Log.java:10) - test
+2021-04-20 10:55:37,159 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modified Section Name ' are  : 
+2021-04-20 10:55:37,160 +0530 [main] INFO  (Log.java:10) - Test_Section_746
+2021-04-20 10:55:41,315 +0530 [main] INFO  (Log.java:10) - Section Number matched for the Section Name: Test_Section_746 Expected: 1 Found: 1
+2021-04-20 10:55:41,349 +0530 [main] INFO  (Log.java:10) - Section Name matched for the Section Name: Test_Section_746 Expected: Test_Section_746 Found: Test_Section_746
+2021-04-20 10:55:41,397 +0530 [main] INFO  (Log.java:10) - Sequence Number matched for the Section Name: Test_Section_746 Expected: 1 Found: 1
+2021-04-20 10:55:41,426 +0530 [main] INFO  (Log.java:10) - Section Class Name matched for the Section Name: Test_Section_746 Expected: col-mo-12 Found: col-mo-12
+2021-04-20 10:55:41,454 +0530 [main] INFO  (Log.java:10) - Bootstrap Class Name matched for the Section Name: Test_Section_746 Expected: col-mo-6 Found: col-mo-6
+2021-04-20 10:55:41,485 +0530 [main] INFO  (Log.java:10) - Custom Class Name matched for the Section Name: Test_Section_746 Expected: custom-class Found: custom-class
+2021-04-20 10:55:41,517 +0530 [main] INFO  (Log.java:10) - Parameter Name matched for the Section Name: Test_Section_746 Expected: Original Field Found: Original Field
+2021-04-20 10:55:41,548 +0530 [main] INFO  (Log.java:10) - Parameter Value matched for the Section Name: Test_Section_746 Expected: test Found: test
+2021-04-20 10:55:47,547 +0530 [main] INFO  (Log.java:10) -  User click on login button
+2021-04-20 10:55:49,217 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modified Application Name ' are  : 
+2021-04-20 10:55:49,217 +0530 [main] INFO  (Log.java:10) - CEE_16959
+2021-04-20 10:55:49,217 +0530 [main] INFO  (Log.java:10) - Atanu_Test_544
+2021-04-20 10:55:53,444 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modified Step Name ' are  : 
+2021-04-20 10:55:53,444 +0530 [main] INFO  (Log.java:10) - Atanu_Step_716
+2021-04-20 10:55:56,155 +0530 [main] INFO  (Log.java:10) - Section List page is displaying with title: Application Sections
+2021-04-20 10:55:56,170 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modified Section Name ' are  : 
+2021-04-20 10:55:56,170 +0530 [main] INFO  (Log.java:10) - Test_Section_746
+2021-04-20 10:56:05,729 +0530 [main] INFO  (Log.java:10) -  User click on login button
+2021-04-20 10:56:07,397 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modified Application Name ' are  : 
+2021-04-20 10:56:07,397 +0530 [main] INFO  (Log.java:10) - CEE_16959
+2021-04-20 10:56:07,398 +0530 [main] INFO  (Log.java:10) - Atanu_Test_544
+2021-04-20 10:56:12,504 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Application Block Name ' are  : 
+2021-04-20 10:56:12,504 +0530 [main] INFO  (Log.java:10) - Atanu_Test
+2021-04-20 10:56:12,505 +0530 [main] INFO  (Log.java:10) - Atanu_Test
+2021-04-20 10:56:12,506 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Block Type ' are  : 
+2021-04-20 10:56:12,506 +0530 [main] INFO  (Log.java:10) - genericBlock
+2021-04-20 10:56:12,506 +0530 [main] INFO  (Log.java:10) - menu
+2021-04-20 10:56:12,508 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Description ' are  : 
+2021-04-20 10:56:12,509 +0530 [main] INFO  (Log.java:10) - This is generic block type desc
+2021-04-20 10:56:12,509 +0530 [main] INFO  (Log.java:10) - This is menu block type desc
+2021-04-20 10:56:12,510 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Bootstrap Class Name ' are  : 
+2021-04-20 10:56:12,510 +0530 [main] INFO  (Log.java:10) - col-mo-10
+2021-04-20 10:56:12,510 +0530 [main] INFO  (Log.java:10) - col-mo-6
+2021-04-20 10:56:12,511 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Custom Class Name ' are  : 
+2021-04-20 10:56:12,511 +0530 [main] INFO  (Log.java:10) - cutom-10-name
+2021-04-20 10:56:12,511 +0530 [main] INFO  (Log.java:10) - cutom-10
+2021-04-20 10:56:12,512 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Parameter Name ' are  : 
+2021-04-20 10:56:12,512 +0530 [main] INFO  (Log.java:10) - Original Field
+2021-04-20 10:56:12,512 +0530 [main] INFO  (Log.java:10) - default_value
+2021-04-20 10:56:12,513 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Parameter Value ' are  : 
+2021-04-20 10:56:12,513 +0530 [main] INFO  (Log.java:10) - test_field
+2021-04-20 10:56:12,513 +0530 [main] INFO  (Log.java:10) - atanu
+2021-04-20 10:56:14,182 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modified Block Name ' are  : 
+2021-04-20 10:56:14,182 +0530 [main] INFO  (Log.java:10) - Atanu_Test_263
+2021-04-20 10:56:14,183 +0530 [main] INFO  (Log.java:10) - Atanu_Test_629
+2021-04-20 10:56:18,063 +0530 [main] INFO  (Log.java:10) - Block Name matched Expectd: Atanu_Test_263 Found: Atanu_Test_263
+2021-04-20 10:56:18,094 +0530 [main] INFO  (Log.java:10) - Block Type matched Expectd: genericBlock Found: genericBlock
+2021-04-20 10:56:18,125 +0530 [main] ERROR (Log.java:14) - Block Description does not matched Expectd: This is generic block type desc Found:  This is generic block type desc
+2021-04-20 10:56:18,157 +0530 [main] INFO  (Log.java:10) - Parameter Name matched Expectd: Original Field Found: Original Field
+2021-04-20 10:56:18,186 +0530 [main] INFO  (Log.java:10) - Parameter Value matched Expectd: test_field Found: test_field
+2021-04-20 10:56:28,571 +0530 [main] INFO  (Log.java:10) -  User click on login button
+2021-04-20 10:56:31,249 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modified Application Name ' are  : 
+2021-04-20 10:56:31,250 +0530 [main] INFO  (Log.java:10) - CEE_16959
+2021-04-20 10:56:31,250 +0530 [main] INFO  (Log.java:10) - Atanu_Test_544
+2021-04-20 10:56:35,427 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modified Block Name ' are  : 
+2021-04-20 10:56:35,428 +0530 [main] INFO  (Log.java:10) - Atanu_Test_263
+2021-04-20 10:56:35,428 +0530 [main] INFO  (Log.java:10) - Atanu_Test_629
+2021-04-20 10:56:40,232 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Unique Id ' are  : 
+2021-04-20 10:56:40,232 +0530 [main] INFO  (Log.java:10) - user_name
+2021-04-20 10:56:40,232 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Field Label ' are  : 
+2021-04-20 10:56:40,233 +0530 [main] INFO  (Log.java:10) - Username
+2021-04-20 10:56:40,233 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Field Type ' are  : 
+2021-04-20 10:56:40,233 +0530 [main] INFO  (Log.java:10) - Textfield
+2021-04-20 10:56:40,233 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Field Sequence ' are  : 
+2021-04-20 10:56:40,234 +0530 [main] INFO  (Log.java:10) - 1
+2021-04-20 10:56:40,234 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Placeholder Text ' are  : 
+2021-04-20 10:56:40,234 +0530 [main] INFO  (Log.java:10) - Enter Your Username 
+2021-04-20 10:56:40,234 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Tooltip ' are  : 
+2021-04-20 10:56:40,235 +0530 [main] INFO  (Log.java:10) - Username needed
+2021-04-20 10:56:40,235 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Field Character Limit ' are  : 
+2021-04-20 10:56:40,235 +0530 [main] INFO  (Log.java:10) - 20
+2021-04-20 10:56:40,236 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' API Key ' are  : 
+2021-04-20 10:56:40,236 +0530 [main] INFO  (Log.java:10) - http#:/#api-key
+2021-04-20 10:56:40,237 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Request API Key ' are  : 
+2021-04-20 10:56:40,237 +0530 [main] INFO  (Log.java:10) - http#:/#Requestapi-key
+2021-04-20 10:56:40,237 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Response API Key ' are  : 
+2021-04-20 10:56:40,238 +0530 [main] INFO  (Log.java:10) - Responseapi-key
+2021-04-20 10:56:40,238 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' CSS Class Name ' are  : 
+2021-04-20 10:56:40,238 +0530 [main] INFO  (Log.java:10) - Bootstrap
+2021-04-20 10:56:40,238 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Default Value ' are  : 
+2021-04-20 10:56:40,239 +0530 [main] INFO  (Log.java:10) - test
+2021-04-20 10:56:40,239 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Possible Values ' are  : 
+2021-04-20 10:56:40,239 +0530 [main] INFO  (Log.java:10) - atanu
+2021-04-20 10:56:40,240 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Bootstrap Class Name ' are  : 
+2021-04-20 10:56:40,240 +0530 [main] INFO  (Log.java:10) - col-mo-12
+2021-04-20 10:56:40,240 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Custom Class Name ' are  : 
+2021-04-20 10:56:40,240 +0530 [main] INFO  (Log.java:10) - col-6
+2021-04-20 10:56:40,240 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Parameter Name ' are  : 
+2021-04-20 10:56:40,241 +0530 [main] INFO  (Log.java:10) - Comparison Field
+2021-04-20 10:56:40,241 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Parameter Value ' are  : 
+2021-04-20 10:56:40,241 +0530 [main] INFO  (Log.java:10) - test_field122
+2021-04-20 10:56:40,263 +0530 [main] INFO  (Log.java:10) - Modified Uniq Id for Field is: user_name_923
+2021-04-20 10:56:44,653 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modified Uniq Id ' are  : 
+2021-04-20 10:56:44,653 +0530 [main] INFO  (Log.java:10) - user_name_923
+2021-04-20 10:56:48,273 +0530 [main] INFO  (Log.java:10) - Uniq Id mathched Expected: user_name_923 Found: user_name_923
+2021-04-20 10:56:48,309 +0530 [main] INFO  (Log.java:10) - Field Label mathched Expected: Username Found: Username
+2021-04-20 10:56:48,353 +0530 [main] INFO  (Log.java:10) - Field Type mathched Expected: Textfield Found: TEXTFIELD
+2021-04-20 10:56:48,381 +0530 [main] INFO  (Log.java:10) - Field Sequence mathched Expected: 1 Found: 1
+2021-04-20 10:56:48,419 +0530 [main] INFO  (Log.java:10) - Placeholder Text mathched Expected: Enter Your Username  Found: Enter Your Username 
+2021-04-20 10:56:48,463 +0530 [main] INFO  (Log.java:10) - Tooltip mathched Expected: Username needed Found: Username needed
+2021-04-20 10:56:48,494 +0530 [main] INFO  (Log.java:10) - Field Character Limit mathched Expected: 20 Found: 20
+2021-04-20 10:56:48,526 +0530 [main] INFO  (Log.java:10) - API Key mathched Expected: http#:/#api-key Found: http#:/#api-key
+2021-04-20 10:56:48,556 +0530 [main] INFO  (Log.java:10) - Request API Key mathched Expected: http#:/#Requestapi-key Found: http#:/#Requestapi-key
+2021-04-20 10:56:48,603 +0530 [main] INFO  (Log.java:10) - Response API Key mathched Expected: Responseapi-key Found: Responseapi-key
+2021-04-20 10:56:48,633 +0530 [main] INFO  (Log.java:10) - CSS Class Name mathched Expected: Bootstrap Found: Bootstrap
+2021-04-20 10:56:48,746 +0530 [main] INFO  (Log.java:10) - Default Value mathched Expected: test Found: test
+2021-04-20 10:56:48,776 +0530 [main] INFO  (Log.java:10) - Possible Values mathched Expected: atanu Found: atanu
+2021-04-20 10:56:48,868 +0530 [main] INFO  (Log.java:10) - Bootstrap Class Name mathched Expected: col-mo-12 Found: col-mo-12
+2021-04-20 10:56:48,899 +0530 [main] INFO  (Log.java:10) - Custom Class Name mathched Expected: col-6 Found: col-6
+2021-04-20 10:56:49,059 +0530 [main] INFO  (Log.java:10) - Parameter Name mathched Expected: Comparison Field Found: Comparison Field
+2021-04-20 10:56:49,087 +0530 [main] INFO  (Log.java:10) - Parameter Value mathched Expected: test_field122 Found: test_field122
+2021-04-20 10:56:58,222 +0530 [main] INFO  (Log.java:10) -  User click on login button
+2021-04-20 10:57:00,728 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modified Application Name ' are  : 
+2021-04-20 10:57:00,729 +0530 [main] INFO  (Log.java:10) - CEE_16959
+2021-04-20 10:57:00,729 +0530 [main] INFO  (Log.java:10) - Atanu_Test_544
+2021-04-20 10:57:06,856 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Enter a message code ' are  : 
+2021-04-20 10:57:06,856 +0530 [main] INFO  (Log.java:10) - atanu_test_message
+2021-04-20 10:57:06,856 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Select a message type ' are  : 
+2021-04-20 10:57:06,856 +0530 [main] INFO  (Log.java:10) - Static Message Text
+2021-04-20 10:57:06,856 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Enter the message to be displayed ' are  : 
+2021-04-20 10:57:06,857 +0530 [main] INFO  (Log.java:10) - This message is for testing perpose
+2021-04-20 10:57:08,774 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modified Message Code ' are  : 
+2021-04-20 10:57:08,774 +0530 [main] INFO  (Log.java:10) - atanu_test_message_370
+2021-04-20 10:57:11,753 +0530 [main] INFO  (Log.java:10) - Message Code is matched  Expected: atanu_test_message_370 Found: atanu_test_message_370
+2021-04-20 10:57:11,894 +0530 [main] INFO  (Log.java:10) - Message Type is matched  Expected: Static Message Text Found: Static Message Text
+2021-04-20 10:57:11,931 +0530 [main] INFO  (Log.java:10) - Message is matched  Expected: This message is for testing perpose Found: This message is for testing perpose
+2021-04-20 10:57:21,195 +0530 [main] INFO  (Log.java:10) -  User click on login button
+2021-04-20 10:57:23,519 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modified Application Name ' are  : 
+2021-04-20 10:57:23,519 +0530 [main] INFO  (Log.java:10) - CEE_16959
+2021-04-20 10:57:23,519 +0530 [main] INFO  (Log.java:10) - Atanu_Test_544
+2021-04-20 10:57:28,158 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Name of the workflow ' are  : 
+2021-04-20 10:57:28,158 +0530 [main] INFO  (Log.java:10) - Test_Workflow
+2021-04-20 10:57:28,158 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Step Name ' are  : 
+2021-04-20 10:57:28,158 +0530 [main] INFO  (Log.java:10) - Atanu_Step_716
+2021-04-20 10:57:28,159 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Step Count Color ' are  : 
+2021-04-20 10:57:28,159 +0530 [main] INFO  (Log.java:10) - Red
+2021-04-20 10:57:28,159 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Percentage Text Color ' are  : 
+2021-04-20 10:57:28,159 +0530 [main] INFO  (Log.java:10) - Blue
+2021-04-20 10:57:28,160 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Progress Bar Color ' are  : 
+2021-04-20 10:57:28,160 +0530 [main] INFO  (Log.java:10) - Black
+2021-04-20 10:57:29,834 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modified Workflow Name ' are  : 
+2021-04-20 10:57:29,834 +0530 [main] INFO  (Log.java:10) - Test_Workflow_496
+2021-04-20 10:57:32,746 +0530 [main] INFO  (Log.java:10) - Workflow Title is matched  Expected: Test_Workflow_496 Found: Test_Workflow_496
+2021-04-20 10:57:33,038 +0530 [main] INFO  (Log.java:10) - Step selection is mathced with Step Name Expected: Atanu_Step_716 Found: Atanu_Step_716
+2021-04-20 10:57:33,065 +0530 [main] INFO  (Log.java:10) - Checkbox for Set as default workflow? is selected 
+2021-04-20 10:57:33,110 +0530 [main] INFO  (Log.java:10) - Checkbox for Show step count? is selected 
+2021-04-20 10:57:33,158 +0530 [main] INFO  (Log.java:10) - Checkbox for Display completion percentage? is selected 
+2021-04-20 10:57:33,200 +0530 [main] INFO  (Log.java:10) - Step Count Color is matched  Expected: Red Found: Red
+2021-04-20 10:57:33,234 +0530 [main] INFO  (Log.java:10) - Percentage Text Color is matched  Expected: Blue Found: Blue
+2021-04-20 10:57:33,259 +0530 [main] INFO  (Log.java:10) - Progress Bar Color is matched  Expected: Black Found: Black
+2021-04-20 10:57:39,318 +0530 [main] INFO  (Log.java:10) -  User click on login button
+2021-04-20 10:57:41,035 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modified Application Name ' are  : 
+2021-04-20 10:57:41,035 +0530 [main] INFO  (Log.java:10) - CEE_16959
+2021-04-20 10:57:41,035 +0530 [main] INFO  (Log.java:10) - Atanu_Test_544
+2021-04-20 10:57:46,482 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Condition Name ' are  : 
+2021-04-20 10:57:46,482 +0530 [main] INFO  (Log.java:10) - Test_Condition
+2021-04-20 10:57:46,482 +0530 [main] INFO  (Log.java:10) - Test_Condition
+2021-04-20 10:57:46,483 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Condition ID ' are  : 
+2021-04-20 10:57:46,483 +0530 [main] INFO  (Log.java:10) - Condition1
+2021-04-20 10:57:46,483 +0530 [main] INFO  (Log.java:10) - Condition2
+2021-04-20 10:57:46,483 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Step Name ' are  : 
+2021-04-20 10:57:46,484 +0530 [main] INFO  (Log.java:10) - Atanu_Step_684
+2021-04-20 10:57:46,484 +0530 [main] INFO  (Log.java:10) - Atanu_Step_684
+2021-04-20 10:57:46,484 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Field Unique Id ' are  : 
+2021-04-20 10:57:46,484 +0530 [main] INFO  (Log.java:10) - user_name_275
+2021-04-20 10:57:46,485 +0530 [main] INFO  (Log.java:10) - user_name_275
+2021-04-20 10:57:46,485 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Comparison Operator ' are  : 
+2021-04-20 10:57:46,486 +0530 [main] INFO  (Log.java:10) - NE
+2021-04-20 10:57:46,486 +0530 [main] INFO  (Log.java:10) - NE
+2021-04-20 10:57:46,486 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Field Values ' are  : 
+2021-04-20 10:57:46,487 +0530 [main] INFO  (Log.java:10) - atanu
+2021-04-20 10:57:46,487 +0530 [main] INFO  (Log.java:10) - atanu
+2021-04-20 10:57:46,487 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Api Key ' are  : 
+2021-04-20 10:57:46,488 +0530 [main] INFO  (Log.java:10) - ##http/api
+2021-04-20 10:57:46,488 +0530 [main] INFO  (Log.java:10) - ##http/api
+2021-04-20 10:57:46,488 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Query ' are  : 
+2021-04-20 10:57:46,488 +0530 [main] INFO  (Log.java:10) - ( Condition1 )
+2021-04-20 10:57:46,489 +0530 [main] INFO  (Log.java:10) - ( Condition2 )
+2021-04-20 11:04:35,274 +0530 [main] INFO  (Log.java:10) -  User click on login button
+2021-04-20 11:04:37,440 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modified Application Name ' are  : 
+2021-04-20 11:04:37,442 +0530 [main] INFO  (Log.java:10) - CEE_16959
+2021-04-20 11:04:37,442 +0530 [main] INFO  (Log.java:10) - Atanu_Test_544
+2021-04-20 11:04:41,649 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modified Step Name ' are  : 
+2021-04-20 11:04:41,664 +0530 [main] INFO  (Log.java:10) - Atanu_Step_716
+2021-04-20 11:04:44,599 +0530 [main] INFO  (Log.java:10) - Section List page is displaying with title: Application Sections
+2021-04-20 11:04:44,642 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modified Section Name ' are  : 
+2021-04-20 11:04:44,642 +0530 [main] INFO  (Log.java:10) - Test_Section_746
+2021-04-20 11:04:47,565 +0530 [main] INFO  (Log.java:10) - User is on Step Field List page :
+2021-04-20 11:04:49,067 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Unique Id ' are  : 
+2021-04-20 11:04:49,067 +0530 [main] INFO  (Log.java:10) - user_name
+2021-04-20 11:04:49,067 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Field Label ' are  : 
+2021-04-20 11:04:49,067 +0530 [main] INFO  (Log.java:10) - Username
+2021-04-20 11:04:49,067 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Field Type ' are  : 
+2021-04-20 11:04:49,067 +0530 [main] INFO  (Log.java:10) - Textfield
+2021-04-20 11:04:49,087 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Field Sequence ' are  : 
+2021-04-20 11:04:49,088 +0530 [main] INFO  (Log.java:10) - 1
+2021-04-20 11:04:49,088 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Placeholder Text ' are  : 
+2021-04-20 11:04:49,088 +0530 [main] INFO  (Log.java:10) - Enter Your Username 
+2021-04-20 11:04:49,089 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Tooltip ' are  : 
+2021-04-20 11:04:49,089 +0530 [main] INFO  (Log.java:10) - Username needed
+2021-04-20 11:04:49,089 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Field Character Limit ' are  : 
+2021-04-20 11:04:49,090 +0530 [main] INFO  (Log.java:10) - 20
+2021-04-20 11:04:49,090 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' API Key ' are  : 
+2021-04-20 11:04:49,090 +0530 [main] INFO  (Log.java:10) - http#:/#api-key
+2021-04-20 11:04:49,090 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Request API Key ' are  : 
+2021-04-20 11:04:49,091 +0530 [main] INFO  (Log.java:10) - http#:/#Requestapi-key
+2021-04-20 11:04:49,091 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Response API Key ' are  : 
+2021-04-20 11:04:49,091 +0530 [main] INFO  (Log.java:10) - Responseapi-key
+2021-04-20 11:04:49,092 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' CSS Class Name ' are  : 
+2021-04-20 11:04:49,092 +0530 [main] INFO  (Log.java:10) - Bootstrap
+2021-04-20 11:04:49,092 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Default Value ' are  : 
+2021-04-20 11:04:49,092 +0530 [main] INFO  (Log.java:10) - test
+2021-04-20 11:04:49,093 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Possible Values ' are  : 
+2021-04-20 11:04:49,093 +0530 [main] INFO  (Log.java:10) - atanu
+2021-04-20 11:04:49,093 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Bootstrap Class Name ' are  : 
+2021-04-20 11:04:49,093 +0530 [main] INFO  (Log.java:10) - col-mo-12
+2021-04-20 11:04:49,094 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Custom Class Name ' are  : 
+2021-04-20 11:04:49,094 +0530 [main] INFO  (Log.java:10) - col-6
+2021-04-20 11:04:49,094 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Parameter Name ' are  : 
+2021-04-20 11:04:49,094 +0530 [main] INFO  (Log.java:10) - Comparison Field
+2021-04-20 11:04:49,095 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Parameter Value ' are  : 
+2021-04-20 11:04:49,095 +0530 [main] INFO  (Log.java:10) - test_field122
+2021-04-20 11:04:49,102 +0530 [main] INFO  (Log.java:10) - Modified Uniq Id for Field is: user_name_922
+2021-04-20 11:04:52,756 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modified Uniq Id ' are  : 
+2021-04-20 11:04:52,757 +0530 [main] INFO  (Log.java:10) - user_name_923
+2021-04-20 11:05:22,961 +0530 [main] INFO  (Log.java:10) -  User click on login button
+2021-04-20 11:05:24,801 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modified Application Name ' are  : 
+2021-04-20 11:05:24,815 +0530 [main] INFO  (Log.java:10) - CEE_16959
+2021-04-20 11:05:24,815 +0530 [main] INFO  (Log.java:10) - Atanu_Test_544
+2021-04-20 11:05:29,202 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modified Step Name ' are  : 
+2021-04-20 11:05:29,214 +0530 [main] INFO  (Log.java:10) - Atanu_Step_716
+2021-04-20 11:05:32,088 +0530 [main] INFO  (Log.java:10) - Section List page is displaying with title: Application Sections
+2021-04-20 11:05:32,112 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modified Section Name ' are  : 
+2021-04-20 11:05:32,112 +0530 [main] INFO  (Log.java:10) - Test_Section_746
+2021-04-20 11:05:35,346 +0530 [main] INFO  (Log.java:10) - User is on Step Field List page :
+2021-04-20 11:05:36,753 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Unique Id ' are  : 
+2021-04-20 11:05:36,754 +0530 [main] INFO  (Log.java:10) - user_name
+2021-04-20 11:05:36,754 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Field Label ' are  : 
+2021-04-20 11:05:36,754 +0530 [main] INFO  (Log.java:10) - Username
+2021-04-20 11:05:36,755 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Field Type ' are  : 
+2021-04-20 11:05:36,755 +0530 [main] INFO  (Log.java:10) - Textfield
+2021-04-20 11:05:36,781 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Field Sequence ' are  : 
+2021-04-20 11:05:36,782 +0530 [main] INFO  (Log.java:10) - 1
+2021-04-20 11:05:36,782 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Placeholder Text ' are  : 
+2021-04-20 11:05:36,782 +0530 [main] INFO  (Log.java:10) - Enter Your Username 
+2021-04-20 11:05:36,783 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Tooltip ' are  : 
+2021-04-20 11:05:36,783 +0530 [main] INFO  (Log.java:10) - Username needed
+2021-04-20 11:05:36,783 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Field Character Limit ' are  : 
+2021-04-20 11:05:36,783 +0530 [main] INFO  (Log.java:10) - 20
+2021-04-20 11:05:36,784 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' API Key ' are  : 
+2021-04-20 11:05:36,784 +0530 [main] INFO  (Log.java:10) - http#:/#api-key
+2021-04-20 11:05:36,784 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Request API Key ' are  : 
+2021-04-20 11:05:36,784 +0530 [main] INFO  (Log.java:10) - http#:/#Requestapi-key
+2021-04-20 11:05:36,784 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Response API Key ' are  : 
+2021-04-20 11:05:36,785 +0530 [main] INFO  (Log.java:10) - Responseapi-key
+2021-04-20 11:05:36,785 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' CSS Class Name ' are  : 
+2021-04-20 11:05:36,785 +0530 [main] INFO  (Log.java:10) - Bootstrap
+2021-04-20 11:05:36,786 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Default Value ' are  : 
+2021-04-20 11:05:36,786 +0530 [main] INFO  (Log.java:10) - test
+2021-04-20 11:05:36,786 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Possible Values ' are  : 
+2021-04-20 11:05:36,787 +0530 [main] INFO  (Log.java:10) - atanu
+2021-04-20 11:05:36,787 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Bootstrap Class Name ' are  : 
+2021-04-20 11:05:36,787 +0530 [main] INFO  (Log.java:10) - col-mo-12
+2021-04-20 11:05:36,788 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Custom Class Name ' are  : 
+2021-04-20 11:05:36,789 +0530 [main] INFO  (Log.java:10) - col-6
+2021-04-20 11:05:36,789 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Parameter Name ' are  : 
+2021-04-20 11:05:36,790 +0530 [main] INFO  (Log.java:10) - Comparison Field
+2021-04-20 11:05:36,790 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Parameter Value ' are  : 
+2021-04-20 11:05:36,790 +0530 [main] INFO  (Log.java:10) - test_field122
+2021-04-20 11:05:37,054 +0530 [main] INFO  (Log.java:10) - Modified Uniq Id for Field is: user_name_387
+2021-04-20 11:05:40,421 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modified Uniq Id ' are  : 
+2021-04-20 11:05:40,421 +0530 [main] INFO  (Log.java:10) - user_name_387
+2021-04-20 11:05:44,586 +0530 [main] INFO  (Log.java:10) - Uniq Id mathched Expected: user_name_387 Found: user_name_387
+2021-04-20 11:05:44,617 +0530 [main] INFO  (Log.java:10) - Field Label mathched Expected: Username Found: Username
+2021-04-20 11:05:44,649 +0530 [main] INFO  (Log.java:10) - Field Type mathched Expected: Textfield Found: TEXTFIELD
+2021-04-20 11:05:44,679 +0530 [main] INFO  (Log.java:10) - Field Sequence mathched Expected: 1 Found: 1
+2021-04-20 11:05:44,713 +0530 [main] INFO  (Log.java:10) - Placeholder Text mathched Expected: Enter Your Username  Found: Enter Your Username 
+2021-04-20 11:05:44,741 +0530 [main] INFO  (Log.java:10) - Tooltip mathched Expected: Username needed Found: Username needed
+2021-04-20 11:05:44,793 +0530 [main] INFO  (Log.java:10) - Field Character Limit mathched Expected: 20 Found: 20
+2021-04-20 11:05:44,842 +0530 [main] INFO  (Log.java:10) - API Key mathched Expected: http#:/#api-key Found: http#:/#api-key
+2021-04-20 11:05:44,890 +0530 [main] INFO  (Log.java:10) - Request API Key mathched Expected: http#:/#Requestapi-key Found: http#:/#Requestapi-key
+2021-04-20 11:05:44,936 +0530 [main] INFO  (Log.java:10) - Response API Key mathched Expected: Responseapi-key Found: Responseapi-key
+2021-04-20 11:05:44,964 +0530 [main] INFO  (Log.java:10) - CSS Class Name mathched Expected: Bootstrap Found: Bootstrap
+2021-04-20 11:05:45,074 +0530 [main] INFO  (Log.java:10) - Default Value mathched Expected: test Found: test
+2021-04-20 11:05:45,105 +0530 [main] INFO  (Log.java:10) - Possible Values mathched Expected: atanu Found: atanu
+2021-04-20 11:05:45,202 +0530 [main] INFO  (Log.java:10) - Bootstrap Class Name mathched Expected: col-mo-12 Found: col-mo-12
+2021-04-20 11:05:45,234 +0530 [main] INFO  (Log.java:10) - Custom Class Name mathched Expected: col-6 Found: col-6
+2021-04-20 11:05:45,388 +0530 [main] INFO  (Log.java:10) - Parameter Name mathched Expected: Comparison Field Found: Comparison Field
+2021-04-20 11:05:45,420 +0530 [main] INFO  (Log.java:10) - Parameter Value mathched Expected: test_field122 Found: test_field122
+2021-04-20 11:06:29,769 +0530 [main] INFO  (Log.java:10) -  User click on login button
+2021-04-20 11:06:31,838 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modified Application Name ' are  : 
+2021-04-20 11:06:31,839 +0530 [main] INFO  (Log.java:10) - CEE_16959
+2021-04-20 11:06:31,839 +0530 [main] INFO  (Log.java:10) - Atanu_Test_544
+2021-04-20 11:06:37,790 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Condition Name ' are  : 
+2021-04-20 11:06:37,803 +0530 [main] INFO  (Log.java:10) - Test_Condition
+2021-04-20 11:06:37,803 +0530 [main] INFO  (Log.java:10) - Test_Condition
+2021-04-20 11:06:37,803 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Condition ID ' are  : 
+2021-04-20 11:06:37,804 +0530 [main] INFO  (Log.java:10) - Condition1
+2021-04-20 11:06:37,804 +0530 [main] INFO  (Log.java:10) - Condition2
+2021-04-20 11:06:37,805 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Step Name ' are  : 
+2021-04-20 11:06:37,805 +0530 [main] INFO  (Log.java:10) - Atanu_Step_684
+2021-04-20 11:06:37,805 +0530 [main] INFO  (Log.java:10) - Atanu_Step_684
+2021-04-20 11:06:37,805 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Field Unique Id ' are  : 
+2021-04-20 11:06:37,806 +0530 [main] INFO  (Log.java:10) - user_name_275
+2021-04-20 11:06:37,806 +0530 [main] INFO  (Log.java:10) - user_name_275
+2021-04-20 11:06:37,807 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Comparison Operator ' are  : 
+2021-04-20 11:06:37,807 +0530 [main] INFO  (Log.java:10) - NE
+2021-04-20 11:06:37,807 +0530 [main] INFO  (Log.java:10) - NE
+2021-04-20 11:06:37,808 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Field Values ' are  : 
+2021-04-20 11:06:37,808 +0530 [main] INFO  (Log.java:10) - atanu
+2021-04-20 11:06:37,808 +0530 [main] INFO  (Log.java:10) - atanu
+2021-04-20 11:06:37,809 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Api Key ' are  : 
+2021-04-20 11:06:37,809 +0530 [main] INFO  (Log.java:10) - ##http/api
+2021-04-20 11:06:37,809 +0530 [main] INFO  (Log.java:10) - ##http/api
+2021-04-20 11:06:37,810 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Query ' are  : 
+2021-04-20 11:06:37,810 +0530 [main] INFO  (Log.java:10) - ( Condition1 )
+2021-04-20 11:06:37,811 +0530 [main] INFO  (Log.java:10) - ( Condition2 )
+2021-04-20 17:05:13,170 +0530 [main] INFO  (Log.java:10) -  User click on login button
+2021-04-20 17:05:16,241 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modified Application Name ' are  : 
+2021-04-20 17:05:16,242 +0530 [main] INFO  (Log.java:10) - CEE_16959
+2021-04-20 17:05:16,242 +0530 [main] INFO  (Log.java:10) - Atanu_Test_544
+2021-04-20 17:05:21,998 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modal Id ' are  : 
+2021-04-20 17:05:21,998 +0530 [main] INFO  (Log.java:10) - Test_Modal
+2021-04-20 17:05:21,999 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modal Type ' are  : 
+2021-04-20 17:05:21,999 +0530 [main] INFO  (Log.java:10) - Info
+2021-04-20 17:05:21,999 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modal Title ' are  : 
+2021-04-20 17:05:22,000 +0530 [main] INFO  (Log.java:10) - testModal
+2021-04-20 17:05:22,000 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Icon For Modal Close Button ' are  : 
+2021-04-20 17:05:22,001 +0530 [main] INFO  (Log.java:10) - closeicon
+2021-04-20 17:05:22,001 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modal Message Text ' are  : 
+2021-04-20 17:05:22,002 +0530 [main] INFO  (Log.java:10) - Warning!! This is for testing purpose
+2021-04-20 17:05:22,002 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Enter value for input form fields ' are  : 
+2021-04-20 17:05:22,002 +0530 [main] INFO  (Log.java:10) - test
+2021-04-20 17:05:22,003 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Button Label ' are  : 
+2021-04-20 17:05:22,004 +0530 [main] INFO  (Log.java:10) - btnLabel
+2021-04-20 17:05:22,004 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Button Type ' are  : 
+2021-04-20 17:05:22,004 +0530 [main] INFO  (Log.java:10) - Positive
+2021-04-20 17:06:10,575 +0530 [main] INFO  (Log.java:10) -  User click on login button
+2021-04-20 17:06:14,395 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modified Application Name ' are  : 
+2021-04-20 17:06:14,400 +0530 [main] INFO  (Log.java:10) - CEE_16959
+2021-04-20 17:06:14,400 +0530 [main] INFO  (Log.java:10) - Atanu_Test_544
+2021-04-20 17:06:20,539 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modal Id ' are  : 
+2021-04-20 17:06:20,539 +0530 [main] INFO  (Log.java:10) - Test_Modal
+2021-04-20 17:06:20,539 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modal Type ' are  : 
+2021-04-20 17:06:20,540 +0530 [main] INFO  (Log.java:10) - Info
+2021-04-20 17:06:20,540 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modal Title ' are  : 
+2021-04-20 17:06:20,540 +0530 [main] INFO  (Log.java:10) - testModal
+2021-04-20 17:06:20,540 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Icon For Modal Close Button ' are  : 
+2021-04-20 17:06:20,541 +0530 [main] INFO  (Log.java:10) - closeicon
+2021-04-20 17:06:20,541 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modal Message Text ' are  : 
+2021-04-20 17:06:20,541 +0530 [main] INFO  (Log.java:10) - Warning!! This is for testing purpose
+2021-04-20 17:06:20,541 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Enter value for input form fields ' are  : 
+2021-04-20 17:06:20,542 +0530 [main] INFO  (Log.java:10) - test
+2021-04-20 17:06:20,544 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Button Label ' are  : 
+2021-04-20 17:06:20,544 +0530 [main] INFO  (Log.java:10) - btnLabel
+2021-04-20 17:06:20,545 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Button Type ' are  : 
+2021-04-20 17:06:20,545 +0530 [main] INFO  (Log.java:10) - Positive
+2021-04-20 17:08:27,729 +0530 [main] INFO  (Log.java:10) -  User click on login button
+2021-04-20 17:08:30,317 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modified Application Name ' are  : 
+2021-04-20 17:08:30,324 +0530 [main] INFO  (Log.java:10) - CEE_16959
+2021-04-20 17:08:30,324 +0530 [main] INFO  (Log.java:10) - Atanu_Test_544
+2021-04-20 17:08:35,748 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modal Id ' are  : 
+2021-04-20 17:08:35,748 +0530 [main] INFO  (Log.java:10) - Test_Modal
+2021-04-20 17:08:35,749 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modal Type ' are  : 
+2021-04-20 17:08:35,749 +0530 [main] INFO  (Log.java:10) - Info
+2021-04-20 17:08:35,749 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modal Title ' are  : 
+2021-04-20 17:08:35,749 +0530 [main] INFO  (Log.java:10) - testModal
+2021-04-20 17:08:35,750 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Icon For Modal Close Button ' are  : 
+2021-04-20 17:08:35,750 +0530 [main] INFO  (Log.java:10) - closeicon
+2021-04-20 17:08:35,751 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modal Message Text ' are  : 
+2021-04-20 17:08:35,751 +0530 [main] INFO  (Log.java:10) - Warning!! This is for testing purpose
+2021-04-20 17:08:35,751 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Enter value for input form fields ' are  : 
+2021-04-20 17:08:35,751 +0530 [main] INFO  (Log.java:10) - test
+2021-04-20 17:08:35,752 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Button Label ' are  : 
+2021-04-20 17:08:35,753 +0530 [main] INFO  (Log.java:10) - btnLabel
+2021-04-20 17:08:35,754 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Button Type ' are  : 
+2021-04-20 17:08:35,755 +0530 [main] INFO  (Log.java:10) - Positive
+2021-04-20 17:08:55,013 +0530 [main] INFO  (Log.java:10) -  User click on login button
+2021-04-20 17:08:57,083 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modified Application Name ' are  : 
+2021-04-20 17:08:57,090 +0530 [main] INFO  (Log.java:10) - CEE_16959
+2021-04-20 17:08:57,090 +0530 [main] INFO  (Log.java:10) - Atanu_Test_544
+2021-04-20 17:09:02,755 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modal Id ' are  : 
+2021-04-20 17:09:02,755 +0530 [main] INFO  (Log.java:10) - Test_Modal
+2021-04-20 17:09:02,756 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modal Type ' are  : 
+2021-04-20 17:09:02,756 +0530 [main] INFO  (Log.java:10) - Info
+2021-04-20 17:09:02,757 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modal Title ' are  : 
+2021-04-20 17:09:02,757 +0530 [main] INFO  (Log.java:10) - testModal
+2021-04-20 17:09:02,758 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Icon For Modal Close Button ' are  : 
+2021-04-20 17:09:02,759 +0530 [main] INFO  (Log.java:10) - closeicon
+2021-04-20 17:09:02,759 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modal Message Text ' are  : 
+2021-04-20 17:09:02,759 +0530 [main] INFO  (Log.java:10) - Warning!! This is for testing purpose
+2021-04-20 17:09:02,760 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Enter value for input form fields ' are  : 
+2021-04-20 17:09:02,760 +0530 [main] INFO  (Log.java:10) - test
+2021-04-20 17:09:02,762 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Button Label ' are  : 
+2021-04-20 17:09:02,762 +0530 [main] INFO  (Log.java:10) - btnLabel
+2021-04-20 17:09:02,762 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Button Type ' are  : 
+2021-04-20 17:09:02,763 +0530 [main] INFO  (Log.java:10) - Positive
+2021-04-20 17:42:25,088 +0530 [main] INFO  (Log.java:10) -  User click on login button
+2021-04-20 17:42:27,665 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modified Application Name ' are  : 
+2021-04-20 17:42:27,666 +0530 [main] INFO  (Log.java:10) - CEE_16959
+2021-04-20 17:42:27,666 +0530 [main] INFO  (Log.java:10) - Atanu_Test_544
+2021-04-20 17:42:33,488 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modal Id ' are  : 
+2021-04-20 17:42:33,488 +0530 [main] INFO  (Log.java:10) - Test_Modal
+2021-04-20 17:42:33,489 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modal Type ' are  : 
+2021-04-20 17:42:33,489 +0530 [main] INFO  (Log.java:10) - Info
+2021-04-20 17:42:33,489 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modal Title ' are  : 
+2021-04-20 17:42:33,489 +0530 [main] INFO  (Log.java:10) - testModal
+2021-04-20 17:42:33,490 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Icon For Modal Close Button ' are  : 
+2021-04-20 17:42:33,490 +0530 [main] INFO  (Log.java:10) - closeicon
+2021-04-20 17:42:33,490 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modal Message Text ' are  : 
+2021-04-20 17:42:33,490 +0530 [main] INFO  (Log.java:10) - Warning!! This is for testing purpose
+2021-04-20 17:42:33,491 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Enter value for input form fields ' are  : 
+2021-04-20 17:42:33,491 +0530 [main] INFO  (Log.java:10) - test
+2021-04-20 17:42:33,492 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Button Label ' are  : 
+2021-04-20 17:42:33,492 +0530 [main] INFO  (Log.java:10) - btnLabel
+2021-04-20 17:42:33,492 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Button Type ' are  : 
+2021-04-20 17:42:33,492 +0530 [main] INFO  (Log.java:10) - Positive
+2021-04-20 17:42:35,253 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modified Modal Id ' are  : 
+2021-04-20 17:42:35,253 +0530 [main] INFO  (Log.java:10) - Test_Modal_594
+2021-04-20 17:47:36,110 +0530 [main] INFO  (Log.java:10) -  User click on login button
+2021-04-20 17:47:38,221 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modified Application Name ' are  : 
+2021-04-20 17:47:38,221 +0530 [main] INFO  (Log.java:10) - CEE_16959
+2021-04-20 17:47:38,221 +0530 [main] INFO  (Log.java:10) - Atanu_Test_544
+2021-04-20 17:47:43,674 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modal Id ' are  : 
+2021-04-20 17:47:43,675 +0530 [main] INFO  (Log.java:10) - Test_Modal
+2021-04-20 17:47:43,675 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modal Type ' are  : 
+2021-04-20 17:47:43,675 +0530 [main] INFO  (Log.java:10) - Info
+2021-04-20 17:47:43,675 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modal Title ' are  : 
+2021-04-20 17:47:43,675 +0530 [main] INFO  (Log.java:10) - testModal
+2021-04-20 17:47:43,676 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Icon For Modal Close Button ' are  : 
+2021-04-20 17:47:43,676 +0530 [main] INFO  (Log.java:10) - closeicon
+2021-04-20 17:47:43,676 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modal Message Text ' are  : 
+2021-04-20 17:47:43,677 +0530 [main] INFO  (Log.java:10) - Warning!! This is for testing purpose
+2021-04-20 17:47:43,677 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Enter value for input form fields ' are  : 
+2021-04-20 17:47:43,677 +0530 [main] INFO  (Log.java:10) - test
+2021-04-20 17:47:43,679 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Button Label ' are  : 
+2021-04-20 17:47:43,679 +0530 [main] INFO  (Log.java:10) - btnLabel
+2021-04-20 17:47:43,679 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Button Type ' are  : 
+2021-04-20 17:47:43,679 +0530 [main] INFO  (Log.java:10) - Positive
+2021-04-20 17:47:45,519 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modified Modal Id ' are  : 
+2021-04-20 17:47:45,520 +0530 [main] INFO  (Log.java:10) - Test_Modal_847
+2021-04-20 17:48:39,721 +0530 [main] INFO  (Log.java:10) -  User click on login button
+2021-04-20 17:48:42,223 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modified Application Name ' are  : 
+2021-04-20 17:48:42,223 +0530 [main] INFO  (Log.java:10) - CEE_16959
+2021-04-20 17:48:42,223 +0530 [main] INFO  (Log.java:10) - Atanu_Test_544
+2021-04-20 17:48:47,647 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modal Id ' are  : 
+2021-04-20 17:48:47,648 +0530 [main] INFO  (Log.java:10) - Test_Modal
+2021-04-20 17:48:47,648 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modal Type ' are  : 
+2021-04-20 17:48:47,648 +0530 [main] INFO  (Log.java:10) - Info
+2021-04-20 17:48:47,648 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modal Title ' are  : 
+2021-04-20 17:48:47,649 +0530 [main] INFO  (Log.java:10) - testModal
+2021-04-20 17:48:47,649 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Icon For Modal Close Button ' are  : 
+2021-04-20 17:48:47,650 +0530 [main] INFO  (Log.java:10) - closeicon
+2021-04-20 17:48:47,650 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modal Message Text ' are  : 
+2021-04-20 17:48:47,650 +0530 [main] INFO  (Log.java:10) - Warning!! This is for testing purpose
+2021-04-20 17:48:47,651 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Enter value for input form fields ' are  : 
+2021-04-20 17:48:47,651 +0530 [main] INFO  (Log.java:10) - test
+2021-04-20 17:48:47,652 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Button Label ' are  : 
+2021-04-20 17:48:47,652 +0530 [main] INFO  (Log.java:10) - btnLabel
+2021-04-20 17:48:47,653 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Button Type ' are  : 
+2021-04-20 17:48:47,653 +0530 [main] INFO  (Log.java:10) - Positive
+2021-04-20 17:48:50,256 +0530 [main] INFO  (Log.java:10) - Listof items ftetched from Excell for Coloumn Name :' Modified Modal Id ' are  : 
+2021-04-20 17:48:50,256 +0530 [main] INFO  (Log.java:10) - Test_Modal_368
+2021-04-20 17:48:53,649 +0530 [main] INFO  (Log.java:10) - Modal Id matched  Expected: Test_Modal_368 Found: Test_Modal_368
+2021-04-20 17:48:53,680 +0530 [main] INFO  (Log.java:10) - Modal Type matched  Expected: Info Found: info
+2021-04-20 17:48:53,728 +0530 [main] INFO  (Log.java:10) - Modal Title matched  Expected: testModal Found: testModal
+2021-04-20 17:48:53,758 +0530 [main] INFO  (Log.java:10) - Icon For Modal Close Button matched  Expected: closeicon Found: closeicon
+2021-04-20 17:48:53,790 +0530 [main] INFO  (Log.java:10) - Icon For Modal Close Button matched  Expected: Warning!! This is for testing purpose Found: Warning!! This is for testing purpose
+2021-04-20 17:48:53,821 +0530 [main] INFO  (Log.java:10) - Input Form Fields matched  Expected: test Found: test
+2021-04-20 17:48:53,851 +0530 [main] INFO  (Log.java:10) - Button Label matched  Expected: btnLabel Found: btnLabel
+2021-04-20 17:48:53,882 +0530 [main] INFO  (Log.java:10) - Button Type matched  Expected: Positive Found: positive
