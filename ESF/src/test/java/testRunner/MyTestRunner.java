@@ -7,7 +7,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/resources/features/Application.feature", glue = { "stepDefinitions",
-		"AppHooks" }, tags = "@Modal", monochrome = true, publish = true)
+		"AppHooks" }, tags = "@ValidationMessage", monochrome = true, publish = true)
 
 public class MyTestRunner {
 

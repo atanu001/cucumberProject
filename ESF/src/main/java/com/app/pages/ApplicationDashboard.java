@@ -20,6 +20,7 @@ public class ApplicationDashboard extends BasePage {
 	private MessageListPage messageListPage;
 	private WorkflowListPage workflowListPage;
 	private ModalListPage modalListPage;
+	private ValidationMessageListPage validationMessageListPage;
 
 	@FindBy(xpath = "//div[@class='row col-lg-12 p-3']//h6[text()='Steps']")
 	public WebElement linkStep;
@@ -35,6 +36,9 @@ public class ApplicationDashboard extends BasePage {
 
 	@FindBy(xpath = "//div[@class='row col-lg-12 p-3']//h6[text()='Modals']")
 	public WebElement linkModal;
+
+	@FindBy(xpath = "//div[@class='row col-lg-12 p-3']//h6[text()='Validation Messages']")
+	public WebElement linkValidationMessages;
 
 	@FindBy(xpath = "//div[@class='row col-lg-12 p-3']//h6[text()='Conditions']")
 	public WebElement linkConditions;
@@ -110,6 +114,19 @@ public class ApplicationDashboard extends BasePage {
 		commonUtil.onClick(linkModal);
 		commonUtil.waitForElementToVisible(modalListPage.labelTxtHeaderModalListPage);
 		return new ModalListPage(driver);
+	}
+
+	/**
+	 * This method is used to click on Validation Message link on the Dashboard
+	 * 
+	 * @return the Validation Message List Page
+	 */
+	public ValidationMessageListPage clickOnValidationMessageButtonOnDashboard() {
+		commonUtil = new CommonUtility(DriverFactory.getDriver());
+		validationMessageListPage = new ValidationMessageListPage(DriverFactory.getDriver());
+		commonUtil.onClick(linkValidationMessages);
+		commonUtil.waitForElementToVisible(validationMessageListPage.labelTxtHeaderValidationMsgListPage);
+		return new ValidationMessageListPage(driver);
 	}
 
 	/**

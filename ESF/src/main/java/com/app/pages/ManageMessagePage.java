@@ -54,6 +54,7 @@ public class ManageMessagePage extends BasePage {
 		ModifiedMessageCode = MessageCode + "_" + randNum;
 		try {
 			ec.writeCellData("Message_Details", "Modified Message Code", rowno, ModifiedMessageCode);
+			ec.writeCellData("Validation_Message_Details", "Associate Message Code", rowno, ModifiedMessageCode);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

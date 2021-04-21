@@ -30,6 +30,8 @@ import com.app.pages.NewApplication;
 import com.app.pages.SectionListPage;
 import com.app.pages.StepFieldListPage;
 import com.app.pages.StepListPage;
+import com.app.pages.ValidationMessageListPage;
+import com.app.pages.ValidationMessageManagePage;
 import com.app.pages.WorkflowListPage;
 import com.app.util.ConfigReader;
 import com.app.util.Excell;
@@ -68,6 +70,8 @@ public class stepDefinition {
 	private ManageWorkflowPage manageWorkflowPage;
 	private ModalListPage modalListPage;
 	private ModalManagePage modalManagePage;
+	private ValidationMessageListPage validationMessageListPage;
+	private ValidationMessageManagePage validationMessageManagePage;
 
 	// private String removalAppName = null;
 
@@ -213,7 +217,7 @@ public class stepDefinition {
 
 	}
 
-	@When("^User open a Block from the list using data in sheetWithRow (.+) and (.+)$")
+	@When("^User open a Block from the list using data in sheetWithRow (.*) and (.*)$")
 	public void user_open_a_block_from_the_list_using_data_in_sheetwithrow_and(String blockdetailssheetname,
 			int rowno) {
 		blockListPage = applicationDashboard.clickOnBlockButtonOnDashboard();
@@ -221,13 +225,13 @@ public class stepDefinition {
 
 	}
 
-	@And("^User create a Block Field using data in sheetWithRow (.+) and (.+)$")
+	@And("^User create a Block Field using data in sheetWithRow (.*) and (.*)$")
 	public void user_create_a_block_field_using_data_in_sheetwithrow_and(String fielddetailssheetname, int rowno) {
 		manageFieldPage = blockFieldListPage.clickOnAddNewBlockFieldBtn();
 		manageFieldPage.createField(fielddetailssheetname, rowno);
 	}
 
-	@Then("^Verify the Block Field in the list using data in sheetWithRow (.+) and (.+)$")
+	@Then("^Verify the Block Field in the list using data in sheetWithRow (.*) and (.*)$")
 	public void verify_the_block_field_in_the_list_using_data_in_sheetwithrow_and(String fielddetailssheetname,
 			int rowno) {
 		blockFieldListPage = new BlockFieldListPage(DriverFactory.getDriver());
@@ -236,7 +240,7 @@ public class stepDefinition {
 
 	}
 
-	@When("^User create a Message using data in sheetWithRow (.+) and (.+)$")
+	@When("^User create a Message using data in sheetWithRow (.*) and (.*)$")
 	public void user_create_a_message_using_data_in_sheetwithrow_and(String messagedetailssheetname, int rowno) {
 		messageListPage = applicationDashboard.clickOnMessageButtonOnDashboard();
 		manageMessagePage = messageListPage.clickOnAddNewMessageBtn();
@@ -244,7 +248,7 @@ public class stepDefinition {
 
 	}
 
-	@Then("^Verify the Message in the list using data in sheetWithRow (.+) and (.+)$")
+	@Then("^Verify the Message in the list using data in sheetWithRow (.*) and (.*)$")
 	public void verify_the_message_in_the_list_using_data_in_sheetwithrow_and(String messagedetailssheetname,
 			int rowno) {
 		manageMessagePage = messageListPage.clickOnOptionEditMessage(messagedetailssheetname, rowno);
@@ -252,14 +256,14 @@ public class stepDefinition {
 
 	}
 
-	@When("^User create a Workflow using data in sheetWithRow (.+) and (.+)$")
+	@When("^User create a Workflow using data in sheetWithRow (.*) and (.*)$")
 	public void user_create_a_workflow_using_data_in_sheetwithrow_and(String workflowdetailssheetname, int rowno) {
 		workflowListPage = applicationDashboard.clickOnWorkflowButtonOnDashboard();
 		manageWorkflowPage = workflowListPage.clickOnAddNewWorkflowBtn();
 		workflowListPage = manageWorkflowPage.createWorkflow(workflowdetailssheetname, rowno);
 	}
 
-	@Then("^Verify the Workflow in the list using data in sheetWithRow (.+) and (.+)$")
+	@Then("^Verify the Workflow in the list using data in sheetWithRow (.*) and (.*)$")
 	public void verify_the_workflow_in_the_list_using_data_in_sheetwithrow_and(String workflowdetailssheetname,
 			int rowno) {
 		manageWorkflowPage = workflowListPage.clickOnEditWorkflowOption(workflowdetailssheetname, rowno);
@@ -267,17 +271,34 @@ public class stepDefinition {
 
 	}
 
-	@When("^User create a Modal using data in sheetWithRow (.+) and (.+)$")
+	@When("^User create a Modal using data in sheetWithRow (.*) and (.*)$")
 	public void user_create_a_modal_using_data_in_sheetwithrow_and(String modaldetailssheetname, int rowno) {
 		modalListPage = applicationDashboard.clickOnModalwButtonOnDashboard();
 		modalManagePage = modalListPage.clickOnAddNewModalBtn();
 		modalListPage = modalManagePage.createModal(modaldetailssheetname, rowno);
 	}
 
-	@Then("^Verify the Modal in the list using data in sheetWithRow (.+) and (.+)$")
+	@Then("^Verify the Modal in the list using data in sheetWithRow (.*) and (.*)$")
 	public void verify_the_modal_in_the_list_using_data_in_sheetwithrow_and(String modaldetailssheetname, int rowno) {
 		modalManagePage = modalListPage.clickOnEditModalOption(modaldetailssheetname, rowno);
 		modalManagePage.verifyModal();
+	}
+
+	@When("^User create (.*) Validation Message using data in sheetWithRow (.*) and (.*)$")
+	public void user_create_validation_message_using_data_in_sheetwithrow_and(int noofvalidationmessage,
+			String validationmessagedetailssheetname, int rowno) {
+		validationMessageListPage = applicationDashboard.clickOnValidationMessageButtonOnDashboard();
+		validationMessageManagePage = validationMessageListPage.clickOnAddNewValidationMsg();
+		validationMessageListPage = validationMessageManagePage.createValidationMessage(noofvalidationmessage,
+				validationmessagedetailssheetname, rowno);
+	}
+
+	@Then("^Verify the Validation Message in the list using data in sheetWithRow (.*) and (.*)$")
+	public void verify_the_validation_message_in_the_list_using_data_in_sheetwithrow_and(
+			String validationmessagedetailssheetname, int rowno) {
+		validationMessageManagePage = validationMessageListPage
+				.clickOnValidationMsgEditOption(validationmessagedetailssheetname, rowno);
+		validationMessageManagePage.verifyValidationMessage();
 	}
 
 	@When("^User create (.*) Condition using data in sheetWithRow (.*) and (.*)$")
