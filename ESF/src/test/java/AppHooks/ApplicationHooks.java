@@ -1,5 +1,6 @@
 package AppHooks;
 
+import java.io.IOException;
 import java.util.Properties;
 
 import org.apache.log4j.PropertyConfigurator;
@@ -34,12 +35,17 @@ public class ApplicationHooks {
 
 		driverFactory = new DriverFactory();
 		driver = driverFactory.initializeDriver(browserName);
-
 	}
 
 	@After(order = 0)
 	public void quitBrowser() {
-		driver.quit();
+		try {
+			Runtime.getRuntime().exec("taskkill /F /IM chromedriver.exe /T");
+			driver.quit();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
 	}
 
 	@After(order = 1)

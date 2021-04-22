@@ -7,10 +7,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.asserts.SoftAssert;
 
 import com.app.factory.DriverFactory;
 import com.app.util.CommonUtility;
-import com.app.util.Log;
 
 public class ValidationMessageManagePage extends BasePage {
 
@@ -20,6 +20,7 @@ public class ValidationMessageManagePage extends BasePage {
 
 	private CommonUtility commonUtil;
 	private ValidationMessageListPage validationMessageListPage;
+	private SoftAssert softassert = null;
 
 	@FindBy(xpath = "//h1[text()='Add Validation Message']")
 	public WebElement labelTxtHeaderValidationMsgManagePage;
@@ -138,100 +139,36 @@ public class ValidationMessageManagePage extends BasePage {
 	}
 
 	public void verifyValidationMessage() {
-
+		commonUtil = new CommonUtility(DriverFactory.getDriver());
+		softassert = new SoftAssert();
 		String actualValMsgName = txtValMsgName.getAttribute("value");
-		if (actualValMsgName.equals(ModifiedValMsgName)) {
-			Log.info("Validation Message is matched " + " Expected: " + ModifiedValMsgName + " Found: "
-					+ actualValMsgName);
-		} else {
-			Log.error("Validation Message does not matched " + " Expected: " + ModifiedValMsgName + " Found: "
-					+ actualValMsgName);
-		}
 		String actualValMsgType = drpdwnValmsgType.getAttribute("value");
-		if (actualValMsgType.equals(ValmsgType)) {
-			Log.info(
-					"Validation Message Type is matched " + " Expected: " + ValmsgType + " Found: " + actualValMsgType);
-		} else {
-			Log.error("Validation Message Type does not matched " + " Expected: " + ValmsgType + " Found: "
-					+ actualValMsgType);
-		}
 		Select s1 = new Select(drpdwnDisplayType);
 		WebElement ele1 = s1.getFirstSelectedOption();
 		String actualDisplayType = ele1.getText();
-		if (actualDisplayType.equals(DisplayType)) {
-			Log.info("Display Type is matched " + " Expected: " + DisplayType + " Found: " + actualDisplayType);
-		} else {
-			Log.error("Display Type does not matched " + " Expected: " + DisplayType + " Found: " + actualDisplayType);
-		}
 		String actualAssociateMsgCode = drpdwnAssociateMsgCode.getAttribute("value");
-		if (actualAssociateMsgCode.equals(AssociateMsgCode)) {
-			Log.info("Associate Message Code is matched " + " Expected: " + AssociateMsgCode + " Found: "
-					+ actualAssociateMsgCode);
-		} else {
-			Log.error("Associate Message Code does not matched " + " Expected: " + AssociateMsgCode + " Found: "
-					+ actualAssociateMsgCode);
-		}
+		String[] actualData = { actualValMsgName, actualValMsgType, actualDisplayType, actualAssociateMsgCode };
+		String[] expectedData = { ModifiedValMsgName, ValmsgType, DisplayType, AssociateMsgCode };
+		commonUtil.softAssert(actualData, expectedData, softassert);
 		if (ValmsgType.equals("Conditional")) {
 			String actualConditionalId = txtConditionId.getAttribute("value").trim();
-			// String abc = actualConditionalId.trim();
-			if (actualConditionalId.equals(ConditionId)) {
-				Log.info("Condition Id is matched " + " Expected: " + ConditionId + " Found: " + actualConditionalId);
-			} else {
-				Log.error("Condition Id does not matched " + " Expected: " + ConditionId + " Found: "
-						+ actualConditionalId);
-			}
 			String actualComparisonStepName = txtComparisonStepName.getAttribute("value");
-			if (actualComparisonStepName.equals(ComparisonStepName)) {
-				Log.info("Comparison Step Name is matched " + " Expected: " + ComparisonStepName + " Found: "
-						+ actualComparisonStepName);
-			} else {
-				Log.error("Comparison Step Name does not matched " + " Expected: " + ComparisonStepName + " Found: "
-						+ actualComparisonStepName);
-			}
 			String actualFieldUniqId = txtFieldUniqId.getAttribute("value").trim();
-			if (actualFieldUniqId.equals(FieldUniqId)) {
-				Log.info("Field Uniq Id is matched " + " Expected: " + FieldUniqId + " Found: " + actualFieldUniqId);
-			} else {
-				Log.error("Field Uniq Id does not matched " + " Expected: " + FieldUniqId + " Found: "
-						+ actualFieldUniqId);
-			}
 			Select s2 = new Select(drpdwnComparisionOperator);
 			WebElement ele2 = s2.getFirstSelectedOption();
 			String actualComparisionOperator = ele2.getText();
-			if (actualComparisionOperator.equals(ComparisionOperator)) {
-				Log.info("Comparision Operator is matched " + " Expected: " + ComparisionOperator + " Found: "
-						+ actualComparisionOperator);
-			} else {
-				Log.error("Comparision Operator does not matched " + " Expected: " + ComparisionOperator + " Found: "
-						+ actualComparisionOperator);
-			}
 			String actualFieldValue = txtFieldValue.getAttribute("value").trim();
-			if (actualFieldValue.equals(FieldValue)) {
-				Log.info("Field Value is matched " + " Expected: " + FieldValue + " Found: " + actualFieldValue);
-			} else {
-				Log.error("Field Value does not matched " + " Expected: " + FieldValue + " Found: " + actualFieldValue);
-			}
 			String actualApiKey = txtApiKey.getAttribute("value").trim();
-			if (actualApiKey.equals(ApiKey)) {
-				Log.info("Api Key is matched " + " Expected: " + ApiKey + " Found: " + actualApiKey);
-			} else {
-				Log.error("Api Key does not matched " + " Expected: " + ApiKey + " Found: " + actualApiKey);
-			}
 			String actualCompareBy = drpdwnCompareBy.getAttribute("value");
-			if (actualCompareBy.equals(CompareBy)) {
-				Log.info("Compare By is matched " + " Expected: " + CompareBy + " Found: " + actualCompareBy);
-			} else {
-				Log.error("Compare By does not matched " + " Expected: " + CompareBy + " Found: " + actualCompareBy);
-			}
 			String actualConditionQuery = txtConditionQuery.getAttribute("value");
-			if (actualConditionQuery.equals(ConditionQuery)) {
-				Log.info("Condition Query is matched " + " Expected: " + ConditionQuery + " Found: "
-						+ actualConditionQuery);
-			} else {
-				Log.error("Condition Query does not matched " + " Expected: " + ConditionQuery + " Found: "
-						+ actualConditionQuery);
-			}
+			String[] actualData2 = { actualConditionalId, actualComparisonStepName, actualFieldUniqId,
+					actualComparisionOperator, actualFieldValue, actualApiKey, actualCompareBy, actualConditionQuery };
+			String[] expectedData2 = { ConditionId, ComparisonStepName, FieldUniqId, ComparisionOperator, FieldValue,
+					ApiKey, CompareBy, ConditionQuery };
+			commonUtil.softAssert(actualData2, expectedData2, softassert);
+
 		}
+		softassert.assertAll();
 	}
 
 }

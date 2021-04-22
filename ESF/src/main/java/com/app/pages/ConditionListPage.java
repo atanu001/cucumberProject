@@ -14,7 +14,7 @@ public class ConditionListPage extends BasePage {
 	}
 
 	private CommonUtility commonUtil;
-	private AddConditionPage addConditionPage;
+	private ConditionManagePage conditionManagePage;
 
 	@FindBy(xpath = "//span[text()='Application Conditions']")
 	public WebElement labelHeaderConditionListPage;
@@ -27,12 +27,12 @@ public class ConditionListPage extends BasePage {
 	 * 
 	 * @return Add Condition Page
 	 */
-	public AddConditionPage clickOnAddNewConditionBtn() {
+	public ConditionManagePage clickOnAddNewConditionBtn() {
 		commonUtil = new CommonUtility(DriverFactory.getDriver());
-		addConditionPage = new AddConditionPage(DriverFactory.getDriver());
+		conditionManagePage = new ConditionManagePage(DriverFactory.getDriver());
 		commonUtil.waitForElementToVisible(labelHeaderConditionListPage);
 		commonUtil.onClick(btnAddCondition);
-		commonUtil.waitForElementToVisible(addConditionPage.labelHeaderAddConditionPage);
-		return new AddConditionPage(driver);
+		commonUtil.waitForElementToVisible(conditionManagePage.labelHeaderconditionManagePage);
+		return new ConditionManagePage(driver);
 	}
 }

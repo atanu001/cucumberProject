@@ -7,18 +7,18 @@ import org.openqa.selenium.support.FindBy;
 import com.app.factory.DriverFactory;
 import com.app.util.CommonUtility;
 
-public class AddConditionPage extends BasePage {
+public class ConditionManagePage extends BasePage {
 
-	public AddConditionPage(WebDriver driver) {
+	public ConditionManagePage(WebDriver driver) {
 		super(driver);
 	}
 
 	private CommonUtility commonUtil;
 	private ConditionListPage conditionListPage;
-	private AddConditionPage addConditionPage;
+	private ConditionManagePage conditionManagePage;
 
 	@FindBy(xpath = "//h1[text()='Add Condition']")
-	public WebElement labelHeaderAddConditionPage;
+	public WebElement labelHeaderconditionManagePage;
 
 	@FindBy(xpath = "//input[@id='condName']")
 	private WebElement txtConditionName;
@@ -96,9 +96,9 @@ public class AddConditionPage extends BasePage {
 	public void createConditions(int number, String conditiondetailssheetname, int rowno) {
 		for (int i = 0; i < number; i++) {
 			conditionListPage = new ConditionListPage(DriverFactory.getDriver());
-			addConditionPage = new AddConditionPage(DriverFactory.getDriver());
+			conditionManagePage = new ConditionManagePage(DriverFactory.getDriver());
 			conditionListPage.clickOnAddNewConditionBtn();
-			addConditionPage.createCondition(conditiondetailssheetname, rowno);
+			conditionManagePage.createCondition(conditiondetailssheetname, rowno);
 
 		}
 	}

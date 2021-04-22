@@ -3,8 +3,8 @@ Feature: Test feature
 Background: 
 Given User has logged into the Portal
 |Email                    |Password|Title       |
-#|portaluser0002@inadev.net|123456  |CEEBIT Login|
-|sofikul@gmail.com        |sofikul |CEEBIT Login|
+|portaluser0002@inadev.net|123456  |CEEBIT Login|
+#|sofikul@gmail.com        |sofikul |CEEBIT Login|
 
 
 
@@ -92,7 +92,7 @@ Then Verify the Message in the list using data in sheetWithRow <Message Details 
 
 Examples:
       |Application Sheet Name|Row No|Message Details Sheet Name|
-      |Application_Details   |0     |Message_Details           |
+#      |Application_Details   |0     |Message_Details           |
       |Application_Details   |1     |Message_Details           |
  
 

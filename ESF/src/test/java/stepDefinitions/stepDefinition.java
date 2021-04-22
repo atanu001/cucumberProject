@@ -9,27 +9,27 @@ import java.util.Properties;
 import org.junit.Assert;
 
 import com.app.factory.DriverFactory;
-import com.app.pages.AddConditionPage;
 import com.app.pages.ApplicationDashboard;
+import com.app.pages.ApplicationListPage;
+import com.app.pages.ApplicationManagePage;
 import com.app.pages.BasePage;
 import com.app.pages.BlockFieldListPage;
 import com.app.pages.BlockListPage;
 import com.app.pages.ConditionListPage;
+import com.app.pages.ConditionManagePage;
 import com.app.pages.LoginPage;
 import com.app.pages.ManageBlockPage;
 import com.app.pages.ManageFieldPage;
 import com.app.pages.ManageMessagePage;
 import com.app.pages.ManageSectionPage;
-import com.app.pages.ManageStepPage;
 import com.app.pages.ManageWorkflowPage;
 import com.app.pages.MessageListPage;
 import com.app.pages.ModalListPage;
 import com.app.pages.ModalManagePage;
-import com.app.pages.MyApplication;
-import com.app.pages.NewApplication;
 import com.app.pages.SectionListPage;
 import com.app.pages.StepFieldListPage;
 import com.app.pages.StepListPage;
+import com.app.pages.StepManagePage;
 import com.app.pages.ValidationMessageListPage;
 import com.app.pages.ValidationMessageManagePage;
 import com.app.pages.WorkflowListPage;
@@ -46,21 +46,21 @@ import io.cucumber.java.en.When;
 public class stepDefinition {
 
 	private LoginPage loginPage;
-	private MyApplication myApplication;
-	private NewApplication newApplication;
+	private ApplicationListPage applicationListPage;
+	private ApplicationManagePage applicationManagePage;
 	private static Properties prop;
 	private Excell ec;
 	private static ConfigReader configReader;
 	private ApplicationDashboard applicationDashboard;
 	private StepListPage stepListPage;
-	private ManageStepPage manageStepPage;
+	private StepManagePage stepManagePage;
 	private BasePage base;
 	private SectionListPage sectionListPage;
 	private ManageSectionPage manageSectionPage;
 	private StepFieldListPage stepFieldListPage;
 	private ManageFieldPage manageFieldPage;
 	private ConditionListPage conditionListPage;
-	private AddConditionPage addConditionPage;
+	private ConditionManagePage conditionManagePage;
 	private BlockListPage blockListPage;
 	private ManageBlockPage manageBlockPage;
 	private BlockFieldListPage blockFieldListPage;
@@ -97,34 +97,33 @@ public class stepDefinition {
 
 	@Given("^User is in My Application page with the title \"([^\"]*)\"$")
 	public void user_in_the_MyApplication_page(String expectedTitle) {
-		myApplication = new MyApplication(DriverFactory.getDriver());
-		String actualTitle = myApplication.getMyApplicationPageTitle();
+		applicationListPage = new ApplicationListPage(DriverFactory.getDriver());
+		String actualTitle = applicationListPage.getMyApplicationPageTitle();
 		Assert.assertTrue(actualTitle.equals(expectedTitle));
-		if (actualTitle.equals(expectedTitle)) {
-			Log.info("Title matched: " + "Expected: " + expectedTitle + "And" + "Found: " + actualTitle);
-		} else {
-			Log.error("Title do not matched: " + "Expected: " + expectedTitle + "And" + "Found: " + actualTitle);
-		}
-
-		newApplication = myApplication.clickOnCreateApplicationBtn();
+//		if (actualTitle.equals(expectedTitle)) {
+//			Log.info("Title matched: " + "Expected: " + expectedTitle + "And" + "Found: " + actualTitle);
+//		} else {
+//			Log.error("Title do not matched: " + "Expected: " + expectedTitle + "And" + "Found: " + actualTitle);
+//		}
+		applicationManagePage = applicationListPage.clickOnCreateApplicationBtn();
 	}
 
 	@And("^Create an Application using data in sheetWithRow (.*) and (.*)$")
 	public void provide_appName_and_platform_and_lang(String sheetName, int rowNo) {
-		newApplication.createApplication(sheetName, rowNo);
+		applicationManagePage.createApplication(sheetName, rowNo);
 	}
 
 	@Then("^Verify the Application in the list using data in sheetWithRow (.*) and (.*)$")
 	public void application_will_display_in_the_list(String sheetName, int rowNo) {
-		newApplication = new NewApplication(DriverFactory.getDriver());
-		newApplication.verifyApplication(sheetName, rowNo);
+		applicationManagePage = new ApplicationManagePage(DriverFactory.getDriver());
+		applicationManagePage.verifyApplication(sheetName, rowNo);
 	}
 
 	@Given("^User open an application from the list using data in sheetWithRow (.*) and (.*)$")
 	public void user_open_an_application_from_the_list_using_data_in_sheetwithrow_and(
 			String applicationdetailssheetname, int rowno) {
-		myApplication = new MyApplication(DriverFactory.getDriver());
-		applicationDashboard = myApplication.openApplication(applicationdetailssheetname, rowno);
+		applicationListPage = new ApplicationListPage(DriverFactory.getDriver());
+		applicationDashboard = applicationListPage.openApplication(applicationdetailssheetname, rowno);
 		String actualTitle = applicationDashboard.getApplicationDashboardTitle();
 		String expectedTitle = "Application Dashboard";
 		Assert.assertTrue(actualTitle.equals(expectedTitle));
@@ -137,14 +136,14 @@ public class stepDefinition {
 		String actualTitle = stepListPage.getStepListPageTitle();
 		String expectedTitle = "Application Steps";
 		Assert.assertTrue(actualTitle.equals(expectedTitle));
-		manageStepPage = stepListPage.clickOnCreateStepBtn();
-		stepListPage = manageStepPage.createStep(stepdetailssheetname, rowno);
+		stepManagePage = stepListPage.clickOnCreateStepBtn();
+		stepListPage = stepManagePage.createStep(stepdetailssheetname, rowno);
 	}
 
 	@Then("^Verify the Step in the list using data in sheetWithRow (.*) and (.*)$")
 	public void verify_the_step_in_the_list_using_data_in_sheetwithrow_and(String stepdetailssheetname, int rowno) {
-		manageStepPage = stepListPage.editStep(stepdetailssheetname, rowno);
-		manageStepPage.verifyStep();
+		stepManagePage = stepListPage.editStep(stepdetailssheetname, rowno);
+		stepManagePage.verifyStep();
 	}
 
 	@When("^User open an Step from the list using data in sheetWithRow (.*) and (.*)$")
@@ -299,14 +298,15 @@ public class stepDefinition {
 		validationMessageManagePage = validationMessageListPage
 				.clickOnValidationMsgEditOption(validationmessagedetailssheetname, rowno);
 		validationMessageManagePage.verifyValidationMessage();
+
 	}
 
 	@When("^User create (.*) Condition using data in sheetWithRow (.*) and (.*)$")
 	public void user_create_a_condition_using_data_in_sheetwithrow_and(int number, String conditiondetailssheetname,
 			int rowno) {
-		addConditionPage = new AddConditionPage(DriverFactory.getDriver());
+		conditionManagePage = new ConditionManagePage(DriverFactory.getDriver());
 		conditionListPage = applicationDashboard.clickOnConditionsBtnOnDashboard();
-		addConditionPage.createConditions(number, conditiondetailssheetname, rowno);
+		conditionManagePage.createConditions(number, conditiondetailssheetname, rowno);
 
 	}
 
@@ -319,11 +319,11 @@ public class stepDefinition {
 	@When("^user click on remove option of an application from the list using data in sheetWithRow (.*) and (.*)$")
 	public void user_click_on_remove_option(String applicationremovalsheetname, int rowno) {
 		try {
-			myApplication = new MyApplication(DriverFactory.getDriver());
+			applicationListPage = new ApplicationListPage(DriverFactory.getDriver());
 			ec = new Excell(prop.getProperty("TestDataPath"));
 			ArrayList<String> removalAppName = ec.getCellDataAsList("Application_Removal", "Application Name");
 			try {
-				myApplication.removeApplication(removalAppName);
+				applicationListPage.removeApplication(removalAppName);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

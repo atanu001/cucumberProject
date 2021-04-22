@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.asserts.SoftAssert;
 
 import com.app.factory.DriverFactory;
 import com.app.util.CommonUtility;
@@ -71,6 +72,8 @@ public class ManageMessagePage extends BasePage {
 	 */
 	public void verifyMessage() {
 		String actualMessageCode = txtEnterMessageCode.getAttribute("value");
+		SoftAssert softassert = new SoftAssert();
+		softassert.assertEquals(actualMessageCode, ModifiedMessageCode);
 		if (actualMessageCode.equals(ModifiedMessageCode)) {
 			Log.info("Message Code is matched " + " Expected: " + ModifiedMessageCode + " Found: " + actualMessageCode);
 		} else {
@@ -91,6 +94,7 @@ public class ManageMessagePage extends BasePage {
 		} else {
 			Log.error("Message does not matched " + " Expected: " + Message + " Found: " + actualMessage);
 		}
+		softassert.assertAll();
 	}
 
 }

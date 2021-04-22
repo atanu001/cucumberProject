@@ -13,7 +13,7 @@ public class StepListPage extends BasePage {
 		super(driver);
 	}
 
-	private CommonUtility commonUtil = new CommonUtility(DriverFactory.getDriver());
+	private CommonUtility commonUtil;
 
 	@FindBy(xpath = "//a[@id='createButton']//span[text()='New Step']")
 	public WebElement createStepBtn;
@@ -31,10 +31,10 @@ public class StepListPage extends BasePage {
 	 * 
 	 * @return the Manage Step Page
 	 */
-	public ManageStepPage clickOnCreateStepBtn() {
+	public StepManagePage clickOnCreateStepBtn() {
 		commonUtil = new CommonUtility(DriverFactory.getDriver());
 		commonUtil.onClick(createStepBtn);
-		return new ManageStepPage(driver);
+		return new StepManagePage(driver);
 
 	}
 
@@ -65,14 +65,14 @@ public class StepListPage extends BasePage {
 	 * @param rowno
 	 * @return the driver to the Manage Step Page
 	 */
-	public ManageStepPage editStep(String stepdetailssheetname, int rowno) {
+	public StepManagePage editStep(String stepdetailssheetname, int rowno) {
 		commonUtil = new CommonUtility(DriverFactory.getDriver());
 		stepName = ec.getCellData("Step_Details", "Modified Step Name", rowno);
 		commonUtil.waitForElementToVisible(stepListPageHeading);
 		commonUtil.doSearch(stepName);
 		commonUtil.onClick(btnOption);
 		commonUtil.onClick(optionEdit);
-		return new ManageStepPage(driver);
+		return new StepManagePage(driver);
 	}
 
 }

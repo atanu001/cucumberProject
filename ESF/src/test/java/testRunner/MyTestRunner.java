@@ -7,7 +7,8 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/resources/features/Application.feature", glue = { "stepDefinitions",
-		"AppHooks" }, tags = "@ValidationMessage", monochrome = true, publish = true)
+		"AppHooks" }, plugin = { "pretty",
+				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" }, tags = "@Step", monochrome = true, publish = true)
 
 public class MyTestRunner {
 

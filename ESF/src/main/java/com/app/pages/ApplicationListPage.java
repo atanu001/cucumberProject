@@ -10,9 +10,9 @@ import com.app.factory.DriverFactory;
 import com.app.util.CommonUtility;
 import com.app.util.Log;
 
-public class MyApplication extends BasePage {
+public class ApplicationListPage extends BasePage {
 
-	public MyApplication(WebDriver driver) {
+	public ApplicationListPage(WebDriver driver) {
 		super(driver);
 	}
 
@@ -38,11 +38,11 @@ public class MyApplication extends BasePage {
 	 * 
 	 * @return driver to the New Application Page
 	 */
-	public NewApplication clickOnCreateApplicationBtn() {
+	public ApplicationManagePage clickOnCreateApplicationBtn() {
 		commonUtil = new CommonUtility(DriverFactory.getDriver());
 		commonUtil.onClick(btnCreateApp);
 		Log.info("User clicked on Create Application Button");
-		return new NewApplication(driver);
+		return new ApplicationManagePage(driver);
 	}
 
 	/**
@@ -58,7 +58,6 @@ public class MyApplication extends BasePage {
 		commonUtil.doSearch(appName);
 		commonUtil.onClick(btnOption);
 		commonUtil.onClick(optionManage);
-		// Thread.sleep(2000);
 		commonUtil.waitForElementToVisible(applicationDashboard.linkStep);
 		return new ApplicationDashboard(driver);
 	}

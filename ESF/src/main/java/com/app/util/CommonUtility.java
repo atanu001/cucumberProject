@@ -1,7 +1,9 @@
 package com.app.util;
 
+import java.time.Duration;
 import java.util.Random;
 
+import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -9,7 +11,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.asserts.SoftAssert;
 
 import com.app.factory.DriverFactory;
 import com.app.pages.BasePage;
@@ -22,7 +26,8 @@ import com.app.pages.BasePage;
 public class CommonUtility {
 
 	private WebDriver driver;
-	private BasePage header = new BasePage(DriverFactory.getDriver());
+	private BasePage basePage;
+	private SoftAssert softassert;
 
 	public CommonUtility(WebDriver driver) {
 		this.driver = driver;
@@ -31,12 +36,29 @@ public class CommonUtility {
 
 	public void doSearch(String text) {
 		try {
-			header.txtSearch.sendKeys(text);
+			basePage = new BasePage(DriverFactory.getDriver());
+			basePage.txtSearch.sendKeys(text);
 			Thread.sleep(2000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 
+	}
+
+	public void softAssert(String[] actualData, String[] expectedData, SoftAssert softassert) {
+		for (int i = 0; i < expectedData.length; i++) {
+			softassert.assertEquals(actualData[i], expectedData[i]);
+		}
+	}
+
+	public String getText(WebElement element) {
+		String s1 = null;
+		if (StringUtils.isEmpty(element.getText())) {
+			s1 = element.getAttribute("value").trim();
+		} else {
+			s1 = element.getText().trim();
+		}
+		return s1;
 	}
 
 	public void refresh(WebElement element) {
@@ -71,6 +93,7 @@ public class CommonUtility {
 	}
 
 	public void onClick(WebElement loc) {
+		waitForElementToBeClickable(loc);
 		loc.click();
 	}
 
@@ -104,7 +127,8 @@ public class CommonUtility {
 
 	public void waitForElementToBeClickable(WebElement Element) {
 		try {
-			WebDriverWait wait = new WebDriverWait(DriverFactory.getDriver(), 10);
+			FluentWait<WebDriver> wait = new WebDriverWait(DriverFactory.getDriver(), 60)
+					.pollingEvery(Duration.ofSeconds(2));
 			wait.until(ExpectedConditions.elementToBeClickable(Element));
 		} catch (Exception e) {
 			try {
@@ -115,16 +139,6 @@ public class CommonUtility {
 		}
 	}
 
-	/*
-	 * public void waitForElementToInvisible(By locator) { try { WebDriverWait wait
-	 * = new WebDriverWait(DriverFactory.getDriver(), Configuration.defaultTimeOut);
-	 * wait.until(ExpectedConditions.refreshed(ExpectedConditions.
-	 * invisibilityOfElementLocated(locator))); } catch (Exception e) { try {
-	 * Thread.sleep(2000); } catch (Exception ex) { ex.printStackTrace(); } }
-	 * 
-	 * }
-	 */
-
 	/**
 	 * This method is used to wait the driver for the Element to be visible will
 	 * wait 15 s
@@ -134,7 +148,8 @@ public class CommonUtility {
 
 	public void waitForElementToVisible(WebElement element) {
 		try {
-			WebDriverWait wait = new WebDriverWait(DriverFactory.getDriver(), 15);
+			FluentWait<WebDriver> wait = new WebDriverWait(DriverFactory.getDriver(), 60)
+					.pollingEvery(Duration.ofSeconds(2));
 			wait.until(ExpectedConditions.visibilityOf(element));
 		} catch (Exception e) {
 			try {

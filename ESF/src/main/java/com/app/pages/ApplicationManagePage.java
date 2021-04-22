@@ -5,19 +5,20 @@ import java.io.IOException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.testng.asserts.SoftAssert;
 
 import com.app.factory.DriverFactory;
 import com.app.util.CommonUtility;
-import com.app.util.Log;
 
-public class NewApplication extends BasePage {
+public class ApplicationManagePage extends BasePage {
 
-	public NewApplication(WebDriver driver) {
+	public ApplicationManagePage(WebDriver driver) {
 		super(driver);
 	}
 
 	private CommonUtility commonUtil;
-	private MyApplication myApplication;
+	private ApplicationListPage applicationListPage;
+	private SoftAssert softassert = null;
 
 	@FindBy(xpath = "//h2[text()='New Application']")
 	private WebElement labelHeaderNewApplication;
@@ -65,7 +66,8 @@ public class NewApplication extends BasePage {
 		commonUtil.onClick(btnSave);
 
 		try {
-			ec.writeCellData("Application_Details", "Modified Application Name", 1, modifiedAppName);
+			ec.writeCellData("Application_Details", "Modified Application Name", rowNo, modifiedAppName);
+			ec.writeCellData("Application_Removal", "Application Name", rowNo, modifiedAppName);
 		} catch (IOException e) {
 
 			e.printStackTrace();
@@ -82,37 +84,22 @@ public class NewApplication extends BasePage {
 	 */
 	public void verifyApplication(String sheetName, int rowNo) {
 		commonUtil = new CommonUtility(DriverFactory.getDriver());
-		myApplication = new MyApplication(DriverFactory.getDriver());
-		commonUtil.waitForElementToVisible(myApplication.appListTable);
+		softassert = new SoftAssert();
+		applicationListPage = new ApplicationListPage(DriverFactory.getDriver());
+		commonUtil.waitForElementToVisible(applicationListPage.appListTable);
 		commonUtil.doSearch(modifiedAppName);
 		commonUtil.onClick(btnOption);
 		commonUtil.onClick(optionEdit);
 		commonUtil.waitForElementToVisible(labelHeaderNewApplication);
-		String actualAppName = txtApplicationName.getAttribute("value");
-		if (actualAppName.equals(modifiedAppName)) {
-			Log.info("Application Name is matched: " + "Expected: " + modifiedAppName + " Found: " + actualAppName);
-		} else {
-			Log.error(
-					"Application Name is not matched: " + "Expected: " + modifiedAppName + " Found: " + actualAppName);
-		}
+		String actualAppName = commonUtil.getText(txtApplicationName);
 		commonUtil.onClick(btnConfigAddParam);
 		commonUtil.scrollDownToBottomPage();
 		commonUtil.waitForElementToVisible(txtParameterName);
-		String actualParameterName = txtParameterName.getAttribute("value");
-		if (actualParameterName.equals(paramName)) {
-			Log.info("Parameter Name is matched for the Application: " + modifiedAppName + " Expected: " + paramName
-					+ " Found: " + actualParameterName);
-		} else {
-			Log.error("Parameter Name is not matched for the Application: " + modifiedAppName + " Expected: "
-					+ paramName + " Found: " + actualParameterName);
-		}
-		String actualParameterValue = txtParameterValue.getAttribute("value");
-		if (actualParameterValue.equals(paramValue)) {
-			Log.info("Parameter Value is matched for the Application: " + modifiedAppName + " Expected: " + paramValue
-					+ " Found: " + actualParameterValue);
-		} else {
-			Log.error("Parameter Value is not matched for the Application: " + modifiedAppName + " Expected: "
-					+ paramValue + " Found: " + actualParameterValue);
-		}
+		String actualParameterName = commonUtil.getText(txtParameterName);
+		String actualParameterValue = commonUtil.getText(txtParameterValue);
+		String[] actualData = { actualAppName, actualParameterName, actualParameterValue };
+		String[] expectedData = { modifiedAppName, paramName, paramValue };
+		commonUtil.softAssert(actualData, expectedData, softassert);
+		softassert.assertAll();
 	}
 }
