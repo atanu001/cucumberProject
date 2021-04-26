@@ -35,4 +35,24 @@ public class ConditionListPage extends BasePage {
 		commonUtil.waitForElementToVisible(conditionManagePage.labelHeaderconditionManagePage);
 		return new ConditionManagePage(driver);
 	}
+
+	/**
+	 * This method will click on edit option of a Condition
+	 * 
+	 * @param rowno
+	 * @param conditiondetailssheetname
+	 * 
+	 * @return Manage Condition Page
+	 */
+	public ConditionManagePage clickOnEditConditionOption(String conditiondetailssheetname, int rowno) {
+		commonUtil = new CommonUtility(DriverFactory.getDriver());
+		conditionManagePage = new ConditionManagePage(DriverFactory.getDriver());
+		commonUtil.waitForElementToVisible(labelHeaderConditionListPage);
+		String ConditionName = ec.getCellData("Condition_Details", "Modified Condition Name", rowno);
+		commonUtil.doSearch(ConditionName);
+		commonUtil.onClick(btnOption);
+		commonUtil.onClick(optionEdit);
+		commonUtil.waitForElementToVisible(conditionManagePage.labelHeaderconditionManagePage);
+		return new ConditionManagePage(driver);
+	}
 }

@@ -92,8 +92,8 @@ Then Verify the Message in the list using data in sheetWithRow <Message Details 
 
 Examples:
       |Application Sheet Name|Row No|Message Details Sheet Name|
-#      |Application_Details   |0     |Message_Details           |
-      |Application_Details   |1     |Message_Details           |
+      |Application_Details   |0     |Message_Details           |
+#      |Application_Details   |1     |Message_Details           |
  
 
 @Workflow @create
@@ -129,8 +129,8 @@ Then Verify the Validation Message in the list using data in sheetWithRow <Valid
 
 Examples:
       |Application Sheet Name|Row No|Validation Message Details Sheet Name|No of Validation Message|
-#      |Application_Details   |0     |Validation_Message_Details           |1                       |
-      |Application_Details   |1     |Validation_Message_Details           |1                       |
+      |Application_Details   |0     |Validation_Message_Details           |1                       |
+#      |Application_Details   |1     |Validation_Message_Details           |1                       |
 
       
 @Condition @create
@@ -138,7 +138,7 @@ Scenario Outline: Create a Condition in the application
 
 Given User open an application from the list using data in sheetWithRow <Application Details Sheet Name> and <Row No>
 When User create <No of Condition> Condition using data in sheetWithRow <Condition Details Sheet Name> and <Row No>
-#Then Verify the Condition in the list using data in sheetWithRow <Condition Details Sheet Name> and <Row No>
+Then Verify the Condition in the list using data in sheetWithRow <Condition Details Sheet Name> and <Row No>
 
 Examples:
       |Application Sheet Name|Row No|Condition Details Sheet Name|No of Condition|

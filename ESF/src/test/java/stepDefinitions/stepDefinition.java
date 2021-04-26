@@ -306,13 +306,16 @@ public class stepDefinition {
 			int rowno) {
 		conditionManagePage = new ConditionManagePage(DriverFactory.getDriver());
 		conditionListPage = applicationDashboard.clickOnConditionsBtnOnDashboard();
-		conditionManagePage.createConditions(number, conditiondetailssheetname, rowno);
+		conditionManagePage = conditionListPage.clickOnAddNewConditionBtn();
+		conditionListPage = conditionManagePage.createCondition(number, conditiondetailssheetname, rowno);
 
 	}
 
 	@Then("^Verify the Condition in the list using data in sheetWithRow (.*) and (.*)$")
 	public void verify_the_condition_in_the_list_using_data_in_sheetwithrow_and(String conditiondetailssheetname,
 			int rowno) {
+		conditionManagePage = conditionListPage.clickOnEditConditionOption(conditiondetailssheetname, rowno);
+		conditionManagePage.verifyCondition();
 
 	}
 
