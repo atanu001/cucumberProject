@@ -17,16 +17,18 @@ import com.app.pages.BlockFieldListPage;
 import com.app.pages.BlockListPage;
 import com.app.pages.ConditionListPage;
 import com.app.pages.ConditionManagePage;
+import com.app.pages.EventListPage;
+import com.app.pages.EventManagePage;
 import com.app.pages.LoginPage;
 import com.app.pages.ManageBlockPage;
 import com.app.pages.ManageFieldPage;
 import com.app.pages.ManageMessagePage;
-import com.app.pages.ManageSectionPage;
 import com.app.pages.ManageWorkflowPage;
 import com.app.pages.MessageListPage;
 import com.app.pages.ModalListPage;
 import com.app.pages.ModalManagePage;
 import com.app.pages.SectionListPage;
+import com.app.pages.SectionManagePage;
 import com.app.pages.StepFieldListPage;
 import com.app.pages.StepListPage;
 import com.app.pages.StepManagePage;
@@ -56,7 +58,7 @@ public class stepDefinition {
 	private StepManagePage stepManagePage;
 	private BasePage base;
 	private SectionListPage sectionListPage;
-	private ManageSectionPage manageSectionPage;
+	private SectionManagePage sectionManagePage;
 	private StepFieldListPage stepFieldListPage;
 	private ManageFieldPage manageFieldPage;
 	private ConditionListPage conditionListPage;
@@ -72,6 +74,8 @@ public class stepDefinition {
 	private ModalManagePage modalManagePage;
 	private ValidationMessageListPage validationMessageListPage;
 	private ValidationMessageManagePage validationMessageManagePage;
+	private EventListPage eventListPage;
+	private EventManagePage eventManagePage;
 
 	// private String removalAppName = null;
 
@@ -124,19 +128,19 @@ public class stepDefinition {
 			String applicationdetailssheetname, int rowno) {
 		applicationListPage = new ApplicationListPage(DriverFactory.getDriver());
 		applicationDashboard = applicationListPage.openApplication(applicationdetailssheetname, rowno);
-		String actualTitle = applicationDashboard.getApplicationDashboardTitle();
-		String expectedTitle = "Application Dashboard";
-		Assert.assertTrue(actualTitle.equals(expectedTitle));
+//		String actualTitle = applicationDashboard.getApplicationDashboardTitle();
+//		String expectedTitle = "Application Dashboard";
+//		Assert.assertTrue(actualTitle.equals(expectedTitle));
 
 	}
 
 	@When("^User create a Step using data in sheetWithRow (.*) and (.*)$")
 	public void user_create_a_step_using_data_in_sheetwithrow_and(String stepdetailssheetname, int rowno) {
 		stepListPage = applicationDashboard.clickOnStepButtonOnDashboard();
-		String actualTitle = stepListPage.getStepListPageTitle();
-		String expectedTitle = "Application Steps";
-		Assert.assertTrue(actualTitle.equals(expectedTitle));
-		stepManagePage = stepListPage.clickOnCreateStepBtn();
+//		String actualTitle = stepListPage.getStepListPageTitle();
+//		String expectedTitle = "Application Steps";
+//		Assert.assertTrue(actualTitle.equals(expectedTitle));
+		stepManagePage = stepListPage.clickOnAddStepBtn();
 		stepListPage = stepManagePage.createStep(stepdetailssheetname, rowno);
 	}
 
@@ -150,29 +154,29 @@ public class stepDefinition {
 	public void user_open_an_step_from_the_list_using_data_in_sheetwithrow_and(String stepdetailssheetname, int rowno) {
 		stepListPage = applicationDashboard.clickOnStepButtonOnDashboard();
 		sectionListPage = stepListPage.openStep(stepdetailssheetname, rowno);
-		if (sectionListPage.getSectionListPageTitle().equals("Application Sections")) {
-			Log.info("Section List page is displaying with title: " + sectionListPage.getSectionListPageTitle());
-		} else {
-			Log.error("Section List page is not displaying with title:");
-		}
+//		if (sectionListPage.getSectionListPageTitle().equals("Application Sections")) {
+//			Log.info("Section List page is displaying with title: " + sectionListPage.getSectionListPageTitle());
+//		} else {
+//			Log.error("Section List page is not displaying with title:");
+//		}
 	}
 
 	@And("^User create a Section using data in sheetWithRow (.*) and (.*)$")
 	public void user_create_a_section_using_data_in_sheetwithrow_and(String sectiondetailssheetname, int rowno) {
-		manageSectionPage = sectionListPage.clickOnCreateSectionBtn();
-		if (manageSectionPage.labelHeaderManageSection().equals("Manage Section")) {
-			Log.info("User is on Manage Section Page: ");
-		} else {
-			Log.error("User is not on Manage Section Page: ");
-		}
-		sectionListPage = manageSectionPage.createSection(sectiondetailssheetname, rowno);
+		sectionManagePage = sectionListPage.clickOnCreateSectionBtn();
+//		if (manageSectionPage.labelHeaderManageSection().equals("Manage Section")) {
+//			Log.info("User is on Manage Section Page: ");
+//		} else {
+//			Log.error("User is not on Manage Section Page: ");
+//		}
+		sectionListPage = sectionManagePage.createSection(sectiondetailssheetname, rowno);
 	}
 
 	@Then("^Verify the Section in the list using data in sheetWithRow (.*) and (.*)$")
 	public void verify_the_section_in_the_list_using_data_in_sheetwithrow_and(String sectiondetailssheetname,
 			int rowno) {
-		manageSectionPage = sectionListPage.editSection(sectiondetailssheetname, rowno);
-		manageSectionPage.verifySection();
+		sectionManagePage = sectionListPage.editSection(sectiondetailssheetname, rowno);
+		sectionManagePage.verifySection();
 	}
 
 	@And("^User open an Section from the list using data in sheetWithRow (.*) and (.*)$")
@@ -317,6 +321,19 @@ public class stepDefinition {
 		conditionManagePage = conditionListPage.clickOnEditConditionOption(conditiondetailssheetname, rowno);
 		conditionManagePage.verifyCondition();
 
+	}
+
+	@When("^User create Event using data in sheetWithRow (.+) and (.+)$")
+	public void user_create_event_using_data_in_sheetwithrow_and(String eventdetailssheetname, int rowno) {
+		eventListPage = applicationDashboard.clickOnEventsBtnOnDashboard();
+		eventManagePage = eventListPage.clickOnAddNewEventBtn();
+		eventListPage = eventManagePage.createEvents(eventdetailssheetname, rowno);
+	}
+
+	@Then("^Verify the Event in the list using data in sheetWithRow (.+) and (.+)$")
+	public void verify_the_event_in_the_list_using_data_in_sheetwithrow_and(String eventdetailssheetname, int rowno) {
+		eventManagePage = eventListPage.clickOnEditEventOption(eventdetailssheetname, rowno);
+		eventManagePage.verifyEvent();
 	}
 
 	@When("^user click on remove option of an application from the list using data in sheetWithRow (.*) and (.*)$")

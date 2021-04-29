@@ -35,6 +35,8 @@ public class DriverFactory {
 		}
 
 		getDriver().manage().deleteAllCookies();
+//		getDriver().get("chrome://settings/clearBrowserData");
+//		getDriver().findElement(By.xpath("//settings-ui")).sendKeys(Keys.ENTER);
 		getDriver().manage().window().maximize();
 		return getDriver();
 

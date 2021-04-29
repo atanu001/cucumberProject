@@ -21,6 +21,7 @@ public class ApplicationDashboard extends BasePage {
 	private WorkflowListPage workflowListPage;
 	private ModalListPage modalListPage;
 	private ValidationMessageListPage validationMessageListPage;
+	private EventListPage eventListPage;
 
 	@FindBy(xpath = "//div[@class='row col-lg-12 p-3']//h6[text()='Steps']")
 	public WebElement linkStep;
@@ -42,6 +43,9 @@ public class ApplicationDashboard extends BasePage {
 
 	@FindBy(xpath = "//div[@class='row col-lg-12 p-3']//h6[text()='Conditions']")
 	public WebElement linkConditions;
+
+	@FindBy(xpath = "//div[@class='row col-lg-12 p-3']//h6[text()='Events']")
+	public WebElement linkEvents;
 
 	public String getApplicationDashboardTitle() {
 		return driver.getTitle();
@@ -142,4 +146,16 @@ public class ApplicationDashboard extends BasePage {
 		return new ConditionListPage(driver);
 	}
 
+	/**
+	 * This method is used to click on Event link on the Dashboard
+	 * 
+	 * @return the Event List Page
+	 */
+	public EventListPage clickOnEventsBtnOnDashboard() {
+		commonUtil = new CommonUtility(DriverFactory.getDriver());
+		eventListPage = new EventListPage(DriverFactory.getDriver());
+		commonUtil.onClick(linkEvents);
+		commonUtil.waitForElementToVisible(eventListPage.labelHeaderEventListPage);
+		return new EventListPage(driver);
+	}
 }

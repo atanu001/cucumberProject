@@ -61,6 +61,10 @@ public class CommonUtility {
 		return s1;
 	}
 
+	public WebElement searchDropdown(String locator, String text) {
+		return driver.findElement(By.xpath(String.format(locator, text)));
+	}
+
 	public void refresh(WebElement element) {
 		element.sendKeys(Keys.F5);
 	}

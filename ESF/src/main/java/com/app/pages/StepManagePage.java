@@ -38,6 +38,20 @@ public class StepManagePage extends BasePage {
 	@FindBy(xpath = "//label[text()='Is this step conditional?']//preceding-sibling::input[@id='conditional']")
 	private WebElement chkboxConditional;
 
+	@FindBy(xpath = "//button[@data-id='displayCondition']")
+	private WebElement drpdwnStepCondition;
+
+	@FindBy(xpath = "//input[@aria-controls='bs-select-1']")
+	private WebElement SearchStepCondition;
+
+	@FindBy(xpath = "//button[@data-id='eventList']")
+	private WebElement drpdwnStepEvent;
+
+	@FindBy(xpath = "//input[@aria-controls='bs-select-2']")
+	private WebElement SearchStepEvent;
+
+	String searchDrpdwnSelect = "//span[contains(text(),'%s')]";
+
 	private static String stepName = null;
 	private static String stepApiUrlName = null;
 	private static String bootstrapClassName = null;
@@ -47,6 +61,8 @@ public class StepManagePage extends BasePage {
 	private static String device_Type = null;
 	private static String templateId = null;
 	private static String modifiedStepName = null;
+	private static String StepCondition = null;
+	private static String StepEvent = null;
 
 	/**
 	 * This method will create a step with the data from Excel Sheet
@@ -58,6 +74,8 @@ public class StepManagePage extends BasePage {
 		commonUtil = new CommonUtility(DriverFactory.getDriver());
 		stepName = ec.getCellData("Step_Details", "Application Step Name", rowno);
 		stepApiUrlName = ec.getCellData("Step_Details", "Step API URL", rowno);
+		StepCondition = ec.getCellData("Step_Details", "Step Condition", rowno);
+		StepEvent = ec.getCellData("Step_Details", "Step Event", rowno);
 		bootstrapClassName = ec.getCellData("Step_Details", "Bootstrap Class Name", rowno);
 		customClassName = ec.getCellData("Step_Details", "Custom Class Name", rowno);
 		parameterName = ec.getCellData("Step_Details", "Parameter Name", rowno);
@@ -77,6 +95,15 @@ public class StepManagePage extends BasePage {
 		commonUtil.typeIn(locator1, testDate1);
 		commonUtil.onClick(chkboxDisplayAsModal);
 		commonUtil.onClick(chkboxDismissModal);
+		commonUtil.onClick(chkboxConditional);
+		// select step condition
+		commonUtil.onClick(drpdwnStepCondition);
+		drpdwnStepCondition.sendKeys(StepCondition);
+		commonUtil.onClick(commonUtil.searchDropdown(searchDrpdwnSelect, StepCondition));
+		// select step event
+		commonUtil.onClick(drpdwnStepEvent);
+		drpdwnStepEvent.sendKeys(StepEvent);
+		commonUtil.onClick(commonUtil.searchDropdown(searchDrpdwnSelect, StepEvent));
 		commonUtil.onClick(btnConfigAddParam);
 		commonUtil.waitForElementToVisible(txtParameterName);
 		String[] testDate2 = { parameterName, parameterValue };
@@ -107,9 +134,11 @@ public class StepManagePage extends BasePage {
 		String actualStepApiUrl = commonUtil.getText(stepApiUrl);
 		softassert.assertTrue(chkboxDisplayAsModal.isSelected());
 		softassert.assertTrue(chkboxDismissModal.isSelected());
-		softassert.assertTrue(!chkboxConditional.isSelected());
+		softassert.assertTrue(chkboxConditional.isSelected());
 		String actualBootstrapClassName = commonUtil.getText(txtBootstrapClassName);
 		String actualCustomClassName = commonUtil.getText(txtCustomClassName);
+		String actualStepCondition = commonUtil.getText(drpdwnStepCondition);
+		String actualStepEvent = commonUtil.getText(drpdwnStepEvent);
 		String actualParameterName = commonUtil.getText(txtParameterName);
 		String actualParameterValue = commonUtil.getText(txtParameterValue);
 		Select selectDeviceType = new Select(drpdwnDeviceType);
@@ -119,9 +148,10 @@ public class StepManagePage extends BasePage {
 		WebElement eleTemplateId = selectTemplateId.getFirstSelectedOption();
 		String actualTemplateId = commonUtil.getText(eleTemplateId);
 		String[] actualData = { actualStepName, actualStepApiUrl, actualBootstrapClassName, actualCustomClassName,
-				actualParameterName, actualParameterValue, actualDeviceType, actualTemplateId };
-		String[] expectedData = { modifiedStepName, stepApiUrlName, bootstrapClassName, customClassName, parameterName,
-				parameterValue, device_Type, templateId };
+				actualStepCondition, actualStepEvent, actualParameterName, actualParameterValue, actualDeviceType,
+				actualTemplateId };
+		String[] expectedData = { modifiedStepName, stepApiUrlName, bootstrapClassName, customClassName, StepCondition,
+				StepEvent, parameterName, parameterValue, device_Type, templateId };
 		commonUtil.softAssert(actualData, expectedData, softassert);
 		softassert.assertAll();
 	}

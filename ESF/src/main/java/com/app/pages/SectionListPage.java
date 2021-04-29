@@ -14,6 +14,7 @@ public class SectionListPage extends BasePage {
 	}
 
 	private CommonUtility commonUtil;
+	private SectionManagePage sectionManagePage;
 
 	@FindBy(xpath = "//span[text()='Application Sections']")
 	public WebElement labelHeaderSectionListPage;
@@ -32,10 +33,12 @@ public class SectionListPage extends BasePage {
 	 * 
 	 * @return the driver to the Manage Section Page
 	 */
-	public ManageSectionPage clickOnCreateSectionBtn() {
+	public SectionManagePage clickOnCreateSectionBtn() {
 		commonUtil = new CommonUtility(DriverFactory.getDriver());
+		sectionManagePage = new SectionManagePage(DriverFactory.getDriver());
 		commonUtil.onClick(btnCreateSection);
-		return new ManageSectionPage(driver);
+		commonUtil.waitForElementToVisible(sectionManagePage.labelHeaderManageSectionPage);
+		return new SectionManagePage(driver);
 	}
 
 	/**
@@ -63,13 +66,13 @@ public class SectionListPage extends BasePage {
 	 * @param rowno
 	 * @return the Manage Section Page
 	 */
-	public ManageSectionPage editSection(String sectiondetailssheetname, int rowno) {
+	public SectionManagePage editSection(String sectiondetailssheetname, int rowno) {
 		commonUtil = new CommonUtility(DriverFactory.getDriver());
 		sectionName = ec.getCellData("Section_Details", "Modified Section Name", rowno);
 		commonUtil.waitForElementToVisible(labelHeaderSectionListPage);
 		commonUtil.doSearch(sectionName);
 		commonUtil.onClick(btnOption);
 		commonUtil.onClick(optionEdit);
-		return new ManageSectionPage(driver);
+		return new SectionManagePage(driver);
 	}
 }

@@ -3,8 +3,8 @@ Feature: Test feature
 Background: 
 Given User has logged into the Portal
 |Email                    |Password|Title       |
-|portaluser0002@inadev.net|123456  |CEEBIT Login|
-#|sofikul@gmail.com        |sofikul |CEEBIT Login|
+#|portaluser0002@inadev.net|123456  |CEEBIT Login|
+|sofikul@gmail.com        |sofikul |CEEBIT Login|
 
 
 
@@ -126,8 +126,7 @@ Scenario Outline: Create a Validation Message in the application
 Given User open an application from the list using data in sheetWithRow <Application Details Sheet Name> and <Row No>
 When User create <No of Validation Message> Validation Message using data in sheetWithRow <Validation Message Details Sheet Name> and <Row No>
 Then Verify the Validation Message in the list using data in sheetWithRow <Validation Message Details Sheet Name> and <Row No>
-
-Examples:
+    Examples:
       |Application Sheet Name|Row No|Validation Message Details Sheet Name|No of Validation Message|
       |Application_Details   |0     |Validation_Message_Details           |1                       |
 #      |Application_Details   |1     |Validation_Message_Details           |1                       |
@@ -144,7 +143,20 @@ Examples:
       |Application Sheet Name|Row No|Condition Details Sheet Name|No of Condition|
       |Application_Details   |0     |Condition_Details           |1            |
      # |Application_Details   |1     |Condition_Details           |1            |
-      
+ 
+ 
+@Event @create
+Scenario Outline: Create a Condition in the application
+
+Given User open an application from the list using data in sheetWithRow <Application Details Sheet Name> and <Row No>
+When User create Event using data in sheetWithRow <Event Details Sheet Name> and <Row No>
+Then Verify the Event in the list using data in sheetWithRow <Event Details Sheet Name> and <Row No>
+
+Examples:
+      |Application Sheet Name|Row No|Event Details Sheet Name|
+      |Application_Details   |0     |Event_Details           |
+      #|Application_Details   |1     |Event_Details           |
+      #|Application_Details   |2     |Event_Details           | 
    
 
 @ApplicationRemove

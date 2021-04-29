@@ -14,6 +14,7 @@ public class StepListPage extends BasePage {
 	}
 
 	private CommonUtility commonUtil;
+	private StepManagePage stepManagePage;
 
 	@FindBy(xpath = "//a[@id='createButton']//span[text()='New Step']")
 	public WebElement createStepBtn;
@@ -31,9 +32,11 @@ public class StepListPage extends BasePage {
 	 * 
 	 * @return the Manage Step Page
 	 */
-	public StepManagePage clickOnCreateStepBtn() {
+	public StepManagePage clickOnAddStepBtn() {
 		commonUtil = new CommonUtility(DriverFactory.getDriver());
+		stepManagePage = new StepManagePage(DriverFactory.getDriver());
 		commonUtil.onClick(createStepBtn);
+		commonUtil.waitForElementToVisible(stepManagePage.labelHeaderManageStepPage);
 		return new StepManagePage(driver);
 
 	}
