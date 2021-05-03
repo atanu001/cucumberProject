@@ -192,6 +192,9 @@ public class FieldManagePage extends BasePage {
 	@FindBy(xpath = "//input[@id='valueStepFieldValue_0']")
 	private WebElement txtValueStepFieldfValue;
 
+	@FindBy(xpath = "//input[@id='validationRegex']")
+	private WebElement txtValidationRegex;
+
 	private static String UniqueId = null;
 	private static String FieldLabel = null;
 	private static String FieldType = null;
@@ -543,6 +546,11 @@ public class FieldManagePage extends BasePage {
 		}
 		String actualValidationMessageName = "";
 		commonUtil.onClick(expandValidation);
+		if (!commonUtil.getText(txtValidationRegex).isEmpty()) {
+			softassert.assertTrue(true);
+		} else {
+			softassert.assertTrue(false);
+		}
 		if (!ValidationMessageName.isEmpty()) {
 			actualValidationMessageName = commonUtil.getText(drpdwnValidationMessage);
 		}

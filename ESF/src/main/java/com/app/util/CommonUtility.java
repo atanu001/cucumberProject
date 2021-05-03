@@ -56,7 +56,7 @@ public class CommonUtility {
 	public String getText(WebElement element) {
 		String s1 = null;
 		waitForElementToVisible(element);
-		if (StringUtils.isEmpty(element.getText())) {
+		if (StringUtils.isEmpty(element.getText().trim())) {
 			s1 = element.getAttribute("value").trim();
 		} else {
 			s1 = element.getText().trim();
@@ -77,7 +77,7 @@ public class CommonUtility {
 			WebDriverWait wait = new WebDriverWait(DriverFactory.getDriver(), 20);
 			wait.until(ExpectedConditions.refreshed(ExpectedConditions.stalenessOf(Element)));
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
 		}
 	}
 
