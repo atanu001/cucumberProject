@@ -19,9 +19,9 @@ import com.app.pages.ConditionListPage;
 import com.app.pages.ConditionManagePage;
 import com.app.pages.EventListPage;
 import com.app.pages.EventManagePage;
+import com.app.pages.FieldManagePage;
 import com.app.pages.LoginPage;
 import com.app.pages.ManageBlockPage;
-import com.app.pages.ManageFieldPage;
 import com.app.pages.ManageMessagePage;
 import com.app.pages.ManageWorkflowPage;
 import com.app.pages.MessageListPage;
@@ -37,7 +37,6 @@ import com.app.pages.ValidationMessageManagePage;
 import com.app.pages.WorkflowListPage;
 import com.app.util.ConfigReader;
 import com.app.util.Excell;
-import com.app.util.Log;
 
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
@@ -60,7 +59,7 @@ public class stepDefinition {
 	private SectionListPage sectionListPage;
 	private SectionManagePage sectionManagePage;
 	private StepFieldListPage stepFieldListPage;
-	private ManageFieldPage manageFieldPage;
+	private FieldManagePage fieldManagePage;
 	private ConditionListPage conditionListPage;
 	private ConditionManagePage conditionManagePage;
 	private BlockListPage blockListPage;
@@ -153,7 +152,7 @@ public class stepDefinition {
 	@When("^User open an Step from the list using data in sheetWithRow (.*) and (.*)$")
 	public void user_open_an_step_from_the_list_using_data_in_sheetwithrow_and(String stepdetailssheetname, int rowno) {
 		stepListPage = applicationDashboard.clickOnStepButtonOnDashboard();
-		sectionListPage = stepListPage.openStep(stepdetailssheetname, rowno);
+		sectionListPage = stepListPage.clickOnManageSectionOption(stepdetailssheetname, rowno);
 //		if (sectionListPage.getSectionListPageTitle().equals("Application Sections")) {
 //			Log.info("Section List page is displaying with title: " + sectionListPage.getSectionListPageTitle());
 //		} else {
@@ -175,34 +174,34 @@ public class stepDefinition {
 	@Then("^Verify the Section in the list using data in sheetWithRow (.*) and (.*)$")
 	public void verify_the_section_in_the_list_using_data_in_sheetwithrow_and(String sectiondetailssheetname,
 			int rowno) {
-		sectionManagePage = sectionListPage.editSection(sectiondetailssheetname, rowno);
+		sectionManagePage = sectionListPage.clickOnEditSectionoption(sectiondetailssheetname, rowno);
 		sectionManagePage.verifySection();
 	}
 
 	@And("^User open an Section from the list using data in sheetWithRow (.*) and (.*)$")
 	public void user_open_an_section_from_the_list_using_data_in_sheetwithrow_and(String sectiondetailssheetname,
 			int rowno) {
-		stepFieldListPage = sectionListPage.openSection(sectiondetailssheetname, rowno);
-		if (stepFieldListPage.labelHeaderFieldListPage().equals("Application Step Fields")) {
-			Log.info("User is on Step Field List page :");
-		} else {
-			Log.error("User is not on Step Field List page :");
-		}
+		stepFieldListPage = sectionListPage.clickOnManageSectionOption(sectiondetailssheetname, rowno);
+//		if (stepFieldListPage.labelHeaderFieldListPage().equals("Application Step Fields")) {
+//			Log.info("User is on Step Field List page :");
+//		} else {
+//			Log.error("User is not on Step Field List page :");
+//		}
 
 	}
 
 	@And("^User create a Step Field using data in sheetWithRow (.*) and (.*)$")
 	public void user_create_a_field_using_data_in_sheetwithrow_and(String fielddetailssheetname, int rowno) {
-		manageFieldPage = stepFieldListPage.clickOnCreateNewFieldBtn();
-		manageFieldPage.createField(fielddetailssheetname, rowno);
+		fieldManagePage = stepFieldListPage.clickOnCreateNewFieldBtn();
+		fieldManagePage.createField(fielddetailssheetname, rowno);
 
 	}
 
 	@Then("^Verify the Step Field in the list using data in sheetWithRow (.*) and (.*)$")
 	public void verify_the_field_in_the_list_using_data_in_sheetwithrow_and(String fielddetailssheetname, int rowno) {
-		manageFieldPage = new ManageFieldPage(DriverFactory.getDriver());
-		manageFieldPage = stepFieldListPage.editField(fielddetailssheetname, rowno);
-		manageFieldPage.verifyField();
+		fieldManagePage = new FieldManagePage(DriverFactory.getDriver());
+		fieldManagePage = stepFieldListPage.editField(fielddetailssheetname, rowno);
+		fieldManagePage.verifyField();
 	}
 
 	@When("^User create a Block using data in sheetWithRow (.*) and (.*)$")
@@ -230,16 +229,16 @@ public class stepDefinition {
 
 	@And("^User create a Block Field using data in sheetWithRow (.*) and (.*)$")
 	public void user_create_a_block_field_using_data_in_sheetwithrow_and(String fielddetailssheetname, int rowno) {
-		manageFieldPage = blockFieldListPage.clickOnAddNewBlockFieldBtn();
-		manageFieldPage.createField(fielddetailssheetname, rowno);
+		fieldManagePage = blockFieldListPage.clickOnAddNewBlockFieldBtn();
+		fieldManagePage.createField(fielddetailssheetname, rowno);
 	}
 
 	@Then("^Verify the Block Field in the list using data in sheetWithRow (.*) and (.*)$")
 	public void verify_the_block_field_in_the_list_using_data_in_sheetwithrow_and(String fielddetailssheetname,
 			int rowno) {
 		blockFieldListPage = new BlockFieldListPage(DriverFactory.getDriver());
-		manageFieldPage = blockFieldListPage.clickOnBlockFieldEdit(fielddetailssheetname, rowno);
-		manageFieldPage.verifyField();
+		fieldManagePage = blockFieldListPage.clickOnBlockFieldEdit(fielddetailssheetname, rowno);
+		fieldManagePage.verifyField();
 
 	}
 

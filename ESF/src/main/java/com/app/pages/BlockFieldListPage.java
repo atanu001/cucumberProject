@@ -19,7 +19,7 @@ public class BlockFieldListPage extends BasePage {
 	}
 
 	private CommonUtility commonUtil;
-	private ManageFieldPage manageFieldPage;
+	private FieldManagePage fieldManagePage;
 	private Excell ec;
 	private Properties prop;
 	private ConfigReader configReader = new ConfigReader();
@@ -38,15 +38,15 @@ public class BlockFieldListPage extends BasePage {
 	 * 
 	 * @return the Manage Field Page
 	 */
-	public ManageFieldPage clickOnAddNewBlockFieldBtn() {
+	public FieldManagePage clickOnAddNewBlockFieldBtn() {
 		commonUtil = new CommonUtility(DriverFactory.getDriver());
-		manageFieldPage = new ManageFieldPage(DriverFactory.getDriver());
+		fieldManagePage = new FieldManagePage(DriverFactory.getDriver());
 		commonUtil.onClick(btnAddNewBlockField);
-		commonUtil.waitForElementToVisible(manageFieldPage.txtlabelHeaderManageField);
-		return new ManageFieldPage(driver);
+		commonUtil.waitForElementToVisible(fieldManagePage.txtlabelHeaderManageField);
+		return new FieldManagePage(driver);
 	}
 
-	public ManageFieldPage clickOnBlockFieldEdit(String fielddetailssheetname, int rowno) {
+	public FieldManagePage clickOnBlockFieldEdit(String fielddetailssheetname, int rowno) {
 		commonUtil = new CommonUtility(DriverFactory.getDriver());
 		prop = configReader.init_prop();
 		try {
@@ -59,7 +59,7 @@ public class BlockFieldListPage extends BasePage {
 		commonUtil.doSearch(FieldUniqId);
 		commonUtil.onClick(btnOption);
 		commonUtil.onClick(optionEdit);
-		return new ManageFieldPage(driver);
+		return new FieldManagePage(driver);
 	}
 
 }

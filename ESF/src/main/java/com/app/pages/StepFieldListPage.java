@@ -19,7 +19,7 @@ public class StepFieldListPage extends BasePage {
 	}
 
 	private CommonUtility commonUtil;
-	private ManageFieldPage manageFieldPage;
+	private FieldManagePage fieldManagePage;
 	private Excell ec;
 	private Properties prop;
 	private ConfigReader configReader = new ConfigReader();
@@ -46,15 +46,15 @@ public class StepFieldListPage extends BasePage {
 	 * 
 	 * @return the driver Manage Field Page
 	 */
-	public ManageFieldPage clickOnCreateNewFieldBtn() {
+	public FieldManagePage clickOnCreateNewFieldBtn() {
 		commonUtil = new CommonUtility(DriverFactory.getDriver());
-		manageFieldPage = new ManageFieldPage(DriverFactory.getDriver());
+		fieldManagePage = new FieldManagePage(DriverFactory.getDriver());
 		commonUtil.onClick(btnCreateNewField);
-		commonUtil.waitForElementToVisible(manageFieldPage.txtlabelHeaderManageField);
-		return new ManageFieldPage(driver);
+		commonUtil.waitForElementToVisible(fieldManagePage.txtlabelHeaderManageField);
+		return new FieldManagePage(driver);
 	}
 
-	public ManageFieldPage editField(String fielddetailssheetname, int rowno) {
+	public FieldManagePage editField(String fielddetailssheetname, int rowno) {
 		commonUtil = new CommonUtility(DriverFactory.getDriver());
 		prop = configReader.init_prop();
 		try {
@@ -67,7 +67,7 @@ public class StepFieldListPage extends BasePage {
 		commonUtil.doSearch(UniqId);
 		commonUtil.onClick(btnOption);
 		commonUtil.onClick(optionEdit);
-		return new ManageFieldPage(driver);
+		return new FieldManagePage(driver);
 	}
 
 }

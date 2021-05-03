@@ -29,6 +29,7 @@ Then Verify the Step in the list using data in sheetWithRow <Step Details Sheet 
 Examples:
       |Application Sheet Name|Row No|Step Details Sheet Name|
       |Application_Details   |0     |Step_Details           |
+      |Application_Details   |1     |Step_Details           |
 
 @Section @create   
 Scenario Outline: Create a Section in a Step of an Application
@@ -40,7 +41,8 @@ Then Verify the Section in the list using data in sheetWithRow <Section Details 
 
 Examples:
       |Application Details Sheet Name|Row No|Step Details Sheet Name|Section Details Sheet Name|
-      |Application_Details           |0     |Step_Details           |Section_Details           |
+#      |Application_Details           |0     |Step_Details           |Section_Details           |
+      |Application_Details           |1     |Step_Details           |Section_Details           |
 
 
 @StepField @create  
@@ -54,7 +56,10 @@ Then Verify the Step Field in the list using data in sheetWithRow <Field Details
 
 Examples:
       |Application Details Sheet Name|Row No|Step Details Sheet Name|Section Details Sheet Name|Field Details Sheet Name|
-      |Application_Details           |0     |Step_Details           |Section_Details           |Field_Details           |  
+      |Application_Details           |0     |Step_Details           |Section_Details           |Field_Details           |
+     # |Application_Details           |1     |Step_Details           |Section_Details           |Field_Details           |
+      #|Application_Details           |2     |Step_Details           |Section_Details           |Field_Details           |
+      
       
       
 @Block @create     
@@ -155,8 +160,8 @@ Then Verify the Event in the list using data in sheetWithRow <Event Details Shee
 Examples:
       |Application Sheet Name|Row No|Event Details Sheet Name|
       |Application_Details   |0     |Event_Details           |
-      #|Application_Details   |1     |Event_Details           |
-      #|Application_Details   |2     |Event_Details           | 
+      |Application_Details   |1     |Event_Details           |
+      |Application_Details   |2     |Event_Details           | 
    
 
 @ApplicationRemove

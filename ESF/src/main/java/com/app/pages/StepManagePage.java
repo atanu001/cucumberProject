@@ -86,7 +86,7 @@ public class StepManagePage extends BasePage {
 		modifiedStepName = stepName + "_" + randomNum;
 		try {
 			ec.writeCellData("Step_Details", "Modified Step Name", rowno, modifiedStepName);
-			ec.writeCellData("Workflow_Details", "Step Name", rowno, modifiedStepName);
+			// ec.writeCellData("Workflow_Details", "Step Name", rowno, modifiedStepName);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -95,15 +95,19 @@ public class StepManagePage extends BasePage {
 		commonUtil.typeIn(locator1, testDate1);
 		commonUtil.onClick(chkboxDisplayAsModal);
 		commonUtil.onClick(chkboxDismissModal);
-		commonUtil.onClick(chkboxConditional);
 		// select step condition
-		commonUtil.onClick(drpdwnStepCondition);
-		drpdwnStepCondition.sendKeys(StepCondition);
-		commonUtil.onClick(commonUtil.searchDropdown(searchDrpdwnSelect, StepCondition));
+		if (!StepCondition.isEmpty()) {
+			commonUtil.onClick(chkboxConditional);
+			commonUtil.onClick(drpdwnStepCondition);
+			drpdwnStepCondition.sendKeys(StepCondition);
+			commonUtil.onClick(commonUtil.searchDropdown(searchDrpdwnSelect, StepCondition));
+		}
 		// select step event
-		commonUtil.onClick(drpdwnStepEvent);
-		drpdwnStepEvent.sendKeys(StepEvent);
-		commonUtil.onClick(commonUtil.searchDropdown(searchDrpdwnSelect, StepEvent));
+		if (!StepEvent.isEmpty()) {
+			commonUtil.onClick(drpdwnStepEvent);
+			drpdwnStepEvent.sendKeys(StepEvent);
+			commonUtil.onClick(commonUtil.searchDropdown(searchDrpdwnSelect, StepEvent));
+		}
 		commonUtil.onClick(btnConfigAddParam);
 		commonUtil.waitForElementToVisible(txtParameterName);
 		String[] testDate2 = { parameterName, parameterValue };
@@ -134,11 +138,17 @@ public class StepManagePage extends BasePage {
 		String actualStepApiUrl = commonUtil.getText(stepApiUrl);
 		softassert.assertTrue(chkboxDisplayAsModal.isSelected());
 		softassert.assertTrue(chkboxDismissModal.isSelected());
-		softassert.assertTrue(chkboxConditional.isSelected());
 		String actualBootstrapClassName = commonUtil.getText(txtBootstrapClassName);
 		String actualCustomClassName = commonUtil.getText(txtCustomClassName);
-		String actualStepCondition = commonUtil.getText(drpdwnStepCondition);
-		String actualStepEvent = commonUtil.getText(drpdwnStepEvent);
+		String actualStepCondition = "";
+		String actualStepEvent = "";
+		if (!StepCondition.isEmpty()) {
+			softassert.assertTrue(chkboxConditional.isSelected());
+			actualStepCondition = commonUtil.getText(drpdwnStepCondition);
+		}
+		if (!StepEvent.isEmpty()) {
+			actualStepEvent = commonUtil.getText(drpdwnStepEvent);
+		}
 		String actualParameterName = commonUtil.getText(txtParameterName);
 		String actualParameterValue = commonUtil.getText(txtParameterValue);
 		Select selectDeviceType = new Select(drpdwnDeviceType);

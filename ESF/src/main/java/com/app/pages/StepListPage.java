@@ -52,7 +52,7 @@ public class StepListPage extends BasePage {
 	 * @param rowno
 	 * @return the Section List Page
 	 */
-	public SectionListPage openStep(String stepdetailssheetname, int rowno) {
+	public SectionListPage clickOnManageSectionOption(String stepdetailssheetname, int rowno) {
 		commonUtil = new CommonUtility(DriverFactory.getDriver());
 		stepName = ec.getCellData("Step_Details", "Modified Step Name", rowno);
 		commonUtil.doSearch(stepName);

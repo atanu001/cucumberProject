@@ -216,8 +216,7 @@ public class EventManagePage extends BasePage {
 		} else if (DisplayType.equals("Workflow")) {
 			commonUtil.onClick(drpdwnWorkflow);
 			drpdwnWorkflow.sendKeys(DisplayWorkflow);
-			// commonUtil.onClick(commonUtil.searchDropdown(selectWorkflow,
-			// DisplayWorkflow));
+			commonUtil.onClick(commonUtil.searchDropdown(searchDrpdwnSelect, DisplayWorkflow));
 		} else {
 			commonUtil.onClick(drpdwnFramework);
 			drpdwnFrameworkSearch.sendKeys(Framework);

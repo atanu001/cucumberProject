@@ -5,6 +5,7 @@ import java.util.Random;
 
 import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -27,7 +28,7 @@ public class CommonUtility {
 
 	private WebDriver driver;
 	private BasePage basePage;
-	private SoftAssert softassert;
+	// private SoftAssert softassert;
 
 	public CommonUtility(WebDriver driver) {
 		this.driver = driver;
@@ -35,8 +36,9 @@ public class CommonUtility {
 	}
 
 	public void doSearch(String text) {
+		basePage = new BasePage(DriverFactory.getDriver());
+		waitForElementToVisible(basePage.txtSearch);
 		try {
-			basePage = new BasePage(DriverFactory.getDriver());
 			basePage.txtSearch.sendKeys(text);
 			Thread.sleep(2000);
 		} catch (InterruptedException e) {
@@ -53,6 +55,7 @@ public class CommonUtility {
 
 	public String getText(WebElement element) {
 		String s1 = null;
+		waitForElementToVisible(element);
 		if (StringUtils.isEmpty(element.getText())) {
 			s1 = element.getAttribute("value").trim();
 		} else {
@@ -80,7 +83,7 @@ public class CommonUtility {
 
 	public int generateRandomNumber() {
 		Random random = new Random();
-		int randNum = random.nextInt(1000);
+		int randNum = random.nextInt(10000);
 		return randNum;
 	}
 
@@ -96,9 +99,14 @@ public class CommonUtility {
 		}
 	}
 
-	public void onClick(WebElement loc) {
-		waitForElementToBeClickable(loc);
-		loc.click();
+	public void onClick(WebElement element) {
+		waitForElementToBeClickable(element);
+		try {
+			element.click();
+		} catch (ElementNotInteractableException e) {
+			clickByJavaScriptExecutor(element);
+		}
+
 	}
 
 	public boolean isDisplayed(WebElement Element) {
@@ -122,9 +130,14 @@ public class CommonUtility {
 		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
 	}
 
+	public void clickByJavaScriptExecutor(WebElement element) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", element);
+	}
+
 	/**
 	 * This method is used to wait the driver for the Element to be Clickable driver
-	 * will wait 10 s
+	 * will check in every 2s for 60 s
 	 * 
 	 * @param Element
 	 */
@@ -145,7 +158,7 @@ public class CommonUtility {
 
 	/**
 	 * This method is used to wait the driver for the Element to be visible will
-	 * wait 15 s
+	 * check in every 2s for 60s
 	 * 
 	 * @param Element
 	 */
@@ -163,19 +176,6 @@ public class CommonUtility {
 			}
 		}
 
-	}
-
-	public void waitForElementToEnabled(By locator) {
-		try {
-			WebDriverWait wait = new WebDriverWait(DriverFactory.getDriver(), 5);
-			wait.until(ExpectedConditions.elementToBeClickable(locator));
-		} catch (Exception e) {
-			try {
-				Thread.sleep(2000);
-			} catch (Exception ex) {
-				ex.printStackTrace();
-			}
-		}
 	}
 
 	public void acceptJavaScripAlert() {

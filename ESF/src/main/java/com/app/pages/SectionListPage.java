@@ -15,6 +15,7 @@ public class SectionListPage extends BasePage {
 
 	private CommonUtility commonUtil;
 	private SectionManagePage sectionManagePage;
+	private StepFieldListPage stepFieldListPage;
 
 	@FindBy(xpath = "//span[text()='Application Sections']")
 	public WebElement labelHeaderSectionListPage;
@@ -48,12 +49,14 @@ public class SectionListPage extends BasePage {
 	 * @param rowno
 	 * @return the Field List Page
 	 */
-	public StepFieldListPage openSection(String sectiondetailssheetname, int rowno) {
+	public StepFieldListPage clickOnManageSectionOption(String sectiondetailssheetname, int rowno) {
 		commonUtil = new CommonUtility(DriverFactory.getDriver());
+		stepFieldListPage = new StepFieldListPage(DriverFactory.getDriver());
 		sectionName = ec.getCellData("Section_Details", "Modified Section Name", rowno);
 		commonUtil.doSearch(sectionName);
 		commonUtil.onClick(btnOption);
 		commonUtil.onClick(optionManage);
+		commonUtil.waitForElementToVisible(stepFieldListPage.txtLabelHeaderFieldListPage);
 		return new StepFieldListPage(driver);
 
 	}
@@ -66,7 +69,7 @@ public class SectionListPage extends BasePage {
 	 * @param rowno
 	 * @return the Manage Section Page
 	 */
-	public SectionManagePage editSection(String sectiondetailssheetname, int rowno) {
+	public SectionManagePage clickOnEditSectionoption(String sectiondetailssheetname, int rowno) {
 		commonUtil = new CommonUtility(DriverFactory.getDriver());
 		sectionName = ec.getCellData("Section_Details", "Modified Section Name", rowno);
 		commonUtil.waitForElementToVisible(labelHeaderSectionListPage);
